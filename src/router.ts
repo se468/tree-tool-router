@@ -1,6 +1,7 @@
 import type {
   RouteInput,
   RouteResult,
+  RouteResultBase,
   RouteTrace,
   RouterDecision,
   ToolRouter,
@@ -10,6 +11,20 @@ import type {
 
 const NO_TOOL = "no_tool_available";
 const NEEDS_CLARIFICATION = "needs_clarification";
+
+type RouteResultDraft =
+  | ({
+      type: "tool";
+      toolName: string;
+    } & Omit<RouteResultBase, "path" | "pathString">)
+  | ({
+      type: "no_tool_available";
+      reason: string;
+    } & Omit<RouteResultBase, "path" | "pathString">)
+  | ({
+      type: "needs_clarification";
+      question: string;
+    } & Omit<RouteResultBase, "path" | "pathString">);
 
 export function createToolRouter(config: ToolRouterConfig): ToolRouter {
   const confidenceThreshold = config.confidenceThreshold ?? 0.8;
@@ -40,12 +55,7 @@ export function createToolRouter(config: ToolRouterConfig): ToolRouter {
             reason: "Only one tool is available at this leaf."
           });
 
-          return {
-            type: "tool",
-            toolName,
-            confidence: 1,
-            trace
-          };
+          return toolResult(toolName, 1, trace);
         }
 
         const step = await choose({
@@ -68,12 +78,12 @@ export function createToolRouter(config: ToolRouterConfig): ToolRouter {
         });
 
         if (step.choice === NEEDS_CLARIFICATION) {
-          return {
+          return withRoutePath({
             type: "needs_clarification",
             question: step.question ?? "Can you clarify which tool or operation you need?",
             confidence: step.confidence,
             trace
-          };
+          });
         }
 
         if (step.choice === NO_TOOL) {
@@ -89,12 +99,12 @@ export function createToolRouter(config: ToolRouterConfig): ToolRouter {
             );
           }
 
-          return {
+          return withRoutePath({
             type: "needs_clarification",
             question: `Should this request use "${step.choice}", or something else?`,
             confidence: step.confidence,
             trace
-          };
+          });
         }
 
         if (!options.includes(step.choice)) {
@@ -102,12 +112,12 @@ export function createToolRouter(config: ToolRouterConfig): ToolRouter {
         }
 
         if (Array.isArray(node)) {
-          return {
+          return withRoutePath({
             type: "tool",
             toolName: step.choice,
             confidence: step.confidence,
             trace
-          };
+          });
         }
 
         const next: ToolTree | string[] = node[step.choice];
@@ -284,12 +294,39 @@ function aggregate(decisions: RouterDecision[]): RouterDecision & { votes: Recor
 }
 
 function noTool(reason: string, confidence: number, trace: RouteTrace[]): RouteResult {
-  return {
+  return withRoutePath({
     type: "no_tool_available",
     reason,
     confidence,
     trace
-  };
+  });
+}
+
+function toolResult(toolName: string, confidence: number, trace: RouteTrace[]): RouteResult {
+  return withRoutePath({
+    type: "tool",
+    toolName,
+    confidence,
+    trace
+  });
+}
+
+function withRoutePath(result: RouteResultDraft): RouteResult {
+  const path = formatRoutePath(result);
+
+  return {
+    ...result,
+    path,
+    pathString: path.join(" -> ")
+  } as RouteResult;
+}
+
+function formatRoutePath(result: RouteResultDraft): string[] {
+  const path = result.trace.map((step) => step.choice);
+  const terminal = result.type === "tool" ? result.toolName : result.type;
+  const last = path[path.length - 1];
+
+  return last === terminal ? path : [...path, terminal];
 }
 
 function clamp(value: number): number {

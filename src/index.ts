@@ -2,6 +2,7 @@ export { createToolRouter } from "./router.js";
 export type { LLMAdapter } from "./adapters/types.js";
 export type {
   RouteInput,
+  RouteResultBase,
   RouteResult,
   RouteTrace,
   ToolDefinition,

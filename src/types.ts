@@ -33,25 +33,26 @@ export interface RouteTrace {
   reason?: string;
 }
 
+export interface RouteResultBase {
+  confidence: number;
+  path: string[];
+  pathString: string;
+  trace: RouteTrace[];
+}
+
 export type RouteResult =
   | {
       type: "tool";
       toolName: string;
-      confidence: number;
-      trace: RouteTrace[];
-    }
+    } & RouteResultBase
   | {
       type: "no_tool_available";
       reason: string;
-      confidence: number;
-      trace: RouteTrace[];
-    }
+    } & RouteResultBase
   | {
       type: "needs_clarification";
       question: string;
-      confidence: number;
-      trace: RouteTrace[];
-    };
+    } & RouteResultBase;
 
 export interface RouterDecision {
   choice: string;

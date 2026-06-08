@@ -92,11 +92,11 @@ const result = await router.route({
 });
 
 if (result.type === "tool") {
-  console.log(result.toolName, result.confidence, result.trace);
+  console.log(result.toolName, result.confidence, result.pathString);
 }
 
 if (result.type === "no_tool_available") {
-  console.log(result.reason, result.trace);
+  console.log(result.reason, result.pathString);
 }
 ```
 
@@ -133,7 +133,7 @@ If the winning choice falls below `confidenceThreshold`, the router returns `no_
 
 When `samples` is greater than 1, ToolRouter repeats the same decision and aggregates votes. The winning option's confidence is based on both model confidence and vote share.
 
-Every result includes a trace so you can inspect routing decisions and tune your tree.
+Every result includes a human-readable `pathString`, a structured `path`, and a full `trace` so you can inspect routing decisions and tune your tree.
 
 ## Use Cases
 
@@ -198,20 +198,36 @@ type RouteResult =
       type: "tool";
       toolName: string;
       confidence: number;
+      path: string[];
+      pathString: string;
       trace: RouteTrace[];
     }
   | {
       type: "no_tool_available";
       reason: string;
       confidence: number;
+      path: string[];
+      pathString: string;
       trace: RouteTrace[];
     }
   | {
       type: "needs_clarification";
       question: string;
       confidence: number;
+      path: string[];
+      pathString: string;
       trace: RouteTrace[];
     };
+```
+
+Example route path:
+
+```ts
+result.path
+// ["research", "compare", "bulk", "CompareResearchBulk"]
+
+result.pathString
+// "research -> compare -> bulk -> CompareResearchBulk"
 ```
 
 ## Design Notes
