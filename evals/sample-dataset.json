@@ -1,0 +1,19 @@
+[
+  {
+    "id": "research-bulk-summarize",
+    "request": "Summarize recent papers about battery recycling",
+    "expectedType": "tool",
+    "expectedToolName": "summarizePaperSet"
+  },
+  {
+    "id": "calendar-single-read",
+    "request": "Check my next project review meeting",
+    "expectedType": "tool",
+    "expectedToolName": "getEvent"
+  },
+  {
+    "id": "unsupported-travel",
+    "request": "Book me a flight to Berlin next Friday",
+    "expectedType": "no_tool_available"
+  }
+]
