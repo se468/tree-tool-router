@@ -100,6 +100,110 @@ if (result.type === "no_tool_available") {
 }
 ```
 
+## Tool Tree Schema
+
+Tools are defined in two parts:
+
+- `tree`: the routing hierarchy
+- `tools`: metadata for each leaf tool
+
+The tree can be as deep as you want, but the default mental model is:
+
+```txt
+domain
+└── operation
+    └── mode
+        └── tool
+```
+
+For example, this `tree`:
+
+```ts
+const tree = {
+  research: {
+    read: {
+      single: ["getPaper"],
+      bulk: ["searchPapers"]
+    },
+    summarize: {
+      single: ["summarizePaper"],
+      bulk: ["summarizePaperSet"]
+    }
+  },
+  calendar: {
+    read: {
+      single: ["getEvent"],
+      bulk: ["listEvents"]
+    },
+    update: {
+      single: ["rescheduleEvent"],
+      bulk: ["rescheduleEvents"]
+    }
+  }
+};
+```
+
+Represents this routing structure:
+
+```txt
+root
+├── research
+│   ├── read
+│   │   ├── single
+│   │   │   └── getPaper
+│   │   └── bulk
+│   │       └── searchPapers
+│   └── summarize
+│       ├── single
+│       │   └── summarizePaper
+│       └── bulk
+│           └── summarizePaperSet
+└── calendar
+    ├── read
+    │   ├── single
+    │   │   └── getEvent
+    │   └── bulk
+    │       └── listEvents
+    └── update
+        ├── single
+        │   └── rescheduleEvent
+        └── bulk
+            └── rescheduleEvents
+```
+
+Each leaf tool is described separately:
+
+```ts
+const tools = {
+  searchPapers: {
+    description: "Search research papers by topic",
+    schema: { query: "string" }
+  },
+  summarizePaperSet: {
+    description: "Summarize multiple research papers",
+    schema: { paperIds: "string[]" }
+  }
+};
+```
+
+At runtime, ToolRouter asks one constrained question per level. For the request:
+
+```txt
+Summarize recent papers about battery recycling
+```
+
+The final path might be:
+
+```txt
+research -> summarize -> bulk -> summarizePaperSet
+```
+
+If none of the child options are plausible, the path ends in:
+
+```txt
+no_tool_available
+```
+
 ## LLM Adapter
 
 ToolRouter works with any LLM provider that can return JSON. Implement one method:
