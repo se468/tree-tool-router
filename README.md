@@ -261,6 +261,7 @@ The examples use mocked LLM adapters, so they run without API keys.
 ```bash
 npm run eval
 npm run eval:large:real
+npm run eval:compare:real
 ```
 
 `evals/run-eval.ts` runs a small sample dataset with a mocked adapter. This is useful for checking that routing logic, traces, and result grading still work during development.
@@ -295,7 +296,16 @@ Current smoke-test results:
 | `npm run eval:real` | `gpt-4.1-mini` | 8 | 3/3 | Passed |
 | `npm run eval:large:real` | `gpt-4.1-mini` | 144 | 6/6 | Passed |
 
-Flat prompt baseline measurements are not included yet. The eval scripts are intentionally small so you can add a baseline runner and compare accuracy, token usage, latency, and false tool call rate on your own dataset.
+`npm run eval:compare:real` compares a flat prompt baseline against ToolRouter on the 144-tool fixture. It reports accuracy, false tool calls, LLM calls, estimated prompt tokens, and latency.
+
+Example comparison run with `gpt-4.1-mini` on the 144-tool fixture:
+
+| Approach | Accuracy | False Tool Calls | LLM Calls | Est. Prompt Tokens | Total Latency |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Flat prompt | 5/6 | 0 | 6 | 63,106 | 10.8s |
+| ToolRouter | 6/6 | 0 | 16 | 5,740 | 23.1s |
+
+These are smoke-test numbers, not a benchmark. Model behavior and latency can vary between runs. The important signal is that the flat baseline sees every tool at once, while ToolRouter trades more LLM calls for a much smaller prompt at each decision step and an auditable route path.
 
 ## API
 

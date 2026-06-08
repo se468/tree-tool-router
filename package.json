@@ -17,7 +17,8 @@
     "example:no-tool": "tsx examples/no-tool.ts",
     "eval": "tsx evals/run-eval.ts",
     "eval:real": "tsx evals/run-real-eval.ts",
-    "eval:large:real": "tsx evals/run-large-real-eval.ts"
+    "eval:large:real": "tsx evals/run-large-real-eval.ts",
+    "eval:compare:real": "tsx evals/run-compare-real-eval.ts"
   },
   "keywords": [
     "llm",
