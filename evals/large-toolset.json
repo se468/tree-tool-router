@@ -1,0 +1,1751 @@
+﻿{
+    "name":  "large-neutral-toolset",
+    "description":  "Synthetic 144-tool routing fixture for stress-testing hierarchical tool selection across neutral domains.",
+    "toolCount":  144,
+    "shape":  "12 domains x 4 operations x 3 modes x 1 leaf tool",
+    "tree":  {
+                 "research":  {
+                                  "read":  {
+                                               "single":  [
+                                                              "ReadResearchSingle"
+                                                          ],
+                                               "bulk":  [
+                                                            "ReadResearchBulk"
+                                                        ],
+                                               "semantic":  [
+                                                                "ReadResearchSemantic"
+                                                            ]
+                                           },
+                                  "summarize":  {
+                                                    "single":  [
+                                                                   "SummarizeResearchSingle"
+                                                               ],
+                                                    "bulk":  [
+                                                                 "SummarizeResearchBulk"
+                                                             ],
+                                                    "semantic":  [
+                                                                     "SummarizeResearchSemantic"
+                                                                 ]
+                                                },
+                                  "compare":  {
+                                                  "single":  [
+                                                                 "CompareResearchSingle"
+                                                             ],
+                                                  "bulk":  [
+                                                               "CompareResearchBulk"
+                                                           ],
+                                                  "semantic":  [
+                                                                   "CompareResearchSemantic"
+                                                               ]
+                                              },
+                                  "export":  {
+                                                 "single":  [
+                                                                "ExportResearchSingle"
+                                                            ],
+                                                 "bulk":  [
+                                                              "ExportResearchBulk"
+                                                          ],
+                                                 "semantic":  [
+                                                                  "ExportResearchSemantic"
+                                                              ]
+                                             }
+                              },
+                 "calendar":  {
+                                  "read":  {
+                                               "single":  [
+                                                              "ReadCalendarSingle"
+                                                          ],
+                                               "bulk":  [
+                                                            "ReadCalendarBulk"
+                                                        ],
+                                               "semantic":  [
+                                                                "ReadCalendarSemantic"
+                                                            ]
+                                           },
+                                  "create":  {
+                                                 "single":  [
+                                                                "CreateCalendarSingle"
+                                                            ],
+                                                 "bulk":  [
+                                                              "CreateCalendarBulk"
+                                                          ],
+                                                 "semantic":  [
+                                                                  "CreateCalendarSemantic"
+                                                              ]
+                                             },
+                                  "update":  {
+                                                 "single":  [
+                                                                "UpdateCalendarSingle"
+                                                            ],
+                                                 "bulk":  [
+                                                              "UpdateCalendarBulk"
+                                                          ],
+                                                 "semantic":  [
+                                                                  "UpdateCalendarSemantic"
+                                                              ]
+                                             },
+                                  "analyze":  {
+                                                  "single":  [
+                                                                 "AnalyzeCalendarSingle"
+                                                             ],
+                                                  "bulk":  [
+                                                               "AnalyzeCalendarBulk"
+                                                           ],
+                                                  "semantic":  [
+                                                                   "AnalyzeCalendarSemantic"
+                                                               ]
+                                              }
+                              },
+                 "documents":  {
+                                   "read":  {
+                                                "single":  [
+                                                               "ReadDocumentsSingle"
+                                                           ],
+                                                "bulk":  [
+                                                             "ReadDocumentsBulk"
+                                                         ],
+                                                "semantic":  [
+                                                                 "ReadDocumentsSemantic"
+                                                             ]
+                                            },
+                                   "draft":  {
+                                                 "single":  [
+                                                                "DraftDocumentsSingle"
+                                                            ],
+                                                 "bulk":  [
+                                                              "DraftDocumentsBulk"
+                                                          ],
+                                                 "semantic":  [
+                                                                  "DraftDocumentsSemantic"
+                                                              ]
+                                             },
+                                   "review":  {
+                                                  "single":  [
+                                                                 "ReviewDocumentsSingle"
+                                                             ],
+                                                  "bulk":  [
+                                                               "ReviewDocumentsBulk"
+                                                           ],
+                                                  "semantic":  [
+                                                                   "ReviewDocumentsSemantic"
+                                                               ]
+                                              },
+                                   "convert":  {
+                                                   "single":  [
+                                                                  "ConvertDocumentsSingle"
+                                                              ],
+                                                   "bulk":  [
+                                                                "ConvertDocumentsBulk"
+                                                            ],
+                                                   "semantic":  [
+                                                                    "ConvertDocumentsSemantic"
+                                                                ]
+                                               }
+                               },
+                 "code":  {
+                              "search":  {
+                                             "single":  [
+                                                            "SearchCodeSingle"
+                                                        ],
+                                             "bulk":  [
+                                                          "SearchCodeBulk"
+                                                      ],
+                                             "semantic":  [
+                                                              "SearchCodeSemantic"
+                                                          ]
+                                         },
+                              "review":  {
+                                             "single":  [
+                                                            "ReviewCodeSingle"
+                                                        ],
+                                             "bulk":  [
+                                                          "ReviewCodeBulk"
+                                                      ],
+                                             "semantic":  [
+                                                              "ReviewCodeSemantic"
+                                                          ]
+                                         },
+                              "modify":  {
+                                             "single":  [
+                                                            "ModifyCodeSingle"
+                                                        ],
+                                             "bulk":  [
+                                                          "ModifyCodeBulk"
+                                                      ],
+                                             "semantic":  [
+                                                              "ModifyCodeSemantic"
+                                                          ]
+                                         },
+                              "test":  {
+                                           "single":  [
+                                                          "TestCodeSingle"
+                                                      ],
+                                           "bulk":  [
+                                                        "TestCodeBulk"
+                                                    ],
+                                           "semantic":  [
+                                                            "TestCodeSemantic"
+                                                        ]
+                                       }
+                          },
+                 "analytics":  {
+                                   "query":  {
+                                                 "single":  [
+                                                                "QueryAnalyticsSingle"
+                                                            ],
+                                                 "bulk":  [
+                                                              "QueryAnalyticsBulk"
+                                                          ],
+                                                 "semantic":  [
+                                                                  "QueryAnalyticsSemantic"
+                                                              ]
+                                             },
+                                   "visualize":  {
+                                                     "single":  [
+                                                                    "VisualizeAnalyticsSingle"
+                                                                ],
+                                                     "bulk":  [
+                                                                  "VisualizeAnalyticsBulk"
+                                                              ],
+                                                     "semantic":  [
+                                                                      "VisualizeAnalyticsSemantic"
+                                                                  ]
+                                                 },
+                                   "forecast":  {
+                                                    "single":  [
+                                                                   "ForecastAnalyticsSingle"
+                                                               ],
+                                                    "bulk":  [
+                                                                 "ForecastAnalyticsBulk"
+                                                             ],
+                                                    "semantic":  [
+                                                                     "ForecastAnalyticsSemantic"
+                                                                 ]
+                                                },
+                                   "explain":  {
+                                                   "single":  [
+                                                                  "ExplainAnalyticsSingle"
+                                                              ],
+                                                   "bulk":  [
+                                                                "ExplainAnalyticsBulk"
+                                                            ],
+                                                   "semantic":  [
+                                                                    "ExplainAnalyticsSemantic"
+                                                                ]
+                                               }
+                               },
+                 "security":  {
+                                  "scan":  {
+                                               "single":  [
+                                                              "ScanSecuritySingle"
+                                                          ],
+                                               "bulk":  [
+                                                            "ScanSecurityBulk"
+                                                        ],
+                                               "semantic":  [
+                                                                "ScanSecuritySemantic"
+                                                            ]
+                                           },
+                                  "audit":  {
+                                                "single":  [
+                                                               "AuditSecuritySingle"
+                                                           ],
+                                                "bulk":  [
+                                                             "AuditSecurityBulk"
+                                                         ],
+                                                "semantic":  [
+                                                                 "AuditSecuritySemantic"
+                                                             ]
+                                            },
+                                  "triage":  {
+                                                 "single":  [
+                                                                "TriageSecuritySingle"
+                                                            ],
+                                                 "bulk":  [
+                                                              "TriageSecurityBulk"
+                                                          ],
+                                                 "semantic":  [
+                                                                  "TriageSecuritySemantic"
+                                                              ]
+                                             },
+                                  "report":  {
+                                                 "single":  [
+                                                                "ReportSecuritySingle"
+                                                            ],
+                                                 "bulk":  [
+                                                              "ReportSecurityBulk"
+                                                          ],
+                                                 "semantic":  [
+                                                                  "ReportSecuritySemantic"
+                                                              ]
+                                             }
+                              },
+                 "infrastructure":  {
+                                        "inspect":  {
+                                                        "single":  [
+                                                                       "InspectInfrastructureSingle"
+                                                                   ],
+                                                        "bulk":  [
+                                                                     "InspectInfrastructureBulk"
+                                                                 ],
+                                                        "semantic":  [
+                                                                         "InspectInfrastructureSemantic"
+                                                                     ]
+                                                    },
+                                        "deploy":  {
+                                                       "single":  [
+                                                                      "DeployInfrastructureSingle"
+                                                                  ],
+                                                       "bulk":  [
+                                                                    "DeployInfrastructureBulk"
+                                                                ],
+                                                       "semantic":  [
+                                                                        "DeployInfrastructureSemantic"
+                                                                    ]
+                                                   },
+                                        "monitor":  {
+                                                        "single":  [
+                                                                       "MonitorInfrastructureSingle"
+                                                                   ],
+                                                        "bulk":  [
+                                                                     "MonitorInfrastructureBulk"
+                                                                 ],
+                                                        "semantic":  [
+                                                                         "MonitorInfrastructureSemantic"
+                                                                     ]
+                                                    },
+                                        "rollback":  {
+                                                         "single":  [
+                                                                        "RollbackInfrastructureSingle"
+                                                                    ],
+                                                         "bulk":  [
+                                                                      "RollbackInfrastructureBulk"
+                                                                  ],
+                                                         "semantic":  [
+                                                                          "RollbackInfrastructureSemantic"
+                                                                      ]
+                                                     }
+                                    },
+                 "media":  {
+                               "inspect":  {
+                                               "single":  [
+                                                              "InspectMediaSingle"
+                                                          ],
+                                               "bulk":  [
+                                                            "InspectMediaBulk"
+                                                        ],
+                                               "semantic":  [
+                                                                "InspectMediaSemantic"
+                                                            ]
+                                           },
+                               "transform":  {
+                                                 "single":  [
+                                                                "TransformMediaSingle"
+                                                            ],
+                                                 "bulk":  [
+                                                              "TransformMediaBulk"
+                                                          ],
+                                                 "semantic":  [
+                                                                  "TransformMediaSemantic"
+                                                              ]
+                                             },
+                               "caption":  {
+                                               "single":  [
+                                                              "CaptionMediaSingle"
+                                                          ],
+                                               "bulk":  [
+                                                            "CaptionMediaBulk"
+                                                        ],
+                                               "semantic":  [
+                                                                "CaptionMediaSemantic"
+                                                            ]
+                                           },
+                               "export":  {
+                                              "single":  [
+                                                             "ExportMediaSingle"
+                                                         ],
+                                              "bulk":  [
+                                                           "ExportMediaBulk"
+                                                       ],
+                                              "semantic":  [
+                                                               "ExportMediaSemantic"
+                                                           ]
+                                          }
+                           },
+                 "education":  {
+                                   "plan":  {
+                                                "single":  [
+                                                               "PlanEducationSingle"
+                                                           ],
+                                                "bulk":  [
+                                                             "PlanEducationBulk"
+                                                         ],
+                                                "semantic":  [
+                                                                 "PlanEducationSemantic"
+                                                             ]
+                                            },
+                                   "grade":  {
+                                                 "single":  [
+                                                                "GradeEducationSingle"
+                                                            ],
+                                                 "bulk":  [
+                                                              "GradeEducationBulk"
+                                                          ],
+                                                 "semantic":  [
+                                                                  "GradeEducationSemantic"
+                                                              ]
+                                             },
+                                   "explain":  {
+                                                   "single":  [
+                                                                  "ExplainEducationSingle"
+                                                              ],
+                                                   "bulk":  [
+                                                                "ExplainEducationBulk"
+                                                            ],
+                                                   "semantic":  [
+                                                                    "ExplainEducationSemantic"
+                                                                ]
+                                               },
+                                   "quiz":  {
+                                                "single":  [
+                                                               "QuizEducationSingle"
+                                                           ],
+                                                "bulk":  [
+                                                             "QuizEducationBulk"
+                                                         ],
+                                                "semantic":  [
+                                                                 "QuizEducationSemantic"
+                                                             ]
+                                            }
+                               },
+                 "support":  {
+                                 "search":  {
+                                                "single":  [
+                                                               "SearchSupportSingle"
+                                                           ],
+                                                "bulk":  [
+                                                             "SearchSupportBulk"
+                                                         ],
+                                                "semantic":  [
+                                                                 "SearchSupportSemantic"
+                                                             ]
+                                            },
+                                 "triage":  {
+                                                "single":  [
+                                                               "TriageSupportSingle"
+                                                           ],
+                                                "bulk":  [
+                                                             "TriageSupportBulk"
+                                                         ],
+                                                "semantic":  [
+                                                                 "TriageSupportSemantic"
+                                                             ]
+                                            },
+                                 "reply":  {
+                                               "single":  [
+                                                              "ReplySupportSingle"
+                                                          ],
+                                               "bulk":  [
+                                                            "ReplySupportBulk"
+                                                        ],
+                                               "semantic":  [
+                                                                "ReplySupportSemantic"
+                                                            ]
+                                           },
+                                 "escalate":  {
+                                                  "single":  [
+                                                                 "EscalateSupportSingle"
+                                                             ],
+                                                  "bulk":  [
+                                                               "EscalateSupportBulk"
+                                                           ],
+                                                  "semantic":  [
+                                                                   "EscalateSupportSemantic"
+                                                               ]
+                                              }
+                             },
+                 "knowledge":  {
+                                   "search":  {
+                                                  "single":  [
+                                                                 "SearchKnowledgeSingle"
+                                                             ],
+                                                  "bulk":  [
+                                                               "SearchKnowledgeBulk"
+                                                           ],
+                                                  "semantic":  [
+                                                                   "SearchKnowledgeSemantic"
+                                                               ]
+                                              },
+                                   "link":  {
+                                                "single":  [
+                                                               "LinkKnowledgeSingle"
+                                                           ],
+                                                "bulk":  [
+                                                             "LinkKnowledgeBulk"
+                                                         ],
+                                                "semantic":  [
+                                                                 "LinkKnowledgeSemantic"
+                                                             ]
+                                            },
+                                   "summarize":  {
+                                                     "single":  [
+                                                                    "SummarizeKnowledgeSingle"
+                                                                ],
+                                                     "bulk":  [
+                                                                  "SummarizeKnowledgeBulk"
+                                                              ],
+                                                     "semantic":  [
+                                                                      "SummarizeKnowledgeSemantic"
+                                                                  ]
+                                                 },
+                                   "archive":  {
+                                                   "single":  [
+                                                                  "ArchiveKnowledgeSingle"
+                                                              ],
+                                                   "bulk":  [
+                                                                "ArchiveKnowledgeBulk"
+                                                            ],
+                                                   "semantic":  [
+                                                                    "ArchiveKnowledgeSemantic"
+                                                                ]
+                                               }
+                               },
+                 "communications":  {
+                                        "read":  {
+                                                     "single":  [
+                                                                    "ReadCommunicationsSingle"
+                                                                ],
+                                                     "bulk":  [
+                                                                  "ReadCommunicationsBulk"
+                                                              ],
+                                                     "semantic":  [
+                                                                      "ReadCommunicationsSemantic"
+                                                                  ]
+                                                 },
+                                        "draft":  {
+                                                      "single":  [
+                                                                     "DraftCommunicationsSingle"
+                                                                 ],
+                                                      "bulk":  [
+                                                                   "DraftCommunicationsBulk"
+                                                               ],
+                                                      "semantic":  [
+                                                                       "DraftCommunicationsSemantic"
+                                                                   ]
+                                                  },
+                                        "schedule":  {
+                                                         "single":  [
+                                                                        "ScheduleCommunicationsSingle"
+                                                                    ],
+                                                         "bulk":  [
+                                                                      "ScheduleCommunicationsBulk"
+                                                                  ],
+                                                         "semantic":  [
+                                                                          "ScheduleCommunicationsSemantic"
+                                                                      ]
+                                                     },
+                                        "summarize":  {
+                                                          "single":  [
+                                                                         "SummarizeCommunicationsSingle"
+                                                                     ],
+                                                          "bulk":  [
+                                                                       "SummarizeCommunicationsBulk"
+                                                                   ],
+                                                          "semantic":  [
+                                                                           "SummarizeCommunicationsSemantic"
+                                                                       ]
+                                                      }
+                                    }
+             },
+    "tools":  {
+                  "ReadResearchSingle":  {
+                                             "description":  "Read one item in the research domain. Use only when the request clearly asks to read research information.",
+                                             "schema":  {
+                                                            "target":  "string",
+                                                            "context":  "string",
+                                                            "dryRun":  "boolean"
+                                                        }
+                                         },
+                  "ReadResearchBulk":  {
+                                           "description":  "Read many items in the research domain. Use only when the request clearly asks to read research information.",
+                                           "schema":  {
+                                                          "target":  "string",
+                                                          "context":  "string",
+                                                          "dryRun":  "boolean"
+                                                      }
+                                       },
+                  "ReadResearchSemantic":  {
+                                               "description":  "Read items selected by semantic intent in the research domain. Use only when the request clearly asks to read research information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "SummarizeResearchSingle":  {
+                                                  "description":  "Summarize one item in the research domain. Use only when the request clearly asks to summarize research information.",
+                                                  "schema":  {
+                                                                 "target":  "string",
+                                                                 "context":  "string",
+                                                                 "dryRun":  "boolean"
+                                                             }
+                                              },
+                  "SummarizeResearchBulk":  {
+                                                "description":  "Summarize many items in the research domain. Use only when the request clearly asks to summarize research information.",
+                                                "schema":  {
+                                                               "target":  "string",
+                                                               "context":  "string",
+                                                               "dryRun":  "boolean"
+                                                           }
+                                            },
+                  "SummarizeResearchSemantic":  {
+                                                    "description":  "Summarize items selected by semantic intent in the research domain. Use only when the request clearly asks to summarize research information.",
+                                                    "schema":  {
+                                                                   "target":  "string",
+                                                                   "context":  "string",
+                                                                   "dryRun":  "boolean"
+                                                               }
+                                                },
+                  "CompareResearchSingle":  {
+                                                "description":  "Compare one item in the research domain. Use only when the request clearly asks to compare research information.",
+                                                "schema":  {
+                                                               "target":  "string",
+                                                               "context":  "string",
+                                                               "dryRun":  "boolean"
+                                                           }
+                                            },
+                  "CompareResearchBulk":  {
+                                              "description":  "Compare many items in the research domain. Use only when the request clearly asks to compare research information.",
+                                              "schema":  {
+                                                             "target":  "string",
+                                                             "context":  "string",
+                                                             "dryRun":  "boolean"
+                                                         }
+                                          },
+                  "CompareResearchSemantic":  {
+                                                  "description":  "Compare items selected by semantic intent in the research domain. Use only when the request clearly asks to compare research information.",
+                                                  "schema":  {
+                                                                 "target":  "string",
+                                                                 "context":  "string",
+                                                                 "dryRun":  "boolean"
+                                                             }
+                                              },
+                  "ExportResearchSingle":  {
+                                               "description":  "Export one item in the research domain. Use only when the request clearly asks to export research information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "ExportResearchBulk":  {
+                                             "description":  "Export many items in the research domain. Use only when the request clearly asks to export research information.",
+                                             "schema":  {
+                                                            "target":  "string",
+                                                            "context":  "string",
+                                                            "dryRun":  "boolean"
+                                                        }
+                                         },
+                  "ExportResearchSemantic":  {
+                                                 "description":  "Export items selected by semantic intent in the research domain. Use only when the request clearly asks to export research information.",
+                                                 "schema":  {
+                                                                "target":  "string",
+                                                                "context":  "string",
+                                                                "dryRun":  "boolean"
+                                                            }
+                                             },
+                  "ReadCalendarSingle":  {
+                                             "description":  "Read one item in the calendar domain. Use only when the request clearly asks to read calendar information.",
+                                             "schema":  {
+                                                            "target":  "string",
+                                                            "context":  "string",
+                                                            "dryRun":  "boolean"
+                                                        }
+                                         },
+                  "ReadCalendarBulk":  {
+                                           "description":  "Read many items in the calendar domain. Use only when the request clearly asks to read calendar information.",
+                                           "schema":  {
+                                                          "target":  "string",
+                                                          "context":  "string",
+                                                          "dryRun":  "boolean"
+                                                      }
+                                       },
+                  "ReadCalendarSemantic":  {
+                                               "description":  "Read items selected by semantic intent in the calendar domain. Use only when the request clearly asks to read calendar information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "CreateCalendarSingle":  {
+                                               "description":  "Create one item in the calendar domain. Use only when the request clearly asks to create calendar information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "CreateCalendarBulk":  {
+                                             "description":  "Create many items in the calendar domain. Use only when the request clearly asks to create calendar information.",
+                                             "schema":  {
+                                                            "target":  "string",
+                                                            "context":  "string",
+                                                            "dryRun":  "boolean"
+                                                        }
+                                         },
+                  "CreateCalendarSemantic":  {
+                                                 "description":  "Create items selected by semantic intent in the calendar domain. Use only when the request clearly asks to create calendar information.",
+                                                 "schema":  {
+                                                                "target":  "string",
+                                                                "context":  "string",
+                                                                "dryRun":  "boolean"
+                                                            }
+                                             },
+                  "UpdateCalendarSingle":  {
+                                               "description":  "Update one item in the calendar domain. Use only when the request clearly asks to update calendar information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "UpdateCalendarBulk":  {
+                                             "description":  "Update many items in the calendar domain. Use only when the request clearly asks to update calendar information.",
+                                             "schema":  {
+                                                            "target":  "string",
+                                                            "context":  "string",
+                                                            "dryRun":  "boolean"
+                                                        }
+                                         },
+                  "UpdateCalendarSemantic":  {
+                                                 "description":  "Update items selected by semantic intent in the calendar domain. Use only when the request clearly asks to update calendar information.",
+                                                 "schema":  {
+                                                                "target":  "string",
+                                                                "context":  "string",
+                                                                "dryRun":  "boolean"
+                                                            }
+                                             },
+                  "AnalyzeCalendarSingle":  {
+                                                "description":  "Analyze one item in the calendar domain. Use only when the request clearly asks to analyze calendar information.",
+                                                "schema":  {
+                                                               "target":  "string",
+                                                               "context":  "string",
+                                                               "dryRun":  "boolean"
+                                                           }
+                                            },
+                  "AnalyzeCalendarBulk":  {
+                                              "description":  "Analyze many items in the calendar domain. Use only when the request clearly asks to analyze calendar information.",
+                                              "schema":  {
+                                                             "target":  "string",
+                                                             "context":  "string",
+                                                             "dryRun":  "boolean"
+                                                         }
+                                          },
+                  "AnalyzeCalendarSemantic":  {
+                                                  "description":  "Analyze items selected by semantic intent in the calendar domain. Use only when the request clearly asks to analyze calendar information.",
+                                                  "schema":  {
+                                                                 "target":  "string",
+                                                                 "context":  "string",
+                                                                 "dryRun":  "boolean"
+                                                             }
+                                              },
+                  "ReadDocumentsSingle":  {
+                                              "description":  "Read one item in the documents domain. Use only when the request clearly asks to read documents information.",
+                                              "schema":  {
+                                                             "target":  "string",
+                                                             "context":  "string",
+                                                             "dryRun":  "boolean"
+                                                         }
+                                          },
+                  "ReadDocumentsBulk":  {
+                                            "description":  "Read many items in the documents domain. Use only when the request clearly asks to read documents information.",
+                                            "schema":  {
+                                                           "target":  "string",
+                                                           "context":  "string",
+                                                           "dryRun":  "boolean"
+                                                       }
+                                        },
+                  "ReadDocumentsSemantic":  {
+                                                "description":  "Read items selected by semantic intent in the documents domain. Use only when the request clearly asks to read documents information.",
+                                                "schema":  {
+                                                               "target":  "string",
+                                                               "context":  "string",
+                                                               "dryRun":  "boolean"
+                                                           }
+                                            },
+                  "DraftDocumentsSingle":  {
+                                               "description":  "Draft one item in the documents domain. Use only when the request clearly asks to draft documents information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "DraftDocumentsBulk":  {
+                                             "description":  "Draft many items in the documents domain. Use only when the request clearly asks to draft documents information.",
+                                             "schema":  {
+                                                            "target":  "string",
+                                                            "context":  "string",
+                                                            "dryRun":  "boolean"
+                                                        }
+                                         },
+                  "DraftDocumentsSemantic":  {
+                                                 "description":  "Draft items selected by semantic intent in the documents domain. Use only when the request clearly asks to draft documents information.",
+                                                 "schema":  {
+                                                                "target":  "string",
+                                                                "context":  "string",
+                                                                "dryRun":  "boolean"
+                                                            }
+                                             },
+                  "ReviewDocumentsSingle":  {
+                                                "description":  "Review one item in the documents domain. Use only when the request clearly asks to review documents information.",
+                                                "schema":  {
+                                                               "target":  "string",
+                                                               "context":  "string",
+                                                               "dryRun":  "boolean"
+                                                           }
+                                            },
+                  "ReviewDocumentsBulk":  {
+                                              "description":  "Review many items in the documents domain. Use only when the request clearly asks to review documents information.",
+                                              "schema":  {
+                                                             "target":  "string",
+                                                             "context":  "string",
+                                                             "dryRun":  "boolean"
+                                                         }
+                                          },
+                  "ReviewDocumentsSemantic":  {
+                                                  "description":  "Review items selected by semantic intent in the documents domain. Use only when the request clearly asks to review documents information.",
+                                                  "schema":  {
+                                                                 "target":  "string",
+                                                                 "context":  "string",
+                                                                 "dryRun":  "boolean"
+                                                             }
+                                              },
+                  "ConvertDocumentsSingle":  {
+                                                 "description":  "Convert one item in the documents domain. Use only when the request clearly asks to convert documents information.",
+                                                 "schema":  {
+                                                                "target":  "string",
+                                                                "context":  "string",
+                                                                "dryRun":  "boolean"
+                                                            }
+                                             },
+                  "ConvertDocumentsBulk":  {
+                                               "description":  "Convert many items in the documents domain. Use only when the request clearly asks to convert documents information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "ConvertDocumentsSemantic":  {
+                                                   "description":  "Convert items selected by semantic intent in the documents domain. Use only when the request clearly asks to convert documents information.",
+                                                   "schema":  {
+                                                                  "target":  "string",
+                                                                  "context":  "string",
+                                                                  "dryRun":  "boolean"
+                                                              }
+                                               },
+                  "SearchCodeSingle":  {
+                                           "description":  "Search one item in the code domain. Use only when the request clearly asks to search code information.",
+                                           "schema":  {
+                                                          "target":  "string",
+                                                          "context":  "string",
+                                                          "dryRun":  "boolean"
+                                                      }
+                                       },
+                  "SearchCodeBulk":  {
+                                         "description":  "Search many items in the code domain. Use only when the request clearly asks to search code information.",
+                                         "schema":  {
+                                                        "target":  "string",
+                                                        "context":  "string",
+                                                        "dryRun":  "boolean"
+                                                    }
+                                     },
+                  "SearchCodeSemantic":  {
+                                             "description":  "Search items selected by semantic intent in the code domain. Use only when the request clearly asks to search code information.",
+                                             "schema":  {
+                                                            "target":  "string",
+                                                            "context":  "string",
+                                                            "dryRun":  "boolean"
+                                                        }
+                                         },
+                  "ReviewCodeSingle":  {
+                                           "description":  "Review one item in the code domain. Use only when the request clearly asks to review code information.",
+                                           "schema":  {
+                                                          "target":  "string",
+                                                          "context":  "string",
+                                                          "dryRun":  "boolean"
+                                                      }
+                                       },
+                  "ReviewCodeBulk":  {
+                                         "description":  "Review many items in the code domain. Use only when the request clearly asks to review code information.",
+                                         "schema":  {
+                                                        "target":  "string",
+                                                        "context":  "string",
+                                                        "dryRun":  "boolean"
+                                                    }
+                                     },
+                  "ReviewCodeSemantic":  {
+                                             "description":  "Review items selected by semantic intent in the code domain. Use only when the request clearly asks to review code information.",
+                                             "schema":  {
+                                                            "target":  "string",
+                                                            "context":  "string",
+                                                            "dryRun":  "boolean"
+                                                        }
+                                         },
+                  "ModifyCodeSingle":  {
+                                           "description":  "Modify one item in the code domain. Use only when the request clearly asks to modify code information.",
+                                           "schema":  {
+                                                          "target":  "string",
+                                                          "context":  "string",
+                                                          "dryRun":  "boolean"
+                                                      }
+                                       },
+                  "ModifyCodeBulk":  {
+                                         "description":  "Modify many items in the code domain. Use only when the request clearly asks to modify code information.",
+                                         "schema":  {
+                                                        "target":  "string",
+                                                        "context":  "string",
+                                                        "dryRun":  "boolean"
+                                                    }
+                                     },
+                  "ModifyCodeSemantic":  {
+                                             "description":  "Modify items selected by semantic intent in the code domain. Use only when the request clearly asks to modify code information.",
+                                             "schema":  {
+                                                            "target":  "string",
+                                                            "context":  "string",
+                                                            "dryRun":  "boolean"
+                                                        }
+                                         },
+                  "TestCodeSingle":  {
+                                         "description":  "Test one item in the code domain. Use only when the request clearly asks to test code information.",
+                                         "schema":  {
+                                                        "target":  "string",
+                                                        "context":  "string",
+                                                        "dryRun":  "boolean"
+                                                    }
+                                     },
+                  "TestCodeBulk":  {
+                                       "description":  "Test many items in the code domain. Use only when the request clearly asks to test code information.",
+                                       "schema":  {
+                                                      "target":  "string",
+                                                      "context":  "string",
+                                                      "dryRun":  "boolean"
+                                                  }
+                                   },
+                  "TestCodeSemantic":  {
+                                           "description":  "Test items selected by semantic intent in the code domain. Use only when the request clearly asks to test code information.",
+                                           "schema":  {
+                                                          "target":  "string",
+                                                          "context":  "string",
+                                                          "dryRun":  "boolean"
+                                                      }
+                                       },
+                  "QueryAnalyticsSingle":  {
+                                               "description":  "Query one item in the analytics domain. Use only when the request clearly asks to query analytics information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "QueryAnalyticsBulk":  {
+                                             "description":  "Query many items in the analytics domain. Use only when the request clearly asks to query analytics information.",
+                                             "schema":  {
+                                                            "target":  "string",
+                                                            "context":  "string",
+                                                            "dryRun":  "boolean"
+                                                        }
+                                         },
+                  "QueryAnalyticsSemantic":  {
+                                                 "description":  "Query items selected by semantic intent in the analytics domain. Use only when the request clearly asks to query analytics information.",
+                                                 "schema":  {
+                                                                "target":  "string",
+                                                                "context":  "string",
+                                                                "dryRun":  "boolean"
+                                                            }
+                                             },
+                  "VisualizeAnalyticsSingle":  {
+                                                   "description":  "Visualize one item in the analytics domain. Use only when the request clearly asks to visualize analytics information.",
+                                                   "schema":  {
+                                                                  "target":  "string",
+                                                                  "context":  "string",
+                                                                  "dryRun":  "boolean"
+                                                              }
+                                               },
+                  "VisualizeAnalyticsBulk":  {
+                                                 "description":  "Visualize many items in the analytics domain. Use only when the request clearly asks to visualize analytics information.",
+                                                 "schema":  {
+                                                                "target":  "string",
+                                                                "context":  "string",
+                                                                "dryRun":  "boolean"
+                                                            }
+                                             },
+                  "VisualizeAnalyticsSemantic":  {
+                                                     "description":  "Visualize items selected by semantic intent in the analytics domain. Use only when the request clearly asks to visualize analytics information.",
+                                                     "schema":  {
+                                                                    "target":  "string",
+                                                                    "context":  "string",
+                                                                    "dryRun":  "boolean"
+                                                                }
+                                                 },
+                  "ForecastAnalyticsSingle":  {
+                                                  "description":  "Forecast one item in the analytics domain. Use only when the request clearly asks to forecast analytics information.",
+                                                  "schema":  {
+                                                                 "target":  "string",
+                                                                 "context":  "string",
+                                                                 "dryRun":  "boolean"
+                                                             }
+                                              },
+                  "ForecastAnalyticsBulk":  {
+                                                "description":  "Forecast many items in the analytics domain. Use only when the request clearly asks to forecast analytics information.",
+                                                "schema":  {
+                                                               "target":  "string",
+                                                               "context":  "string",
+                                                               "dryRun":  "boolean"
+                                                           }
+                                            },
+                  "ForecastAnalyticsSemantic":  {
+                                                    "description":  "Forecast items selected by semantic intent in the analytics domain. Use only when the request clearly asks to forecast analytics information.",
+                                                    "schema":  {
+                                                                   "target":  "string",
+                                                                   "context":  "string",
+                                                                   "dryRun":  "boolean"
+                                                               }
+                                                },
+                  "ExplainAnalyticsSingle":  {
+                                                 "description":  "Explain one item in the analytics domain. Use only when the request clearly asks to explain analytics information.",
+                                                 "schema":  {
+                                                                "target":  "string",
+                                                                "context":  "string",
+                                                                "dryRun":  "boolean"
+                                                            }
+                                             },
+                  "ExplainAnalyticsBulk":  {
+                                               "description":  "Explain many items in the analytics domain. Use only when the request clearly asks to explain analytics information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "ExplainAnalyticsSemantic":  {
+                                                   "description":  "Explain items selected by semantic intent in the analytics domain. Use only when the request clearly asks to explain analytics information.",
+                                                   "schema":  {
+                                                                  "target":  "string",
+                                                                  "context":  "string",
+                                                                  "dryRun":  "boolean"
+                                                              }
+                                               },
+                  "ScanSecuritySingle":  {
+                                             "description":  "Scan one item in the security domain. Use only when the request clearly asks to scan security information.",
+                                             "schema":  {
+                                                            "target":  "string",
+                                                            "context":  "string",
+                                                            "dryRun":  "boolean"
+                                                        }
+                                         },
+                  "ScanSecurityBulk":  {
+                                           "description":  "Scan many items in the security domain. Use only when the request clearly asks to scan security information.",
+                                           "schema":  {
+                                                          "target":  "string",
+                                                          "context":  "string",
+                                                          "dryRun":  "boolean"
+                                                      }
+                                       },
+                  "ScanSecuritySemantic":  {
+                                               "description":  "Scan items selected by semantic intent in the security domain. Use only when the request clearly asks to scan security information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "AuditSecuritySingle":  {
+                                              "description":  "Audit one item in the security domain. Use only when the request clearly asks to audit security information.",
+                                              "schema":  {
+                                                             "target":  "string",
+                                                             "context":  "string",
+                                                             "dryRun":  "boolean"
+                                                         }
+                                          },
+                  "AuditSecurityBulk":  {
+                                            "description":  "Audit many items in the security domain. Use only when the request clearly asks to audit security information.",
+                                            "schema":  {
+                                                           "target":  "string",
+                                                           "context":  "string",
+                                                           "dryRun":  "boolean"
+                                                       }
+                                        },
+                  "AuditSecuritySemantic":  {
+                                                "description":  "Audit items selected by semantic intent in the security domain. Use only when the request clearly asks to audit security information.",
+                                                "schema":  {
+                                                               "target":  "string",
+                                                               "context":  "string",
+                                                               "dryRun":  "boolean"
+                                                           }
+                                            },
+                  "TriageSecuritySingle":  {
+                                               "description":  "Triage one item in the security domain. Use only when the request clearly asks to triage security information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "TriageSecurityBulk":  {
+                                             "description":  "Triage many items in the security domain. Use only when the request clearly asks to triage security information.",
+                                             "schema":  {
+                                                            "target":  "string",
+                                                            "context":  "string",
+                                                            "dryRun":  "boolean"
+                                                        }
+                                         },
+                  "TriageSecuritySemantic":  {
+                                                 "description":  "Triage items selected by semantic intent in the security domain. Use only when the request clearly asks to triage security information.",
+                                                 "schema":  {
+                                                                "target":  "string",
+                                                                "context":  "string",
+                                                                "dryRun":  "boolean"
+                                                            }
+                                             },
+                  "ReportSecuritySingle":  {
+                                               "description":  "Report one item in the security domain. Use only when the request clearly asks to report security information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "ReportSecurityBulk":  {
+                                             "description":  "Report many items in the security domain. Use only when the request clearly asks to report security information.",
+                                             "schema":  {
+                                                            "target":  "string",
+                                                            "context":  "string",
+                                                            "dryRun":  "boolean"
+                                                        }
+                                         },
+                  "ReportSecuritySemantic":  {
+                                                 "description":  "Report items selected by semantic intent in the security domain. Use only when the request clearly asks to report security information.",
+                                                 "schema":  {
+                                                                "target":  "string",
+                                                                "context":  "string",
+                                                                "dryRun":  "boolean"
+                                                            }
+                                             },
+                  "InspectInfrastructureSingle":  {
+                                                      "description":  "Inspect one item in the infrastructure domain. Use only when the request clearly asks to inspect infrastructure information.",
+                                                      "schema":  {
+                                                                     "target":  "string",
+                                                                     "context":  "string",
+                                                                     "dryRun":  "boolean"
+                                                                 }
+                                                  },
+                  "InspectInfrastructureBulk":  {
+                                                    "description":  "Inspect many items in the infrastructure domain. Use only when the request clearly asks to inspect infrastructure information.",
+                                                    "schema":  {
+                                                                   "target":  "string",
+                                                                   "context":  "string",
+                                                                   "dryRun":  "boolean"
+                                                               }
+                                                },
+                  "InspectInfrastructureSemantic":  {
+                                                        "description":  "Inspect items selected by semantic intent in the infrastructure domain. Use only when the request clearly asks to inspect infrastructure information.",
+                                                        "schema":  {
+                                                                       "target":  "string",
+                                                                       "context":  "string",
+                                                                       "dryRun":  "boolean"
+                                                                   }
+                                                    },
+                  "DeployInfrastructureSingle":  {
+                                                     "description":  "Deploy one item in the infrastructure domain. Use only when the request clearly asks to deploy infrastructure information.",
+                                                     "schema":  {
+                                                                    "target":  "string",
+                                                                    "context":  "string",
+                                                                    "dryRun":  "boolean"
+                                                                }
+                                                 },
+                  "DeployInfrastructureBulk":  {
+                                                   "description":  "Deploy many items in the infrastructure domain. Use only when the request clearly asks to deploy infrastructure information.",
+                                                   "schema":  {
+                                                                  "target":  "string",
+                                                                  "context":  "string",
+                                                                  "dryRun":  "boolean"
+                                                              }
+                                               },
+                  "DeployInfrastructureSemantic":  {
+                                                       "description":  "Deploy items selected by semantic intent in the infrastructure domain. Use only when the request clearly asks to deploy infrastructure information.",
+                                                       "schema":  {
+                                                                      "target":  "string",
+                                                                      "context":  "string",
+                                                                      "dryRun":  "boolean"
+                                                                  }
+                                                   },
+                  "MonitorInfrastructureSingle":  {
+                                                      "description":  "Monitor one item in the infrastructure domain. Use only when the request clearly asks to monitor infrastructure information.",
+                                                      "schema":  {
+                                                                     "target":  "string",
+                                                                     "context":  "string",
+                                                                     "dryRun":  "boolean"
+                                                                 }
+                                                  },
+                  "MonitorInfrastructureBulk":  {
+                                                    "description":  "Monitor many items in the infrastructure domain. Use only when the request clearly asks to monitor infrastructure information.",
+                                                    "schema":  {
+                                                                   "target":  "string",
+                                                                   "context":  "string",
+                                                                   "dryRun":  "boolean"
+                                                               }
+                                                },
+                  "MonitorInfrastructureSemantic":  {
+                                                        "description":  "Monitor items selected by semantic intent in the infrastructure domain. Use only when the request clearly asks to monitor infrastructure information.",
+                                                        "schema":  {
+                                                                       "target":  "string",
+                                                                       "context":  "string",
+                                                                       "dryRun":  "boolean"
+                                                                   }
+                                                    },
+                  "RollbackInfrastructureSingle":  {
+                                                       "description":  "Rollback one item in the infrastructure domain. Use only when the request clearly asks to rollback infrastructure information.",
+                                                       "schema":  {
+                                                                      "target":  "string",
+                                                                      "context":  "string",
+                                                                      "dryRun":  "boolean"
+                                                                  }
+                                                   },
+                  "RollbackInfrastructureBulk":  {
+                                                     "description":  "Rollback many items in the infrastructure domain. Use only when the request clearly asks to rollback infrastructure information.",
+                                                     "schema":  {
+                                                                    "target":  "string",
+                                                                    "context":  "string",
+                                                                    "dryRun":  "boolean"
+                                                                }
+                                                 },
+                  "RollbackInfrastructureSemantic":  {
+                                                         "description":  "Rollback items selected by semantic intent in the infrastructure domain. Use only when the request clearly asks to rollback infrastructure information.",
+                                                         "schema":  {
+                                                                        "target":  "string",
+                                                                        "context":  "string",
+                                                                        "dryRun":  "boolean"
+                                                                    }
+                                                     },
+                  "InspectMediaSingle":  {
+                                             "description":  "Inspect one item in the media domain. Use only when the request clearly asks to inspect media information.",
+                                             "schema":  {
+                                                            "target":  "string",
+                                                            "context":  "string",
+                                                            "dryRun":  "boolean"
+                                                        }
+                                         },
+                  "InspectMediaBulk":  {
+                                           "description":  "Inspect many items in the media domain. Use only when the request clearly asks to inspect media information.",
+                                           "schema":  {
+                                                          "target":  "string",
+                                                          "context":  "string",
+                                                          "dryRun":  "boolean"
+                                                      }
+                                       },
+                  "InspectMediaSemantic":  {
+                                               "description":  "Inspect items selected by semantic intent in the media domain. Use only when the request clearly asks to inspect media information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "TransformMediaSingle":  {
+                                               "description":  "Transform one item in the media domain. Use only when the request clearly asks to transform media information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "TransformMediaBulk":  {
+                                             "description":  "Transform many items in the media domain. Use only when the request clearly asks to transform media information.",
+                                             "schema":  {
+                                                            "target":  "string",
+                                                            "context":  "string",
+                                                            "dryRun":  "boolean"
+                                                        }
+                                         },
+                  "TransformMediaSemantic":  {
+                                                 "description":  "Transform items selected by semantic intent in the media domain. Use only when the request clearly asks to transform media information.",
+                                                 "schema":  {
+                                                                "target":  "string",
+                                                                "context":  "string",
+                                                                "dryRun":  "boolean"
+                                                            }
+                                             },
+                  "CaptionMediaSingle":  {
+                                             "description":  "Caption one item in the media domain. Use only when the request clearly asks to caption media information.",
+                                             "schema":  {
+                                                            "target":  "string",
+                                                            "context":  "string",
+                                                            "dryRun":  "boolean"
+                                                        }
+                                         },
+                  "CaptionMediaBulk":  {
+                                           "description":  "Caption many items in the media domain. Use only when the request clearly asks to caption media information.",
+                                           "schema":  {
+                                                          "target":  "string",
+                                                          "context":  "string",
+                                                          "dryRun":  "boolean"
+                                                      }
+                                       },
+                  "CaptionMediaSemantic":  {
+                                               "description":  "Caption items selected by semantic intent in the media domain. Use only when the request clearly asks to caption media information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "ExportMediaSingle":  {
+                                            "description":  "Export one item in the media domain. Use only when the request clearly asks to export media information.",
+                                            "schema":  {
+                                                           "target":  "string",
+                                                           "context":  "string",
+                                                           "dryRun":  "boolean"
+                                                       }
+                                        },
+                  "ExportMediaBulk":  {
+                                          "description":  "Export many items in the media domain. Use only when the request clearly asks to export media information.",
+                                          "schema":  {
+                                                         "target":  "string",
+                                                         "context":  "string",
+                                                         "dryRun":  "boolean"
+                                                     }
+                                      },
+                  "ExportMediaSemantic":  {
+                                              "description":  "Export items selected by semantic intent in the media domain. Use only when the request clearly asks to export media information.",
+                                              "schema":  {
+                                                             "target":  "string",
+                                                             "context":  "string",
+                                                             "dryRun":  "boolean"
+                                                         }
+                                          },
+                  "PlanEducationSingle":  {
+                                              "description":  "Plan one item in the education domain. Use only when the request clearly asks to plan education information.",
+                                              "schema":  {
+                                                             "target":  "string",
+                                                             "context":  "string",
+                                                             "dryRun":  "boolean"
+                                                         }
+                                          },
+                  "PlanEducationBulk":  {
+                                            "description":  "Plan many items in the education domain. Use only when the request clearly asks to plan education information.",
+                                            "schema":  {
+                                                           "target":  "string",
+                                                           "context":  "string",
+                                                           "dryRun":  "boolean"
+                                                       }
+                                        },
+                  "PlanEducationSemantic":  {
+                                                "description":  "Plan items selected by semantic intent in the education domain. Use only when the request clearly asks to plan education information.",
+                                                "schema":  {
+                                                               "target":  "string",
+                                                               "context":  "string",
+                                                               "dryRun":  "boolean"
+                                                           }
+                                            },
+                  "GradeEducationSingle":  {
+                                               "description":  "Grade one item in the education domain. Use only when the request clearly asks to grade education information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "GradeEducationBulk":  {
+                                             "description":  "Grade many items in the education domain. Use only when the request clearly asks to grade education information.",
+                                             "schema":  {
+                                                            "target":  "string",
+                                                            "context":  "string",
+                                                            "dryRun":  "boolean"
+                                                        }
+                                         },
+                  "GradeEducationSemantic":  {
+                                                 "description":  "Grade items selected by semantic intent in the education domain. Use only when the request clearly asks to grade education information.",
+                                                 "schema":  {
+                                                                "target":  "string",
+                                                                "context":  "string",
+                                                                "dryRun":  "boolean"
+                                                            }
+                                             },
+                  "ExplainEducationSingle":  {
+                                                 "description":  "Explain one item in the education domain. Use only when the request clearly asks to explain education information.",
+                                                 "schema":  {
+                                                                "target":  "string",
+                                                                "context":  "string",
+                                                                "dryRun":  "boolean"
+                                                            }
+                                             },
+                  "ExplainEducationBulk":  {
+                                               "description":  "Explain many items in the education domain. Use only when the request clearly asks to explain education information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "ExplainEducationSemantic":  {
+                                                   "description":  "Explain items selected by semantic intent in the education domain. Use only when the request clearly asks to explain education information.",
+                                                   "schema":  {
+                                                                  "target":  "string",
+                                                                  "context":  "string",
+                                                                  "dryRun":  "boolean"
+                                                              }
+                                               },
+                  "QuizEducationSingle":  {
+                                              "description":  "Quiz one item in the education domain. Use only when the request clearly asks to quiz education information.",
+                                              "schema":  {
+                                                             "target":  "string",
+                                                             "context":  "string",
+                                                             "dryRun":  "boolean"
+                                                         }
+                                          },
+                  "QuizEducationBulk":  {
+                                            "description":  "Quiz many items in the education domain. Use only when the request clearly asks to quiz education information.",
+                                            "schema":  {
+                                                           "target":  "string",
+                                                           "context":  "string",
+                                                           "dryRun":  "boolean"
+                                                       }
+                                        },
+                  "QuizEducationSemantic":  {
+                                                "description":  "Quiz items selected by semantic intent in the education domain. Use only when the request clearly asks to quiz education information.",
+                                                "schema":  {
+                                                               "target":  "string",
+                                                               "context":  "string",
+                                                               "dryRun":  "boolean"
+                                                           }
+                                            },
+                  "SearchSupportSingle":  {
+                                              "description":  "Search one item in the support domain. Use only when the request clearly asks to search support information.",
+                                              "schema":  {
+                                                             "target":  "string",
+                                                             "context":  "string",
+                                                             "dryRun":  "boolean"
+                                                         }
+                                          },
+                  "SearchSupportBulk":  {
+                                            "description":  "Search many items in the support domain. Use only when the request clearly asks to search support information.",
+                                            "schema":  {
+                                                           "target":  "string",
+                                                           "context":  "string",
+                                                           "dryRun":  "boolean"
+                                                       }
+                                        },
+                  "SearchSupportSemantic":  {
+                                                "description":  "Search items selected by semantic intent in the support domain. Use only when the request clearly asks to search support information.",
+                                                "schema":  {
+                                                               "target":  "string",
+                                                               "context":  "string",
+                                                               "dryRun":  "boolean"
+                                                           }
+                                            },
+                  "TriageSupportSingle":  {
+                                              "description":  "Triage one item in the support domain. Use only when the request clearly asks to triage support information.",
+                                              "schema":  {
+                                                             "target":  "string",
+                                                             "context":  "string",
+                                                             "dryRun":  "boolean"
+                                                         }
+                                          },
+                  "TriageSupportBulk":  {
+                                            "description":  "Triage many items in the support domain. Use only when the request clearly asks to triage support information.",
+                                            "schema":  {
+                                                           "target":  "string",
+                                                           "context":  "string",
+                                                           "dryRun":  "boolean"
+                                                       }
+                                        },
+                  "TriageSupportSemantic":  {
+                                                "description":  "Triage items selected by semantic intent in the support domain. Use only when the request clearly asks to triage support information.",
+                                                "schema":  {
+                                                               "target":  "string",
+                                                               "context":  "string",
+                                                               "dryRun":  "boolean"
+                                                           }
+                                            },
+                  "ReplySupportSingle":  {
+                                             "description":  "Reply one item in the support domain. Use only when the request clearly asks to reply support information.",
+                                             "schema":  {
+                                                            "target":  "string",
+                                                            "context":  "string",
+                                                            "dryRun":  "boolean"
+                                                        }
+                                         },
+                  "ReplySupportBulk":  {
+                                           "description":  "Reply many items in the support domain. Use only when the request clearly asks to reply support information.",
+                                           "schema":  {
+                                                          "target":  "string",
+                                                          "context":  "string",
+                                                          "dryRun":  "boolean"
+                                                      }
+                                       },
+                  "ReplySupportSemantic":  {
+                                               "description":  "Reply items selected by semantic intent in the support domain. Use only when the request clearly asks to reply support information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "EscalateSupportSingle":  {
+                                                "description":  "Escalate one item in the support domain. Use only when the request clearly asks to escalate support information.",
+                                                "schema":  {
+                                                               "target":  "string",
+                                                               "context":  "string",
+                                                               "dryRun":  "boolean"
+                                                           }
+                                            },
+                  "EscalateSupportBulk":  {
+                                              "description":  "Escalate many items in the support domain. Use only when the request clearly asks to escalate support information.",
+                                              "schema":  {
+                                                             "target":  "string",
+                                                             "context":  "string",
+                                                             "dryRun":  "boolean"
+                                                         }
+                                          },
+                  "EscalateSupportSemantic":  {
+                                                  "description":  "Escalate items selected by semantic intent in the support domain. Use only when the request clearly asks to escalate support information.",
+                                                  "schema":  {
+                                                                 "target":  "string",
+                                                                 "context":  "string",
+                                                                 "dryRun":  "boolean"
+                                                             }
+                                              },
+                  "SearchKnowledgeSingle":  {
+                                                "description":  "Search one item in the knowledge base domain. Use only when the request clearly asks to search knowledge base information.",
+                                                "schema":  {
+                                                               "target":  "string",
+                                                               "context":  "string",
+                                                               "dryRun":  "boolean"
+                                                           }
+                                            },
+                  "SearchKnowledgeBulk":  {
+                                              "description":  "Search many items in the knowledge base domain. Use only when the request clearly asks to search knowledge base information.",
+                                              "schema":  {
+                                                             "target":  "string",
+                                                             "context":  "string",
+                                                             "dryRun":  "boolean"
+                                                         }
+                                          },
+                  "SearchKnowledgeSemantic":  {
+                                                  "description":  "Search items selected by semantic intent in the knowledge base domain. Use only when the request clearly asks to search knowledge base information.",
+                                                  "schema":  {
+                                                                 "target":  "string",
+                                                                 "context":  "string",
+                                                                 "dryRun":  "boolean"
+                                                             }
+                                              },
+                  "LinkKnowledgeSingle":  {
+                                              "description":  "Link one item in the knowledge base domain. Use only when the request clearly asks to link knowledge base information.",
+                                              "schema":  {
+                                                             "target":  "string",
+                                                             "context":  "string",
+                                                             "dryRun":  "boolean"
+                                                         }
+                                          },
+                  "LinkKnowledgeBulk":  {
+                                            "description":  "Link many items in the knowledge base domain. Use only when the request clearly asks to link knowledge base information.",
+                                            "schema":  {
+                                                           "target":  "string",
+                                                           "context":  "string",
+                                                           "dryRun":  "boolean"
+                                                       }
+                                        },
+                  "LinkKnowledgeSemantic":  {
+                                                "description":  "Link items selected by semantic intent in the knowledge base domain. Use only when the request clearly asks to link knowledge base information.",
+                                                "schema":  {
+                                                               "target":  "string",
+                                                               "context":  "string",
+                                                               "dryRun":  "boolean"
+                                                           }
+                                            },
+                  "SummarizeKnowledgeSingle":  {
+                                                   "description":  "Summarize one item in the knowledge base domain. Use only when the request clearly asks to summarize knowledge base information.",
+                                                   "schema":  {
+                                                                  "target":  "string",
+                                                                  "context":  "string",
+                                                                  "dryRun":  "boolean"
+                                                              }
+                                               },
+                  "SummarizeKnowledgeBulk":  {
+                                                 "description":  "Summarize many items in the knowledge base domain. Use only when the request clearly asks to summarize knowledge base information.",
+                                                 "schema":  {
+                                                                "target":  "string",
+                                                                "context":  "string",
+                                                                "dryRun":  "boolean"
+                                                            }
+                                             },
+                  "SummarizeKnowledgeSemantic":  {
+                                                     "description":  "Summarize items selected by semantic intent in the knowledge base domain. Use only when the request clearly asks to summarize knowledge base information.",
+                                                     "schema":  {
+                                                                    "target":  "string",
+                                                                    "context":  "string",
+                                                                    "dryRun":  "boolean"
+                                                                }
+                                                 },
+                  "ArchiveKnowledgeSingle":  {
+                                                 "description":  "Archive one item in the knowledge base domain. Use only when the request clearly asks to archive knowledge base information.",
+                                                 "schema":  {
+                                                                "target":  "string",
+                                                                "context":  "string",
+                                                                "dryRun":  "boolean"
+                                                            }
+                                             },
+                  "ArchiveKnowledgeBulk":  {
+                                               "description":  "Archive many items in the knowledge base domain. Use only when the request clearly asks to archive knowledge base information.",
+                                               "schema":  {
+                                                              "target":  "string",
+                                                              "context":  "string",
+                                                              "dryRun":  "boolean"
+                                                          }
+                                           },
+                  "ArchiveKnowledgeSemantic":  {
+                                                   "description":  "Archive items selected by semantic intent in the knowledge base domain. Use only when the request clearly asks to archive knowledge base information.",
+                                                   "schema":  {
+                                                                  "target":  "string",
+                                                                  "context":  "string",
+                                                                  "dryRun":  "boolean"
+                                                              }
+                                               },
+                  "ReadCommunicationsSingle":  {
+                                                   "description":  "Read one item in the communications domain. Use only when the request clearly asks to read communications information.",
+                                                   "schema":  {
+                                                                  "target":  "string",
+                                                                  "context":  "string",
+                                                                  "dryRun":  "boolean"
+                                                              }
+                                               },
+                  "ReadCommunicationsBulk":  {
+                                                 "description":  "Read many items in the communications domain. Use only when the request clearly asks to read communications information.",
+                                                 "schema":  {
+                                                                "target":  "string",
+                                                                "context":  "string",
+                                                                "dryRun":  "boolean"
+                                                            }
+                                             },
+                  "ReadCommunicationsSemantic":  {
+                                                     "description":  "Read items selected by semantic intent in the communications domain. Use only when the request clearly asks to read communications information.",
+                                                     "schema":  {
+                                                                    "target":  "string",
+                                                                    "context":  "string",
+                                                                    "dryRun":  "boolean"
+                                                                }
+                                                 },
+                  "DraftCommunicationsSingle":  {
+                                                    "description":  "Draft one item in the communications domain. Use only when the request clearly asks to draft communications information.",
+                                                    "schema":  {
+                                                                   "target":  "string",
+                                                                   "context":  "string",
+                                                                   "dryRun":  "boolean"
+                                                               }
+                                                },
+                  "DraftCommunicationsBulk":  {
+                                                  "description":  "Draft many items in the communications domain. Use only when the request clearly asks to draft communications information.",
+                                                  "schema":  {
+                                                                 "target":  "string",
+                                                                 "context":  "string",
+                                                                 "dryRun":  "boolean"
+                                                             }
+                                              },
+                  "DraftCommunicationsSemantic":  {
+                                                      "description":  "Draft items selected by semantic intent in the communications domain. Use only when the request clearly asks to draft communications information.",
+                                                      "schema":  {
+                                                                     "target":  "string",
+                                                                     "context":  "string",
+                                                                     "dryRun":  "boolean"
+                                                                 }
+                                                  },
+                  "ScheduleCommunicationsSingle":  {
+                                                       "description":  "Schedule one item in the communications domain. Use only when the request clearly asks to schedule communications information.",
+                                                       "schema":  {
+                                                                      "target":  "string",
+                                                                      "context":  "string",
+                                                                      "dryRun":  "boolean"
+                                                                  }
+                                                   },
+                  "ScheduleCommunicationsBulk":  {
+                                                     "description":  "Schedule many items in the communications domain. Use only when the request clearly asks to schedule communications information.",
+                                                     "schema":  {
+                                                                    "target":  "string",
+                                                                    "context":  "string",
+                                                                    "dryRun":  "boolean"
+                                                                }
+                                                 },
+                  "ScheduleCommunicationsSemantic":  {
+                                                         "description":  "Schedule items selected by semantic intent in the communications domain. Use only when the request clearly asks to schedule communications information.",
+                                                         "schema":  {
+                                                                        "target":  "string",
+                                                                        "context":  "string",
+                                                                        "dryRun":  "boolean"
+                                                                    }
+                                                     },
+                  "SummarizeCommunicationsSingle":  {
+                                                        "description":  "Summarize one item in the communications domain. Use only when the request clearly asks to summarize communications information.",
+                                                        "schema":  {
+                                                                       "target":  "string",
+                                                                       "context":  "string",
+                                                                       "dryRun":  "boolean"
+                                                                   }
+                                                    },
+                  "SummarizeCommunicationsBulk":  {
+                                                      "description":  "Summarize many items in the communications domain. Use only when the request clearly asks to summarize communications information.",
+                                                      "schema":  {
+                                                                     "target":  "string",
+                                                                     "context":  "string",
+                                                                     "dryRun":  "boolean"
+                                                                 }
+                                                  },
+                  "SummarizeCommunicationsSemantic":  {
+                                                          "description":  "Summarize items selected by semantic intent in the communications domain. Use only when the request clearly asks to summarize communications information.",
+                                                          "schema":  {
+                                                                         "target":  "string",
+                                                                         "context":  "string",
+                                                                         "dryRun":  "boolean"
+                                                                     }
+                                                      }
+              },
+    "evalCases":  [
+                      {
+                          "id":  "research-compare-bulk",
+                          "request":  "Compare the methodology sections across these five climate adaptation papers",
+                          "expectedType":  "tool",
+            "expectedToolName":  "CompareResearchBulk"
+                      },
+                      {
+                          "id":  "calendar-analyze-semantic",
+                          "request":  "Find weeks next month that are unusually meeting-heavy",
+                          "expectedType":  "tool",
+            "expectedToolName":  "AnalyzeCalendarSemantic"
+                      },
+                      {
+                          "id":  "documents-review-single",
+                          "request":  "Review this grant proposal for unclear claims",
+                          "expectedType":  "tool",
+            "expectedToolName":  "ReviewDocumentsSingle"
+                      },
+                      {
+                          "id":  "code-test-bulk",
+                          "request":  "Run the relevant tests for the changed parser files",
+                          "expectedType":  "tool",
+            "expectedToolName":  "TestCodeBulk"
+                      },
+                      {
+                          "id":  "security-triage-semantic",
+                          "request":  "Prioritize suspicious login alerts by likely account risk",
+                          "expectedType":  "tool",
+            "expectedToolName":  "TriageSecuritySemantic"
+                      },
+                      {
+                          "id":  "unsupported-hotel",
+                          "request":  "Book a refundable hotel room near Kyoto station",
+                          "expectedType":  "no_tool_available"
+                      }
+                  ]
+}
