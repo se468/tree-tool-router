@@ -4,7 +4,7 @@ A hierarchical tool router for LLM agents with too many tools.
 
 Instead of dumping every tool into one giant prompt, ToolRouter narrows the search space step-by-step and allows the agent to safely say `no_tool_available`.
 
-Website: https://se468.github.io/tree-tool-router/
+Quickstart guide: https://se468.github.io/tree-tool-router/
 
 ## Why ToolRouter?
 
