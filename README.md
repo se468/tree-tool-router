@@ -38,6 +38,7 @@ For local development in this repo:
 ```bash
 npm install
 npm run build
+npm test
 ```
 
 ## Quickstart
@@ -155,7 +156,27 @@ The examples use mocked LLM adapters, so they run without API keys.
 npm run eval
 ```
 
-`evals/run-eval.ts` runs a small sample dataset with a mocked adapter. Replace the mock with your provider adapter and expand `evals/sample-dataset.json` for real measurements.
+`evals/run-eval.ts` runs a small sample dataset with a mocked adapter. This is useful for checking that routing logic, traces, and result grading still work during development.
+
+To smoke test a real model, use any OpenAI-compatible chat completions endpoint:
+
+```bash
+TOOLROUTER_MODEL=gpt-4.1-mini TOOLROUTER_API_KEY=... npm run eval:real
+```
+
+For local or gateway models, set `TOOLROUTER_BASE_URL`:
+
+```bash
+TOOLROUTER_BASE_URL=http://localhost:11434/v1 TOOLROUTER_MODEL=llama3.1 npm run eval:real
+```
+
+Real eval settings:
+
+- `TOOLROUTER_MODEL`: required model name
+- `TOOLROUTER_API_KEY`: optional for local servers, required by most hosted providers
+- `TOOLROUTER_BASE_URL`: optional, defaults to `https://api.openai.com/v1`
+
+Expand `evals/sample-dataset.json` for meaningful measurements.
 
 | Approach | Accuracy | Token Usage | Latency | False Tool Call Rate |
 | --- | ---: | ---: | ---: | ---: |

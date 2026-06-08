@@ -15,7 +15,8 @@
   "include": [
     "src/**/*.ts",
     "examples/**/*.ts",
-    "evals/**/*.ts"
+    "evals/**/*.ts",
+    "tests/**/*.ts"
   ],
   "exclude": [
     "dist",

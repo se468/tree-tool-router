@@ -12,9 +12,11 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "test": "node --test dist/tests/*.test.js",
     "example:basic": "tsx examples/basic.ts",
     "example:no-tool": "tsx examples/no-tool.ts",
-    "eval": "tsx evals/run-eval.ts"
+    "eval": "tsx evals/run-eval.ts",
+    "eval:real": "tsx evals/run-real-eval.ts"
   },
   "keywords": [
     "llm",

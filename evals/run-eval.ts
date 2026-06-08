@@ -1,12 +1,6 @@
 import dataset from "./sample-dataset.json" with { type: "json" };
-import { createToolRouter, type LLMAdapter, type RouteResult } from "../src/index.js";
-
-interface EvalCase {
-  id: string;
-  request: string;
-  expectedType: RouteResult["type"];
-  expectedToolName?: string;
-}
+import type { LLMAdapter } from "../src/index.js";
+import { runEval, type EvalCase } from "./shared.js";
 
 const mockAdapter: LLMAdapter = {
   async completeJSON<T>({ prompt }: { system: string; prompt: string; schema?: unknown }) {
@@ -53,69 +47,9 @@ const mockAdapter: LLMAdapter = {
   }
 };
 
-const router = createToolRouter({
-  confidenceThreshold: 0.82,
-  samples: 3,
-  allowNoTool: true,
-  llm: mockAdapter,
-  tree: {
-    research: {
-      read: {
-        single: ["getPaper"],
-        bulk: ["searchPapers"]
-      },
-      summarize: {
-        single: ["summarizePaper"],
-        bulk: ["summarizePaperSet"]
-      }
-    },
-    calendar: {
-      read: {
-        single: ["getEvent"],
-        bulk: ["listEvents"]
-      },
-      update: {
-        single: ["rescheduleEvent"],
-        bulk: ["rescheduleEvents"]
-      }
-    }
-  },
-  tools: {
-    getPaper: { description: "Get one research paper by ID" },
-    searchPapers: { description: "Search research papers by topic" },
-    summarizePaper: { description: "Summarize one research paper" },
-    summarizePaperSet: { description: "Summarize multiple research papers" },
-    getEvent: { description: "Get one calendar event" },
-    listEvents: { description: "List calendar events" },
-    rescheduleEvent: { description: "Move one calendar event" },
-    rescheduleEvents: { description: "Move multiple calendar events" }
-  }
-});
-
 const cases = dataset as EvalCase[];
-const results = [];
-
-for (const testCase of cases) {
-  const startedAt = performance.now();
-  const result = await router.route({ request: testCase.request });
-  const latencyMs = Math.round(performance.now() - startedAt);
-  const passed =
-    result.type === testCase.expectedType &&
-    (testCase.expectedType !== "tool" ||
-      (result.type === "tool" && result.toolName === testCase.expectedToolName));
-
-  results.push({
-    id: testCase.id,
-    passed,
-    expected: testCase.expectedToolName ?? testCase.expectedType,
-    actual: result.type === "tool" ? result.toolName : result.type,
-    confidence: result.confidence,
-    latencyMs
-  });
-}
-
-const passed = results.filter((result) => result.passed).length;
-const accuracy = passed / results.length;
+const { results, passed, accuracy } = await runEval(cases, mockAdapter);
 
 console.table(results);
+console.log("Model: mockAdapter");
 console.log(`Accuracy: ${(accuracy * 100).toFixed(1)}% (${passed}/${results.length})`);
