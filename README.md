@@ -4,6 +4,8 @@ A hierarchical tool router for LLM agents with too many tools.
 
 Instead of dumping every tool into one giant prompt, ToolRouter narrows the search space step-by-step and allows the agent to safely say `no_tool_available`.
 
+Website: https://se468.github.io/tree-tool-router/
+
 ## Why ToolRouter?
 
 LLM agents often fail tool selection when every available tool is passed in one flat prompt. Large tool lists create context bloat, make similar tools harder to distinguish, increase latency and cost, and can push the model toward bad tool calls when the correct answer is "do nothing."

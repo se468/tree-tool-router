@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="ToolRouter is a hierarchical tool router for LLM agents with too many tools."
+    />
+    <title>ToolRouter</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="ToolRouter home">
+        <span class="brand-mark" aria-hidden="true">TR</span>
+        <span>ToolRouter</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#why">Why</a>
+        <a href="#routing">Routing</a>
+        <a href="#evals">Evals</a>
+        <a href="https://github.com/se468/tree-tool-router">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-visual" aria-hidden="true">
+          <div class="cloud flat">
+            <span>flat prompt</span>
+            <i>128 tools</i>
+            <i>full schemas</i>
+            <i>ambiguous choices</i>
+          </div>
+          <div class="route-map">
+            <span class="node root">request</span>
+            <span class="branch"></span>
+            <span class="node">domain</span>
+            <span class="branch"></span>
+            <span class="node">operation</span>
+            <span class="branch"></span>
+            <span class="node">mode</span>
+            <span class="branch"></span>
+            <span class="node final">tool or no tool</span>
+          </div>
+          <div class="cloud trace">
+            <span>trace</span>
+            <i>research</i>
+            <i>summarize</i>
+            <i>bulk</i>
+            <i>summarizePaperSet</i>
+          </div>
+        </div>
+
+        <div class="hero-content">
+          <p class="eyebrow">Provider-agnostic TypeScript SDK</p>
+          <h1 id="hero-title">ToolRouter</h1>
+          <p class="hero-copy">
+            A hierarchical tool router for LLM agents with too many tools. Narrow the search space
+            step-by-step and let the agent safely return <code>no_tool_available</code>.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="https://github.com/se468/tree-tool-router">View on GitHub</a>
+            <a class="button secondary" href="#quickstart">Quickstart</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="why" class="band">
+        <div class="section-head">
+          <p class="eyebrow">The Problem</p>
+          <h2>Flat tool lists get noisy fast.</h2>
+          <p>
+            Once agents see dozens or hundreds of tools at once, selection gets expensive,
+            brittle, and harder to debug.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <h3>Less context bloat</h3>
+            <p>Each routing step includes only the current path and available child options.</p>
+          </article>
+          <article class="feature">
+            <h3>Safer refusal</h3>
+            <p><code>no_tool_available</code> is a normal result, not an afterthought.</p>
+          </article>
+          <article class="feature">
+            <h3>Auditable traces</h3>
+            <p>Every decision records path, options, votes, confidence, and reason.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="routing" class="split">
+        <div>
+          <p class="eyebrow">Routing Shape</p>
+          <h2>Ask for one constrained choice at a time.</h2>
+          <p>
+            ToolRouter traverses a tree level by level: domain, operation, mode, then the final
+            tool. Multi-sample voting and confidence thresholds help avoid low-confidence calls.
+          </p>
+        </div>
+        <pre class="code-window"><code>const router = createToolRouter({
+  confidenceThreshold: 0.82,
+  samples: 3,
+  allowNoTool: true,
+  llm,
+  tree,
+  tools
+});
+
+const result = await router.route({
+  request: "Summarize recent papers..."
+});</code></pre>
+      </section>
+
+      <section id="quickstart" class="band compact">
+        <div class="section-head">
+          <p class="eyebrow">Quickstart</p>
+          <h2>Install, build, and test locally.</h2>
+        </div>
+        <pre class="terminal"><code>npm install
+npm run build
+npm test
+npm run eval</code></pre>
+      </section>
+
+      <section id="evals" class="evals">
+        <div>
+          <p class="eyebrow">Development Checks</p>
+          <h2>Mock evals for speed. Real model evals for confidence.</h2>
+          <p>
+            The repo includes a 144-tool synthetic fixture and an OpenAI-compatible eval runner for
+            smoke testing real model behavior.
+          </p>
+        </div>
+        <div class="metric-strip" aria-label="Project evaluation fixture statistics">
+          <div>
+            <strong>144</strong>
+            <span>synthetic tools</span>
+          </div>
+          <div>
+            <strong>12</strong>
+            <span>neutral domains</span>
+          </div>
+          <div>
+            <strong>3</strong>
+            <span>result types</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>MIT Licensed</span>
+      <a href="https://github.com/se468/tree-tool-router">github.com/se468/tree-tool-router</a>
+    </footer>
+  </body>
+</html>
