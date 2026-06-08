@@ -285,14 +285,17 @@ Real eval settings:
 - `TOOLROUTER_API_KEY`: optional for local servers, required by most hosted providers
 - `TOOLROUTER_BASE_URL`: optional, defaults to `https://api.openai.com/v1`
 
-Expand `evals/sample-dataset.json` for meaningful measurements.
-
 For a larger stress fixture, `evals/large-toolset.json` contains 144 tools and includes an unsupported request that should return `no_tool_available`.
 
-| Approach | Accuracy | Token Usage | Latency | False Tool Call Rate |
-| --- | ---: | ---: | ---: | ---: |
-| Flat prompt | TODO | TODO | TODO | TODO |
-| ToolRouter | TODO | TODO | TODO | TODO |
+Current smoke-test results:
+
+| Eval | Adapter | Tools | Accuracy | Unsupported Request |
+| --- | --- | ---: | ---: | --- |
+| `npm run eval` | Mock adapter | 8 | 3/3 | Passed |
+| `npm run eval:real` | `gpt-4.1-mini` | 8 | 3/3 | Passed |
+| `npm run eval:large:real` | `gpt-4.1-mini` | 144 | 6/6 | Passed |
+
+Flat prompt baseline measurements are not included yet. The eval scripts are intentionally small so you can add a baseline runner and compare accuracy, token usage, latency, and false tool call rate on your own dataset.
 
 ## API
 
