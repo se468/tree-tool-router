@@ -559,7 +559,7 @@
              },
     "tools":  {
                   "ReadResearchSingle":  {
-                                             "description":  "Read one item in the research domain. Use only when the request clearly asks to read research information.",
+                                             "description":  "Read one explicit item, this item, one file, one document, one event, or one named entity in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -567,7 +567,7 @@
                                                         }
                                          },
                   "ReadResearchBulk":  {
-                                           "description":  "Read many items in the research domain. Use only when the request clearly asks to read research information.",
+                                           "description":  "Read multiple explicit items, a known set, changed files, these papers, or several selected items in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -575,7 +575,7 @@
                                                       }
                                        },
                   "ReadResearchSemantic":  {
-                                               "description":  "Read items selected by semantic intent in the research domain. Use only when the request clearly asks to read research information.",
+                                               "description":  "Read unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -583,7 +583,7 @@
                                                           }
                                            },
                   "SummarizeResearchSingle":  {
-                                                  "description":  "Summarize one item in the research domain. Use only when the request clearly asks to summarize research information.",
+                                                  "description":  "Summarize one explicit item, this item, one file, one document, one event, or one named entity in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings.",
                                                   "schema":  {
                                                                  "target":  "string",
                                                                  "context":  "string",
@@ -591,7 +591,7 @@
                                                              }
                                               },
                   "SummarizeResearchBulk":  {
-                                                "description":  "Summarize many items in the research domain. Use only when the request clearly asks to summarize research information.",
+                                                "description":  "Summarize multiple explicit items, a known set, changed files, these papers, or several selected items in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -599,7 +599,7 @@
                                                            }
                                             },
                   "SummarizeResearchSemantic":  {
-                                                    "description":  "Summarize items selected by semantic intent in the research domain. Use only when the request clearly asks to summarize research information.",
+                                                    "description":  "Summarize unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings.",
                                                     "schema":  {
                                                                    "target":  "string",
                                                                    "context":  "string",
@@ -607,7 +607,7 @@
                                                                }
                                                 },
                   "CompareResearchSingle":  {
-                                                "description":  "Compare one item in the research domain. Use only when the request clearly asks to compare research information.",
+                                                "description":  "Compare one explicit item, this item, one file, one document, one event, or one named entity in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -615,7 +615,7 @@
                                                            }
                                             },
                   "CompareResearchBulk":  {
-                                              "description":  "Compare many items in the research domain. Use only when the request clearly asks to compare research information.",
+                                              "description":  "Compare multiple explicit items, a known set, changed files, these papers, or several selected items in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -623,7 +623,7 @@
                                                          }
                                           },
                   "CompareResearchSemantic":  {
-                                                  "description":  "Compare items selected by semantic intent in the research domain. Use only when the request clearly asks to compare research information.",
+                                                  "description":  "Compare unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings.",
                                                   "schema":  {
                                                                  "target":  "string",
                                                                  "context":  "string",
@@ -631,7 +631,7 @@
                                                              }
                                               },
                   "ExportResearchSingle":  {
-                                               "description":  "Export one item in the research domain. Use only when the request clearly asks to export research information.",
+                                               "description":  "Export one explicit item, this item, one file, one document, one event, or one named entity in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -639,7 +639,7 @@
                                                           }
                                            },
                   "ExportResearchBulk":  {
-                                             "description":  "Export many items in the research domain. Use only when the request clearly asks to export research information.",
+                                             "description":  "Export multiple explicit items, a known set, changed files, these papers, or several selected items in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -647,7 +647,7 @@
                                                         }
                                          },
                   "ExportResearchSemantic":  {
-                                                 "description":  "Export items selected by semantic intent in the research domain. Use only when the request clearly asks to export research information.",
+                                                 "description":  "Export unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -655,7 +655,7 @@
                                                             }
                                              },
                   "ReadCalendarSingle":  {
-                                             "description":  "Read one item in the calendar domain. Use only when the request clearly asks to read calendar information.",
+                                             "description":  "Read one explicit item, this item, one file, one document, one event, or one named entity in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -663,7 +663,7 @@
                                                         }
                                          },
                   "ReadCalendarBulk":  {
-                                           "description":  "Read many items in the calendar domain. Use only when the request clearly asks to read calendar information.",
+                                           "description":  "Read multiple explicit items, a known set, changed files, these papers, or several selected items in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -671,7 +671,7 @@
                                                       }
                                        },
                   "ReadCalendarSemantic":  {
-                                               "description":  "Read items selected by semantic intent in the calendar domain. Use only when the request clearly asks to read calendar information.",
+                                               "description":  "Read unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -679,7 +679,7 @@
                                                           }
                                            },
                   "CreateCalendarSingle":  {
-                                               "description":  "Create one item in the calendar domain. Use only when the request clearly asks to create calendar information.",
+                                               "description":  "Create one explicit item, this item, one file, one document, one event, or one named entity in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -687,7 +687,7 @@
                                                           }
                                            },
                   "CreateCalendarBulk":  {
-                                             "description":  "Create many items in the calendar domain. Use only when the request clearly asks to create calendar information.",
+                                             "description":  "Create multiple explicit items, a known set, changed files, these papers, or several selected items in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -695,7 +695,7 @@
                                                         }
                                          },
                   "CreateCalendarSemantic":  {
-                                                 "description":  "Create items selected by semantic intent in the calendar domain. Use only when the request clearly asks to create calendar information.",
+                                                 "description":  "Create unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -703,7 +703,7 @@
                                                             }
                                              },
                   "UpdateCalendarSingle":  {
-                                               "description":  "Update one item in the calendar domain. Use only when the request clearly asks to update calendar information.",
+                                               "description":  "Update one explicit item, this item, one file, one document, one event, or one named entity in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -711,7 +711,7 @@
                                                           }
                                            },
                   "UpdateCalendarBulk":  {
-                                             "description":  "Update many items in the calendar domain. Use only when the request clearly asks to update calendar information.",
+                                             "description":  "Update multiple explicit items, a known set, changed files, these papers, or several selected items in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -719,7 +719,7 @@
                                                         }
                                          },
                   "UpdateCalendarSemantic":  {
-                                                 "description":  "Update items selected by semantic intent in the calendar domain. Use only when the request clearly asks to update calendar information.",
+                                                 "description":  "Update unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -727,7 +727,7 @@
                                                             }
                                              },
                   "AnalyzeCalendarSingle":  {
-                                                "description":  "Analyze one item in the calendar domain. Use only when the request clearly asks to analyze calendar information.",
+                                                "description":  "Analyze one explicit item, this item, one file, one document, one event, or one named entity in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -735,7 +735,7 @@
                                                            }
                                             },
                   "AnalyzeCalendarBulk":  {
-                                              "description":  "Analyze many items in the calendar domain. Use only when the request clearly asks to analyze calendar information.",
+                                              "description":  "Analyze multiple explicit items, a known set, changed files, these papers, or several selected items in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -743,7 +743,7 @@
                                                          }
                                           },
                   "AnalyzeCalendarSemantic":  {
-                                                  "description":  "Analyze items selected by semantic intent in the calendar domain. Use only when the request clearly asks to analyze calendar information.",
+                                                  "description":  "Analyze unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules.",
                                                   "schema":  {
                                                                  "target":  "string",
                                                                  "context":  "string",
@@ -751,7 +751,7 @@
                                                              }
                                               },
                   "ReadDocumentsSingle":  {
-                                              "description":  "Read one item in the documents domain. Use only when the request clearly asks to read documents information.",
+                                              "description":  "Read one explicit item, this item, one file, one document, one event, or one named entity in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -759,7 +759,7 @@
                                                          }
                                           },
                   "ReadDocumentsBulk":  {
-                                            "description":  "Read many items in the documents domain. Use only when the request clearly asks to read documents information.",
+                                            "description":  "Read multiple explicit items, a known set, changed files, these papers, or several selected items in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review.",
                                             "schema":  {
                                                            "target":  "string",
                                                            "context":  "string",
@@ -767,7 +767,7 @@
                                                        }
                                         },
                   "ReadDocumentsSemantic":  {
-                                                "description":  "Read items selected by semantic intent in the documents domain. Use only when the request clearly asks to read documents information.",
+                                                "description":  "Read unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -775,7 +775,7 @@
                                                            }
                                             },
                   "DraftDocumentsSingle":  {
-                                               "description":  "Draft one item in the documents domain. Use only when the request clearly asks to draft documents information.",
+                                               "description":  "Draft one explicit item, this item, one file, one document, one event, or one named entity in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -783,7 +783,7 @@
                                                           }
                                            },
                   "DraftDocumentsBulk":  {
-                                             "description":  "Draft many items in the documents domain. Use only when the request clearly asks to draft documents information.",
+                                             "description":  "Draft multiple explicit items, a known set, changed files, these papers, or several selected items in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -791,7 +791,7 @@
                                                         }
                                          },
                   "DraftDocumentsSemantic":  {
-                                                 "description":  "Draft items selected by semantic intent in the documents domain. Use only when the request clearly asks to draft documents information.",
+                                                 "description":  "Draft unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -799,7 +799,7 @@
                                                             }
                                              },
                   "ReviewDocumentsSingle":  {
-                                                "description":  "Review one item in the documents domain. Use only when the request clearly asks to review documents information.",
+                                                "description":  "Review one explicit item, this item, one file, one document, one event, or one named entity in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -807,7 +807,7 @@
                                                            }
                                             },
                   "ReviewDocumentsBulk":  {
-                                              "description":  "Review many items in the documents domain. Use only when the request clearly asks to review documents information.",
+                                              "description":  "Review multiple explicit items, a known set, changed files, these papers, or several selected items in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -815,7 +815,7 @@
                                                          }
                                           },
                   "ReviewDocumentsSemantic":  {
-                                                  "description":  "Review items selected by semantic intent in the documents domain. Use only when the request clearly asks to review documents information.",
+                                                  "description":  "Review unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review.",
                                                   "schema":  {
                                                                  "target":  "string",
                                                                  "context":  "string",
@@ -823,7 +823,7 @@
                                                              }
                                               },
                   "ConvertDocumentsSingle":  {
-                                                 "description":  "Convert one item in the documents domain. Use only when the request clearly asks to convert documents information.",
+                                                 "description":  "Convert one explicit item, this item, one file, one document, one event, or one named entity in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -831,7 +831,7 @@
                                                             }
                                              },
                   "ConvertDocumentsBulk":  {
-                                               "description":  "Convert many items in the documents domain. Use only when the request clearly asks to convert documents information.",
+                                               "description":  "Convert multiple explicit items, a known set, changed files, these papers, or several selected items in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -839,7 +839,7 @@
                                                           }
                                            },
                   "ConvertDocumentsSemantic":  {
-                                                   "description":  "Convert items selected by semantic intent in the documents domain. Use only when the request clearly asks to convert documents information.",
+                                                   "description":  "Convert unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review.",
                                                    "schema":  {
                                                                   "target":  "string",
                                                                   "context":  "string",
@@ -847,7 +847,7 @@
                                                               }
                                                },
                   "SearchCodeSingle":  {
-                                           "description":  "Search one item in the code domain. Use only when the request clearly asks to search code information.",
+                                           "description":  "Search one explicit item, this item, one file, one document, one event, or one named entity in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -855,7 +855,7 @@
                                                       }
                                        },
                   "SearchCodeBulk":  {
-                                         "description":  "Search many items in the code domain. Use only when the request clearly asks to search code information.",
+                                         "description":  "Search multiple explicit items, a known set, changed files, these papers, or several selected items in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors.",
                                          "schema":  {
                                                         "target":  "string",
                                                         "context":  "string",
@@ -863,7 +863,7 @@
                                                     }
                                      },
                   "SearchCodeSemantic":  {
-                                             "description":  "Search items selected by semantic intent in the code domain. Use only when the request clearly asks to search code information.",
+                                             "description":  "Search unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -871,7 +871,7 @@
                                                         }
                                          },
                   "ReviewCodeSingle":  {
-                                           "description":  "Review one item in the code domain. Use only when the request clearly asks to review code information.",
+                                           "description":  "Review one explicit item, this item, one file, one document, one event, or one named entity in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -879,7 +879,7 @@
                                                       }
                                        },
                   "ReviewCodeBulk":  {
-                                         "description":  "Review many items in the code domain. Use only when the request clearly asks to review code information.",
+                                         "description":  "Review multiple explicit items, a known set, changed files, these papers, or several selected items in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors.",
                                          "schema":  {
                                                         "target":  "string",
                                                         "context":  "string",
@@ -887,7 +887,7 @@
                                                     }
                                      },
                   "ReviewCodeSemantic":  {
-                                             "description":  "Review items selected by semantic intent in the code domain. Use only when the request clearly asks to review code information.",
+                                             "description":  "Review unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -895,7 +895,7 @@
                                                         }
                                          },
                   "ModifyCodeSingle":  {
-                                           "description":  "Modify one item in the code domain. Use only when the request clearly asks to modify code information.",
+                                           "description":  "Modify one explicit item, this item, one file, one document, one event, or one named entity in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -903,7 +903,7 @@
                                                       }
                                        },
                   "ModifyCodeBulk":  {
-                                         "description":  "Modify many items in the code domain. Use only when the request clearly asks to modify code information.",
+                                         "description":  "Modify multiple explicit items, a known set, changed files, these papers, or several selected items in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors.",
                                          "schema":  {
                                                         "target":  "string",
                                                         "context":  "string",
@@ -911,7 +911,7 @@
                                                     }
                                      },
                   "ModifyCodeSemantic":  {
-                                             "description":  "Modify items selected by semantic intent in the code domain. Use only when the request clearly asks to modify code information.",
+                                             "description":  "Modify unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -919,7 +919,7 @@
                                                         }
                                          },
                   "TestCodeSingle":  {
-                                         "description":  "Test one item in the code domain. Use only when the request clearly asks to test code information.",
+                                         "description":  "Test one explicit item, this item, one file, one document, one event, or one named entity in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors.",
                                          "schema":  {
                                                         "target":  "string",
                                                         "context":  "string",
@@ -927,7 +927,7 @@
                                                     }
                                      },
                   "TestCodeBulk":  {
-                                       "description":  "Test many items in the code domain. Use only when the request clearly asks to test code information.",
+                                       "description":  "Test multiple explicit items, a known set, changed files, these papers, or several selected items in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors.",
                                        "schema":  {
                                                       "target":  "string",
                                                       "context":  "string",
@@ -935,7 +935,7 @@
                                                   }
                                    },
                   "TestCodeSemantic":  {
-                                           "description":  "Test items selected by semantic intent in the code domain. Use only when the request clearly asks to test code information.",
+                                           "description":  "Test unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -943,7 +943,7 @@
                                                       }
                                        },
                   "QueryAnalyticsSingle":  {
-                                               "description":  "Query one item in the analytics domain. Use only when the request clearly asks to query analytics information.",
+                                               "description":  "Query one explicit item, this item, one file, one document, one event, or one named entity in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -951,7 +951,7 @@
                                                           }
                                            },
                   "QueryAnalyticsBulk":  {
-                                             "description":  "Query many items in the analytics domain. Use only when the request clearly asks to query analytics information.",
+                                             "description":  "Query multiple explicit items, a known set, changed files, these papers, or several selected items in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -959,7 +959,7 @@
                                                         }
                                          },
                   "QueryAnalyticsSemantic":  {
-                                                 "description":  "Query items selected by semantic intent in the analytics domain. Use only when the request clearly asks to query analytics information.",
+                                                 "description":  "Query unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -967,7 +967,7 @@
                                                             }
                                              },
                   "VisualizeAnalyticsSingle":  {
-                                                   "description":  "Visualize one item in the analytics domain. Use only when the request clearly asks to visualize analytics information.",
+                                                   "description":  "Visualize one explicit item, this item, one file, one document, one event, or one named entity in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts.",
                                                    "schema":  {
                                                                   "target":  "string",
                                                                   "context":  "string",
@@ -975,7 +975,7 @@
                                                               }
                                                },
                   "VisualizeAnalyticsBulk":  {
-                                                 "description":  "Visualize many items in the analytics domain. Use only when the request clearly asks to visualize analytics information.",
+                                                 "description":  "Visualize multiple explicit items, a known set, changed files, these papers, or several selected items in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -983,7 +983,7 @@
                                                             }
                                              },
                   "VisualizeAnalyticsSemantic":  {
-                                                     "description":  "Visualize items selected by semantic intent in the analytics domain. Use only when the request clearly asks to visualize analytics information.",
+                                                     "description":  "Visualize unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts.",
                                                      "schema":  {
                                                                     "target":  "string",
                                                                     "context":  "string",
@@ -991,7 +991,7 @@
                                                                 }
                                                  },
                   "ForecastAnalyticsSingle":  {
-                                                  "description":  "Forecast one item in the analytics domain. Use only when the request clearly asks to forecast analytics information.",
+                                                  "description":  "Forecast one explicit item, this item, one file, one document, one event, or one named entity in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts.",
                                                   "schema":  {
                                                                  "target":  "string",
                                                                  "context":  "string",
@@ -999,7 +999,7 @@
                                                              }
                                               },
                   "ForecastAnalyticsBulk":  {
-                                                "description":  "Forecast many items in the analytics domain. Use only when the request clearly asks to forecast analytics information.",
+                                                "description":  "Forecast multiple explicit items, a known set, changed files, these papers, or several selected items in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -1007,7 +1007,7 @@
                                                            }
                                             },
                   "ForecastAnalyticsSemantic":  {
-                                                    "description":  "Forecast items selected by semantic intent in the analytics domain. Use only when the request clearly asks to forecast analytics information.",
+                                                    "description":  "Forecast unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts.",
                                                     "schema":  {
                                                                    "target":  "string",
                                                                    "context":  "string",
@@ -1015,7 +1015,7 @@
                                                                }
                                                 },
                   "ExplainAnalyticsSingle":  {
-                                                 "description":  "Explain one item in the analytics domain. Use only when the request clearly asks to explain analytics information.",
+                                                 "description":  "Explain one explicit item, this item, one file, one document, one event, or one named entity in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -1023,7 +1023,7 @@
                                                             }
                                              },
                   "ExplainAnalyticsBulk":  {
-                                               "description":  "Explain many items in the analytics domain. Use only when the request clearly asks to explain analytics information.",
+                                               "description":  "Explain multiple explicit items, a known set, changed files, these papers, or several selected items in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1031,7 +1031,7 @@
                                                           }
                                            },
                   "ExplainAnalyticsSemantic":  {
-                                                   "description":  "Explain items selected by semantic intent in the analytics domain. Use only when the request clearly asks to explain analytics information.",
+                                                   "description":  "Explain unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts.",
                                                    "schema":  {
                                                                   "target":  "string",
                                                                   "context":  "string",
@@ -1039,7 +1039,7 @@
                                                               }
                                                },
                   "ScanSecuritySingle":  {
-                                             "description":  "Scan one item in the security domain. Use only when the request clearly asks to scan security information.",
+                                             "description":  "Scan one explicit item, this item, one file, one document, one event, or one named entity in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -1047,7 +1047,7 @@
                                                         }
                                          },
                   "ScanSecurityBulk":  {
-                                           "description":  "Scan many items in the security domain. Use only when the request clearly asks to scan security information.",
+                                           "description":  "Scan multiple explicit items, a known set, changed files, these papers, or several selected items in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -1055,7 +1055,7 @@
                                                       }
                                        },
                   "ScanSecuritySemantic":  {
-                                               "description":  "Scan items selected by semantic intent in the security domain. Use only when the request clearly asks to scan security information.",
+                                               "description":  "Scan unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1063,7 +1063,7 @@
                                                           }
                                            },
                   "AuditSecuritySingle":  {
-                                              "description":  "Audit one item in the security domain. Use only when the request clearly asks to audit security information.",
+                                              "description":  "Audit one explicit item, this item, one file, one document, one event, or one named entity in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -1071,7 +1071,7 @@
                                                          }
                                           },
                   "AuditSecurityBulk":  {
-                                            "description":  "Audit many items in the security domain. Use only when the request clearly asks to audit security information.",
+                                            "description":  "Audit multiple explicit items, a known set, changed files, these papers, or several selected items in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents.",
                                             "schema":  {
                                                            "target":  "string",
                                                            "context":  "string",
@@ -1079,7 +1079,7 @@
                                                        }
                                         },
                   "AuditSecuritySemantic":  {
-                                                "description":  "Audit items selected by semantic intent in the security domain. Use only when the request clearly asks to audit security information.",
+                                                "description":  "Audit unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -1087,7 +1087,7 @@
                                                            }
                                             },
                   "TriageSecuritySingle":  {
-                                               "description":  "Triage one item in the security domain. Use only when the request clearly asks to triage security information.",
+                                               "description":  "Triage one explicit item, this item, one file, one document, one event, or one named entity in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1095,7 +1095,7 @@
                                                           }
                                            },
                   "TriageSecurityBulk":  {
-                                             "description":  "Triage many items in the security domain. Use only when the request clearly asks to triage security information.",
+                                             "description":  "Triage multiple explicit items, a known set, changed files, these papers, or several selected items in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -1103,7 +1103,7 @@
                                                         }
                                          },
                   "TriageSecuritySemantic":  {
-                                                 "description":  "Triage items selected by semantic intent in the security domain. Use only when the request clearly asks to triage security information.",
+                                                 "description":  "Triage unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -1111,7 +1111,7 @@
                                                             }
                                              },
                   "ReportSecuritySingle":  {
-                                               "description":  "Report one item in the security domain. Use only when the request clearly asks to report security information.",
+                                               "description":  "Report one explicit item, this item, one file, one document, one event, or one named entity in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1119,7 +1119,7 @@
                                                           }
                                            },
                   "ReportSecurityBulk":  {
-                                             "description":  "Report many items in the security domain. Use only when the request clearly asks to report security information.",
+                                             "description":  "Report multiple explicit items, a known set, changed files, these papers, or several selected items in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -1127,7 +1127,7 @@
                                                         }
                                          },
                   "ReportSecuritySemantic":  {
-                                                 "description":  "Report items selected by semantic intent in the security domain. Use only when the request clearly asks to report security information.",
+                                                 "description":  "Report unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -1135,7 +1135,7 @@
                                                             }
                                              },
                   "InspectInfrastructureSingle":  {
-                                                      "description":  "Inspect one item in the infrastructure domain. Use only when the request clearly asks to inspect infrastructure information.",
+                                                      "description":  "Inspect one explicit item, this item, one file, one document, one event, or one named entity in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts.",
                                                       "schema":  {
                                                                      "target":  "string",
                                                                      "context":  "string",
@@ -1143,7 +1143,7 @@
                                                                  }
                                                   },
                   "InspectInfrastructureBulk":  {
-                                                    "description":  "Inspect many items in the infrastructure domain. Use only when the request clearly asks to inspect infrastructure information.",
+                                                    "description":  "Inspect multiple explicit items, a known set, changed files, these papers, or several selected items in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts.",
                                                     "schema":  {
                                                                    "target":  "string",
                                                                    "context":  "string",
@@ -1151,7 +1151,7 @@
                                                                }
                                                 },
                   "InspectInfrastructureSemantic":  {
-                                                        "description":  "Inspect items selected by semantic intent in the infrastructure domain. Use only when the request clearly asks to inspect infrastructure information.",
+                                                        "description":  "Inspect unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts.",
                                                         "schema":  {
                                                                        "target":  "string",
                                                                        "context":  "string",
@@ -1159,7 +1159,7 @@
                                                                    }
                                                     },
                   "DeployInfrastructureSingle":  {
-                                                     "description":  "Deploy one item in the infrastructure domain. Use only when the request clearly asks to deploy infrastructure information.",
+                                                     "description":  "Deploy one explicit item, this item, one file, one document, one event, or one named entity in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts.",
                                                      "schema":  {
                                                                     "target":  "string",
                                                                     "context":  "string",
@@ -1167,7 +1167,7 @@
                                                                 }
                                                  },
                   "DeployInfrastructureBulk":  {
-                                                   "description":  "Deploy many items in the infrastructure domain. Use only when the request clearly asks to deploy infrastructure information.",
+                                                   "description":  "Deploy multiple explicit items, a known set, changed files, these papers, or several selected items in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts.",
                                                    "schema":  {
                                                                   "target":  "string",
                                                                   "context":  "string",
@@ -1175,7 +1175,7 @@
                                                               }
                                                },
                   "DeployInfrastructureSemantic":  {
-                                                       "description":  "Deploy items selected by semantic intent in the infrastructure domain. Use only when the request clearly asks to deploy infrastructure information.",
+                                                       "description":  "Deploy unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts.",
                                                        "schema":  {
                                                                       "target":  "string",
                                                                       "context":  "string",
@@ -1183,7 +1183,7 @@
                                                                   }
                                                    },
                   "MonitorInfrastructureSingle":  {
-                                                      "description":  "Monitor one item in the infrastructure domain. Use only when the request clearly asks to monitor infrastructure information.",
+                                                      "description":  "Monitor one explicit item, this item, one file, one document, one event, or one named entity in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts.",
                                                       "schema":  {
                                                                      "target":  "string",
                                                                      "context":  "string",
@@ -1191,7 +1191,7 @@
                                                                  }
                                                   },
                   "MonitorInfrastructureBulk":  {
-                                                    "description":  "Monitor many items in the infrastructure domain. Use only when the request clearly asks to monitor infrastructure information.",
+                                                    "description":  "Monitor multiple explicit items, a known set, changed files, these papers, or several selected items in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts.",
                                                     "schema":  {
                                                                    "target":  "string",
                                                                    "context":  "string",
@@ -1199,7 +1199,7 @@
                                                                }
                                                 },
                   "MonitorInfrastructureSemantic":  {
-                                                        "description":  "Monitor items selected by semantic intent in the infrastructure domain. Use only when the request clearly asks to monitor infrastructure information.",
+                                                        "description":  "Monitor unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts.",
                                                         "schema":  {
                                                                        "target":  "string",
                                                                        "context":  "string",
@@ -1207,7 +1207,7 @@
                                                                    }
                                                     },
                   "RollbackInfrastructureSingle":  {
-                                                       "description":  "Rollback one item in the infrastructure domain. Use only when the request clearly asks to rollback infrastructure information.",
+                                                       "description":  "Rollback one explicit item, this item, one file, one document, one event, or one named entity in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts.",
                                                        "schema":  {
                                                                       "target":  "string",
                                                                       "context":  "string",
@@ -1215,7 +1215,7 @@
                                                                   }
                                                    },
                   "RollbackInfrastructureBulk":  {
-                                                     "description":  "Rollback many items in the infrastructure domain. Use only when the request clearly asks to rollback infrastructure information.",
+                                                     "description":  "Rollback multiple explicit items, a known set, changed files, these papers, or several selected items in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts.",
                                                      "schema":  {
                                                                     "target":  "string",
                                                                     "context":  "string",
@@ -1223,7 +1223,7 @@
                                                                 }
                                                  },
                   "RollbackInfrastructureSemantic":  {
-                                                         "description":  "Rollback items selected by semantic intent in the infrastructure domain. Use only when the request clearly asks to rollback infrastructure information.",
+                                                         "description":  "Rollback unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts.",
                                                          "schema":  {
                                                                         "target":  "string",
                                                                         "context":  "string",
@@ -1231,7 +1231,7 @@
                                                                     }
                                                      },
                   "InspectMediaSingle":  {
-                                             "description":  "Inspect one item in the media domain. Use only when the request clearly asks to inspect media information.",
+                                             "description":  "Inspect one explicit item, this item, one file, one document, one event, or one named entity in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -1239,7 +1239,7 @@
                                                         }
                                          },
                   "InspectMediaBulk":  {
-                                           "description":  "Inspect many items in the media domain. Use only when the request clearly asks to inspect media information.",
+                                           "description":  "Inspect multiple explicit items, a known set, changed files, these papers, or several selected items in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -1247,7 +1247,7 @@
                                                       }
                                        },
                   "InspectMediaSemantic":  {
-                                               "description":  "Inspect items selected by semantic intent in the media domain. Use only when the request clearly asks to inspect media information.",
+                                               "description":  "Inspect unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1255,7 +1255,7 @@
                                                           }
                                            },
                   "TransformMediaSingle":  {
-                                               "description":  "Transform one item in the media domain. Use only when the request clearly asks to transform media information.",
+                                               "description":  "Transform one explicit item, this item, one file, one document, one event, or one named entity in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1263,7 +1263,7 @@
                                                           }
                                            },
                   "TransformMediaBulk":  {
-                                             "description":  "Transform many items in the media domain. Use only when the request clearly asks to transform media information.",
+                                             "description":  "Transform multiple explicit items, a known set, changed files, these papers, or several selected items in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -1271,7 +1271,7 @@
                                                         }
                                          },
                   "TransformMediaSemantic":  {
-                                                 "description":  "Transform items selected by semantic intent in the media domain. Use only when the request clearly asks to transform media information.",
+                                                 "description":  "Transform unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -1279,7 +1279,7 @@
                                                             }
                                              },
                   "CaptionMediaSingle":  {
-                                             "description":  "Caption one item in the media domain. Use only when the request clearly asks to caption media information.",
+                                             "description":  "Caption one explicit item, this item, one file, one document, one event, or one named entity in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -1287,7 +1287,7 @@
                                                         }
                                          },
                   "CaptionMediaBulk":  {
-                                           "description":  "Caption many items in the media domain. Use only when the request clearly asks to caption media information.",
+                                           "description":  "Caption multiple explicit items, a known set, changed files, these papers, or several selected items in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -1295,7 +1295,7 @@
                                                       }
                                        },
                   "CaptionMediaSemantic":  {
-                                               "description":  "Caption items selected by semantic intent in the media domain. Use only when the request clearly asks to caption media information.",
+                                               "description":  "Caption unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1303,7 +1303,7 @@
                                                           }
                                            },
                   "ExportMediaSingle":  {
-                                            "description":  "Export one item in the media domain. Use only when the request clearly asks to export media information.",
+                                            "description":  "Export one explicit item, this item, one file, one document, one event, or one named entity in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports.",
                                             "schema":  {
                                                            "target":  "string",
                                                            "context":  "string",
@@ -1311,7 +1311,7 @@
                                                        }
                                         },
                   "ExportMediaBulk":  {
-                                          "description":  "Export many items in the media domain. Use only when the request clearly asks to export media information.",
+                                          "description":  "Export multiple explicit items, a known set, changed files, these papers, or several selected items in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports.",
                                           "schema":  {
                                                          "target":  "string",
                                                          "context":  "string",
@@ -1319,7 +1319,7 @@
                                                      }
                                       },
                   "ExportMediaSemantic":  {
-                                              "description":  "Export items selected by semantic intent in the media domain. Use only when the request clearly asks to export media information.",
+                                              "description":  "Export unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -1327,7 +1327,7 @@
                                                          }
                                           },
                   "PlanEducationSingle":  {
-                                              "description":  "Plan one item in the education domain. Use only when the request clearly asks to plan education information.",
+                                              "description":  "Plan one explicit item, this item, one file, one document, one event, or one named entity in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -1335,7 +1335,7 @@
                                                          }
                                           },
                   "PlanEducationBulk":  {
-                                            "description":  "Plan many items in the education domain. Use only when the request clearly asks to plan education information.",
+                                            "description":  "Plan multiple explicit items, a known set, changed files, these papers, or several selected items in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback.",
                                             "schema":  {
                                                            "target":  "string",
                                                            "context":  "string",
@@ -1343,7 +1343,7 @@
                                                        }
                                         },
                   "PlanEducationSemantic":  {
-                                                "description":  "Plan items selected by semantic intent in the education domain. Use only when the request clearly asks to plan education information.",
+                                                "description":  "Plan unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -1351,7 +1351,7 @@
                                                            }
                                             },
                   "GradeEducationSingle":  {
-                                               "description":  "Grade one item in the education domain. Use only when the request clearly asks to grade education information.",
+                                               "description":  "Grade one explicit item, this item, one file, one document, one event, or one named entity in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1359,7 +1359,7 @@
                                                           }
                                            },
                   "GradeEducationBulk":  {
-                                             "description":  "Grade many items in the education domain. Use only when the request clearly asks to grade education information.",
+                                             "description":  "Grade multiple explicit items, a known set, changed files, these papers, or several selected items in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -1367,7 +1367,7 @@
                                                         }
                                          },
                   "GradeEducationSemantic":  {
-                                                 "description":  "Grade items selected by semantic intent in the education domain. Use only when the request clearly asks to grade education information.",
+                                                 "description":  "Grade unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -1375,7 +1375,7 @@
                                                             }
                                              },
                   "ExplainEducationSingle":  {
-                                                 "description":  "Explain one item in the education domain. Use only when the request clearly asks to explain education information.",
+                                                 "description":  "Explain one explicit item, this item, one file, one document, one event, or one named entity in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -1383,7 +1383,7 @@
                                                             }
                                              },
                   "ExplainEducationBulk":  {
-                                               "description":  "Explain many items in the education domain. Use only when the request clearly asks to explain education information.",
+                                               "description":  "Explain multiple explicit items, a known set, changed files, these papers, or several selected items in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1391,7 +1391,7 @@
                                                           }
                                            },
                   "ExplainEducationSemantic":  {
-                                                   "description":  "Explain items selected by semantic intent in the education domain. Use only when the request clearly asks to explain education information.",
+                                                   "description":  "Explain unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback.",
                                                    "schema":  {
                                                                   "target":  "string",
                                                                   "context":  "string",
@@ -1399,7 +1399,7 @@
                                                               }
                                                },
                   "QuizEducationSingle":  {
-                                              "description":  "Quiz one item in the education domain. Use only when the request clearly asks to quiz education information.",
+                                              "description":  "Quiz one explicit item, this item, one file, one document, one event, or one named entity in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -1407,7 +1407,7 @@
                                                          }
                                           },
                   "QuizEducationBulk":  {
-                                            "description":  "Quiz many items in the education domain. Use only when the request clearly asks to quiz education information.",
+                                            "description":  "Quiz multiple explicit items, a known set, changed files, these papers, or several selected items in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback.",
                                             "schema":  {
                                                            "target":  "string",
                                                            "context":  "string",
@@ -1415,7 +1415,7 @@
                                                        }
                                         },
                   "QuizEducationSemantic":  {
-                                                "description":  "Quiz items selected by semantic intent in the education domain. Use only when the request clearly asks to quiz education information.",
+                                                "description":  "Quiz unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -1423,7 +1423,7 @@
                                                            }
                                             },
                   "SearchSupportSingle":  {
-                                              "description":  "Search one item in the support domain. Use only when the request clearly asks to search support information.",
+                                              "description":  "Search one explicit item, this item, one file, one document, one event, or one named entity in support desk. Applies to: tickets, customer issues, replies, escalations, troubleshooting requests.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -1431,7 +1431,7 @@
                                                          }
                                           },
                   "SearchSupportBulk":  {
-                                            "description":  "Search many items in the support domain. Use only when the request clearly asks to search support information.",
+                                            "description":  "Search multiple explicit items, a known set, changed files, these papers, or several selected items in support desk. Applies to: tickets, customer issues, replies, escalations, troubleshooting requests.",
                                             "schema":  {
                                                            "target":  "string",
                                                            "context":  "string",
@@ -1439,7 +1439,7 @@
                                                        }
                                         },
                   "SearchSupportSemantic":  {
-                                                "description":  "Search items selected by semantic intent in the support domain. Use only when the request clearly asks to search support information.",
+                                                "description":  "Search unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in support desk. Applies to: tickets, customer issues, replies, escalations, troubleshooting requests.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -1447,7 +1447,7 @@
                                                            }
                                             },
                   "TriageSupportSingle":  {
-                                              "description":  "Triage one item in the support domain. Use only when the request clearly asks to triage support information.",
+                                              "description":  "Triage one explicit item, this item, one file, one document, one event, or one named entity in support desk. Applies to: tickets, customer issues, replies, escalations, troubleshooting requests.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -1455,7 +1455,7 @@
                                                          }
                                           },
                   "TriageSupportBulk":  {
-                                            "description":  "Triage many items in the support domain. Use only when the request clearly asks to triage support information.",
+                                            "description":  "Triage multiple explicit items, a known set, changed files, these papers, or several selected items in support desk. Applies to: tickets, customer issues, replies, escalations, troubleshooting requests.",
                                             "schema":  {
                                                            "target":  "string",
                                                            "context":  "string",
@@ -1463,7 +1463,7 @@
                                                        }
                                         },
                   "TriageSupportSemantic":  {
-                                                "description":  "Triage items selected by semantic intent in the support domain. Use only when the request clearly asks to triage support information.",
+                                                "description":  "Triage unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in support desk. Applies to: tickets, customer issues, replies, escalations, troubleshooting requests.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -1471,7 +1471,7 @@
                                                            }
                                             },
                   "ReplySupportSingle":  {
-                                             "description":  "Reply one item in the support domain. Use only when the request clearly asks to reply support information.",
+                                             "description":  "Reply one explicit item, this item, one file, one document, one event, or one named entity in support desk. Applies to: tickets, customer issues, replies, escalations, troubleshooting requests.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -1479,7 +1479,7 @@
                                                         }
                                          },
                   "ReplySupportBulk":  {
-                                           "description":  "Reply many items in the support domain. Use only when the request clearly asks to reply support information.",
+                                           "description":  "Reply multiple explicit items, a known set, changed files, these papers, or several selected items in support desk. Applies to: tickets, customer issues, replies, escalations, troubleshooting requests.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -1487,7 +1487,7 @@
                                                       }
                                        },
                   "ReplySupportSemantic":  {
-                                               "description":  "Reply items selected by semantic intent in the support domain. Use only when the request clearly asks to reply support information.",
+                                               "description":  "Reply unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in support desk. Applies to: tickets, customer issues, replies, escalations, troubleshooting requests.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1495,7 +1495,7 @@
                                                           }
                                            },
                   "EscalateSupportSingle":  {
-                                                "description":  "Escalate one item in the support domain. Use only when the request clearly asks to escalate support information.",
+                                                "description":  "Escalate one explicit item, this item, one file, one document, one event, or one named entity in support desk. Applies to: tickets, customer issues, replies, escalations, troubleshooting requests.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -1503,7 +1503,7 @@
                                                            }
                                             },
                   "EscalateSupportBulk":  {
-                                              "description":  "Escalate many items in the support domain. Use only when the request clearly asks to escalate support information.",
+                                              "description":  "Escalate multiple explicit items, a known set, changed files, these papers, or several selected items in support desk. Applies to: tickets, customer issues, replies, escalations, troubleshooting requests.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -1511,7 +1511,7 @@
                                                          }
                                           },
                   "EscalateSupportSemantic":  {
-                                                  "description":  "Escalate items selected by semantic intent in the support domain. Use only when the request clearly asks to escalate support information.",
+                                                  "description":  "Escalate unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in support desk. Applies to: tickets, customer issues, replies, escalations, troubleshooting requests.",
                                                   "schema":  {
                                                                  "target":  "string",
                                                                  "context":  "string",
@@ -1519,7 +1519,7 @@
                                                              }
                                               },
                   "SearchKnowledgeSingle":  {
-                                                "description":  "Search one item in the knowledge base domain. Use only when the request clearly asks to search knowledge base information.",
+                                                "description":  "Search one explicit item, this item, one file, one document, one event, or one named entity in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -1527,7 +1527,7 @@
                                                            }
                                             },
                   "SearchKnowledgeBulk":  {
-                                              "description":  "Search many items in the knowledge base domain. Use only when the request clearly asks to search knowledge base information.",
+                                              "description":  "Search multiple explicit items, a known set, changed files, these papers, or several selected items in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -1535,7 +1535,7 @@
                                                          }
                                           },
                   "SearchKnowledgeSemantic":  {
-                                                  "description":  "Search items selected by semantic intent in the knowledge base domain. Use only when the request clearly asks to search knowledge base information.",
+                                                  "description":  "Search unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers.",
                                                   "schema":  {
                                                                  "target":  "string",
                                                                  "context":  "string",
@@ -1543,7 +1543,7 @@
                                                              }
                                               },
                   "LinkKnowledgeSingle":  {
-                                              "description":  "Link one item in the knowledge base domain. Use only when the request clearly asks to link knowledge base information.",
+                                              "description":  "Link one explicit item, this item, one file, one document, one event, or one named entity in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -1551,7 +1551,7 @@
                                                          }
                                           },
                   "LinkKnowledgeBulk":  {
-                                            "description":  "Link many items in the knowledge base domain. Use only when the request clearly asks to link knowledge base information.",
+                                            "description":  "Link multiple explicit items, a known set, changed files, these papers, or several selected items in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers.",
                                             "schema":  {
                                                            "target":  "string",
                                                            "context":  "string",
@@ -1559,7 +1559,7 @@
                                                        }
                                         },
                   "LinkKnowledgeSemantic":  {
-                                                "description":  "Link items selected by semantic intent in the knowledge base domain. Use only when the request clearly asks to link knowledge base information.",
+                                                "description":  "Link unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -1567,7 +1567,7 @@
                                                            }
                                             },
                   "SummarizeKnowledgeSingle":  {
-                                                   "description":  "Summarize one item in the knowledge base domain. Use only when the request clearly asks to summarize knowledge base information.",
+                                                   "description":  "Summarize one explicit item, this item, one file, one document, one event, or one named entity in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers.",
                                                    "schema":  {
                                                                   "target":  "string",
                                                                   "context":  "string",
@@ -1575,7 +1575,7 @@
                                                               }
                                                },
                   "SummarizeKnowledgeBulk":  {
-                                                 "description":  "Summarize many items in the knowledge base domain. Use only when the request clearly asks to summarize knowledge base information.",
+                                                 "description":  "Summarize multiple explicit items, a known set, changed files, these papers, or several selected items in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -1583,7 +1583,7 @@
                                                             }
                                              },
                   "SummarizeKnowledgeSemantic":  {
-                                                     "description":  "Summarize items selected by semantic intent in the knowledge base domain. Use only when the request clearly asks to summarize knowledge base information.",
+                                                     "description":  "Summarize unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers.",
                                                      "schema":  {
                                                                     "target":  "string",
                                                                     "context":  "string",
@@ -1591,7 +1591,7 @@
                                                                 }
                                                  },
                   "ArchiveKnowledgeSingle":  {
-                                                 "description":  "Archive one item in the knowledge base domain. Use only when the request clearly asks to archive knowledge base information.",
+                                                 "description":  "Archive one explicit item, this item, one file, one document, one event, or one named entity in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -1599,7 +1599,7 @@
                                                             }
                                              },
                   "ArchiveKnowledgeBulk":  {
-                                               "description":  "Archive many items in the knowledge base domain. Use only when the request clearly asks to archive knowledge base information.",
+                                               "description":  "Archive multiple explicit items, a known set, changed files, these papers, or several selected items in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1607,7 +1607,7 @@
                                                           }
                                            },
                   "ArchiveKnowledgeSemantic":  {
-                                                   "description":  "Archive items selected by semantic intent in the knowledge base domain. Use only when the request clearly asks to archive knowledge base information.",
+                                                   "description":  "Archive unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers.",
                                                    "schema":  {
                                                                   "target":  "string",
                                                                   "context":  "string",
@@ -1615,7 +1615,7 @@
                                                               }
                                                },
                   "ReadCommunicationsSingle":  {
-                                                   "description":  "Read one item in the communications domain. Use only when the request clearly asks to read communications information.",
+                                                   "description":  "Read one explicit item, this item, one file, one document, one event, or one named entity in communications. Applies to: messages, announcements, newsletters, emails, communication summaries.",
                                                    "schema":  {
                                                                   "target":  "string",
                                                                   "context":  "string",
@@ -1623,7 +1623,7 @@
                                                               }
                                                },
                   "ReadCommunicationsBulk":  {
-                                                 "description":  "Read many items in the communications domain. Use only when the request clearly asks to read communications information.",
+                                                 "description":  "Read multiple explicit items, a known set, changed files, these papers, or several selected items in communications. Applies to: messages, announcements, newsletters, emails, communication summaries.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -1631,7 +1631,7 @@
                                                             }
                                              },
                   "ReadCommunicationsSemantic":  {
-                                                     "description":  "Read items selected by semantic intent in the communications domain. Use only when the request clearly asks to read communications information.",
+                                                     "description":  "Read unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in communications. Applies to: messages, announcements, newsletters, emails, communication summaries.",
                                                      "schema":  {
                                                                     "target":  "string",
                                                                     "context":  "string",
@@ -1639,7 +1639,7 @@
                                                                 }
                                                  },
                   "DraftCommunicationsSingle":  {
-                                                    "description":  "Draft one item in the communications domain. Use only when the request clearly asks to draft communications information.",
+                                                    "description":  "Draft one explicit item, this item, one file, one document, one event, or one named entity in communications. Applies to: messages, announcements, newsletters, emails, communication summaries.",
                                                     "schema":  {
                                                                    "target":  "string",
                                                                    "context":  "string",
@@ -1647,7 +1647,7 @@
                                                                }
                                                 },
                   "DraftCommunicationsBulk":  {
-                                                  "description":  "Draft many items in the communications domain. Use only when the request clearly asks to draft communications information.",
+                                                  "description":  "Draft multiple explicit items, a known set, changed files, these papers, or several selected items in communications. Applies to: messages, announcements, newsletters, emails, communication summaries.",
                                                   "schema":  {
                                                                  "target":  "string",
                                                                  "context":  "string",
@@ -1655,7 +1655,7 @@
                                                              }
                                               },
                   "DraftCommunicationsSemantic":  {
-                                                      "description":  "Draft items selected by semantic intent in the communications domain. Use only when the request clearly asks to draft communications information.",
+                                                      "description":  "Draft unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in communications. Applies to: messages, announcements, newsletters, emails, communication summaries.",
                                                       "schema":  {
                                                                      "target":  "string",
                                                                      "context":  "string",
@@ -1663,7 +1663,7 @@
                                                                  }
                                                   },
                   "ScheduleCommunicationsSingle":  {
-                                                       "description":  "Schedule one item in the communications domain. Use only when the request clearly asks to schedule communications information.",
+                                                       "description":  "Schedule one explicit item, this item, one file, one document, one event, or one named entity in communications. Applies to: messages, announcements, newsletters, emails, communication summaries.",
                                                        "schema":  {
                                                                       "target":  "string",
                                                                       "context":  "string",
@@ -1671,7 +1671,7 @@
                                                                   }
                                                    },
                   "ScheduleCommunicationsBulk":  {
-                                                     "description":  "Schedule many items in the communications domain. Use only when the request clearly asks to schedule communications information.",
+                                                     "description":  "Schedule multiple explicit items, a known set, changed files, these papers, or several selected items in communications. Applies to: messages, announcements, newsletters, emails, communication summaries.",
                                                      "schema":  {
                                                                     "target":  "string",
                                                                     "context":  "string",
@@ -1679,7 +1679,7 @@
                                                                 }
                                                  },
                   "ScheduleCommunicationsSemantic":  {
-                                                         "description":  "Schedule items selected by semantic intent in the communications domain. Use only when the request clearly asks to schedule communications information.",
+                                                         "description":  "Schedule unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in communications. Applies to: messages, announcements, newsletters, emails, communication summaries.",
                                                          "schema":  {
                                                                         "target":  "string",
                                                                         "context":  "string",
@@ -1687,7 +1687,7 @@
                                                                     }
                                                      },
                   "SummarizeCommunicationsSingle":  {
-                                                        "description":  "Summarize one item in the communications domain. Use only when the request clearly asks to summarize communications information.",
+                                                        "description":  "Summarize one explicit item, this item, one file, one document, one event, or one named entity in communications. Applies to: messages, announcements, newsletters, emails, communication summaries.",
                                                         "schema":  {
                                                                        "target":  "string",
                                                                        "context":  "string",
@@ -1695,7 +1695,7 @@
                                                                    }
                                                     },
                   "SummarizeCommunicationsBulk":  {
-                                                      "description":  "Summarize many items in the communications domain. Use only when the request clearly asks to summarize communications information.",
+                                                      "description":  "Summarize multiple explicit items, a known set, changed files, these papers, or several selected items in communications. Applies to: messages, announcements, newsletters, emails, communication summaries.",
                                                       "schema":  {
                                                                      "target":  "string",
                                                                      "context":  "string",
@@ -1703,7 +1703,7 @@
                                                                  }
                                                   },
                   "SummarizeCommunicationsSemantic":  {
-                                                          "description":  "Summarize items selected by semantic intent in the communications domain. Use only when the request clearly asks to summarize communications information.",
+                                                          "description":  "Summarize unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in communications. Applies to: messages, announcements, newsletters, emails, communication summaries.",
                                                           "schema":  {
                                                                          "target":  "string",
                                                                          "context":  "string",
@@ -1716,31 +1716,31 @@
                           "id":  "research-compare-bulk",
                           "request":  "Compare the methodology sections across these five climate adaptation papers",
                           "expectedType":  "tool",
-            "expectedToolName":  "CompareResearchBulk"
+                          "expectedToolName":  "CompareResearchBulk"
                       },
                       {
                           "id":  "calendar-analyze-semantic",
                           "request":  "Find weeks next month that are unusually meeting-heavy",
                           "expectedType":  "tool",
-            "expectedToolName":  "AnalyzeCalendarSemantic"
+                          "expectedToolName":  "AnalyzeCalendarSemantic"
                       },
                       {
                           "id":  "documents-review-single",
-                          "request":  "Review this grant proposal for unclear claims",
+                          "request":  "Review the single grant proposal file proposal_42.docx for unclear claims",
                           "expectedType":  "tool",
-            "expectedToolName":  "ReviewDocumentsSingle"
+                          "expectedToolName":  "ReviewDocumentsSingle"
                       },
                       {
                           "id":  "code-test-bulk",
                           "request":  "Run the relevant tests for the changed parser files",
                           "expectedType":  "tool",
-            "expectedToolName":  "TestCodeBulk"
+                          "expectedToolName":  "TestCodeBulk"
                       },
                       {
                           "id":  "security-triage-semantic",
                           "request":  "Prioritize suspicious login alerts by likely account risk",
                           "expectedType":  "tool",
-            "expectedToolName":  "TriageSecuritySemantic"
+                          "expectedToolName":  "TriageSecuritySemantic"
                       },
                       {
                           "id":  "unsupported-hotel",

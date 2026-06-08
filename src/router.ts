@@ -29,6 +29,25 @@ export function createToolRouter(config: ToolRouterConfig): ToolRouter {
           return noTool("No child options are available at the current path.", 1, trace);
         }
 
+        if (options.length === 1 && Array.isArray(node)) {
+          const toolName = options[0];
+          trace.push({
+            path: [...path],
+            options,
+            choice: toolName,
+            confidence: 1,
+            votes: { [toolName]: 1 },
+            reason: "Only one tool is available at this leaf."
+          });
+
+          return {
+            type: "tool",
+            toolName,
+            confidence: 1,
+            trace
+          };
+        }
+
         const step = await choose({
           request: input.request,
           path,
@@ -37,6 +56,7 @@ export function createToolRouter(config: ToolRouterConfig): ToolRouter {
           config,
           samples
         });
+        step.choice = coerceChoice(step.choice, options);
 
         trace.push({
           path: [...path],
@@ -115,7 +135,7 @@ async function choose(input: {
   for (let i = 0; i < input.samples; i += 1) {
     const decision = await input.config.llm.completeJSON<RouterDecision>({
       system:
-        "You are a precise tool router. Choose exactly one available option, no_tool_available, or needs_clarification. Return JSON only.",
+        "You are a precise hierarchical tool router. Available options may be categories, operations, modes, or final tools. Choose the best child option when its subtree is likely to contain the right tool. Choose no_tool_available only when no available child option can plausibly handle the request. Return JSON only.",
       prompt: buildPrompt(input),
       schema: {
         type: "object",
@@ -153,12 +173,29 @@ function buildPrompt(input: {
     `Current path: ${currentPath}`,
     "Available child options:",
     ...optionLines,
+    ...buildSelectionHints(input.options),
     "",
-    "Choose one available child option.",
-    `You may choose ${NO_TOOL} if none apply.`,
+    "Choose one available child option to continue routing.",
+    "Some options are intermediate categories, not final tools.",
+    "If a child option is a plausible path toward the right final tool, choose it.",
+    `Choose ${NO_TOOL} only if none of the child options are plausible.`,
     `You may choose ${NEEDS_CLARIFICATION} if the request is ambiguous.`,
     "Return JSON with: choice, confidence, reason, and optional question."
   ].join("\n");
+}
+
+function buildSelectionHints(options: string[]): string[] {
+  if (!options.includes("single") || !options.includes("bulk") || !options.includes("semantic")) {
+    return [];
+  }
+
+  return [
+    "",
+    "Mode selection hints:",
+    "- single: one explicit item, this item/file/document/event, or one named entity.",
+    "- bulk: multiple explicit items, a known set, changed files, these papers, or several selected items.",
+    "- semantic: discover unknown matching items by meaning, fuzzy criteria, or intent across a collection."
+  ];
 }
 
 function describeOption(option: string, node: ToolTree | string[], config: ToolRouterConfig): string | undefined {
@@ -172,10 +209,20 @@ function describeOption(option: string, node: ToolTree | string[], config: ToolR
   }
 
   if (Array.isArray(child)) {
-    return `${child.length} tool options`;
+    return child
+      .map((toolName) => {
+        const description = config.tools[toolName]?.description;
+        return description ? `${toolName}: ${description}` : toolName;
+      })
+      .join("; ");
   }
 
-  return `${Object.keys(child).length} child options`;
+  return describeBranch(child, config);
+}
+
+function describeBranch(node: ToolTree, config: ToolRouterConfig): string {
+  const childKeys = Object.keys(node);
+  return `routes to: ${childKeys.join(", ")}`;
 }
 
 function normalizeDecision(decision: RouterDecision): RouterDecision {
@@ -185,6 +232,26 @@ function normalizeDecision(decision: RouterDecision): RouterDecision {
     reason: decision.reason,
     question: decision.question
   };
+}
+
+function coerceChoice(choice: string, options: string[]): string {
+  if (options.includes(choice)) return choice;
+
+  const lowerChoice = choice.toLowerCase();
+  const exact = options.find((option) => option.toLowerCase() === lowerChoice);
+  if (exact) return exact;
+
+  const nested = options.find((option) => {
+    const lowerOption = option.toLowerCase();
+    return (
+      lowerChoice.startsWith(`${lowerOption}.`) ||
+      lowerChoice.startsWith(`${lowerOption}/`) ||
+      lowerChoice.startsWith(`${lowerOption} -> `) ||
+      lowerChoice.startsWith(`${lowerOption}:`)
+    );
+  });
+
+  return nested ?? choice;
 }
 
 function aggregate(decisions: RouterDecision[]): RouterDecision & { votes: Record<string, number> } {

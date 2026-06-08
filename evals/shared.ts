@@ -90,6 +90,7 @@ export async function runEvalWithConfig(
       expected: testCase.expectedToolName ?? testCase.expectedType,
       actual: result.type === "tool" ? result.toolName : result.type,
       confidence: result.confidence,
+      trace: result.trace.map((step) => step.choice).join(" -> "),
       latencyMs
     });
   }
