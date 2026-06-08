@@ -164,6 +164,8 @@ To smoke test a real model, use any OpenAI-compatible chat completions endpoint:
 TOOLROUTER_MODEL=gpt-4.1-mini TOOLROUTER_API_KEY=... npm run eval:real
 ```
 
+You can also put values in `.env`. `TOOLROUTER_API_KEY` and `OPENAI_API_KEY` are both supported. If `TOOLROUTER_MODEL` is not set, the script defaults to `gpt-4.1-mini`.
+
 For local or gateway models, set `TOOLROUTER_BASE_URL`:
 
 ```bash
@@ -172,7 +174,7 @@ TOOLROUTER_BASE_URL=http://localhost:11434/v1 TOOLROUTER_MODEL=llama3.1 npm run 
 
 Real eval settings:
 
-- `TOOLROUTER_MODEL`: required model name
+- `TOOLROUTER_MODEL`: optional model name, defaults to `gpt-4.1-mini`
 - `TOOLROUTER_API_KEY`: optional for local servers, required by most hosted providers
 - `TOOLROUTER_BASE_URL`: optional, defaults to `https://api.openai.com/v1`
 

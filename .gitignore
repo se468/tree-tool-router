@@ -4,3 +4,4 @@ tools/
 *.tsbuildinfo
 npm-debug.log*
 .DS_Store
+.env
