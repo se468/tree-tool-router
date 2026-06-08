@@ -42,18 +42,37 @@ export const tools: ToolRouterConfig["tools"] = {
 };
 
 export function createEvalRouter(llm: LLMAdapter, samples = 3) {
+  return createEvalRouterWithConfig(tree, tools, llm, samples);
+}
+
+export function createEvalRouterWithConfig(
+  treeConfig: ToolRouterConfig["tree"],
+  toolConfig: ToolRouterConfig["tools"],
+  llm: LLMAdapter,
+  samples = 3
+) {
   return createToolRouter({
     confidenceThreshold: 0.82,
     samples,
     allowNoTool: true,
     llm,
-    tree,
-    tools
+    tree: treeConfig,
+    tools: toolConfig
   });
 }
 
 export async function runEval(cases: EvalCase[], llm: LLMAdapter, samples = 3) {
-  const router = createEvalRouter(llm, samples);
+  return runEvalWithConfig(cases, tree, tools, llm, samples);
+}
+
+export async function runEvalWithConfig(
+  cases: EvalCase[],
+  treeConfig: ToolRouterConfig["tree"],
+  toolConfig: ToolRouterConfig["tools"],
+  llm: LLMAdapter,
+  samples = 3
+) {
+  const router = createEvalRouterWithConfig(treeConfig, toolConfig, llm, samples);
   const results = [];
 
   for (const testCase of cases) {

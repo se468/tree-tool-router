@@ -156,6 +156,7 @@ The examples use mocked LLM adapters, so they run without API keys.
 
 ```bash
 npm run eval
+npm run eval:large:real
 ```
 
 `evals/run-eval.ts` runs a small sample dataset with a mocked adapter. This is useful for checking that routing logic, traces, and result grading still work during development.
@@ -181,6 +182,8 @@ Real eval settings:
 - `TOOLROUTER_BASE_URL`: optional, defaults to `https://api.openai.com/v1`
 
 Expand `evals/sample-dataset.json` for meaningful measurements.
+
+For a larger stress fixture, `evals/large-toolset.json` contains 144 tools and includes an unsupported request that should return `no_tool_available`.
 
 | Approach | Accuracy | Token Usage | Latency | False Tool Call Rate |
 | --- | ---: | ---: | ---: | ---: |
