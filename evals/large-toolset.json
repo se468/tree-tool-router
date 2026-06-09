@@ -1,8 +1,8 @@
 ﻿{
     "name":  "large-neutral-toolset",
-    "description":  "Synthetic 144-tool routing fixture for stress-testing hierarchical tool selection across neutral domains.",
-    "toolCount":  144,
-    "shape":  "12 domains x 4 operations x 3 modes x 1 leaf tool",
+    "description":  "Synthetic 156-tool routing fixture for stress-testing hierarchical tool selection across neutral domains, including similar billing actions.",
+    "toolCount":  156,
+    "shape":  "13 domains x 4 operations x 3 modes x 1 leaf tool",
     "tree":  {
                  "research":  {
                                   "read":  {
@@ -555,11 +555,57 @@
                                                                            "SummarizeCommunicationsSemantic"
                                                                        ]
                                                       }
-                                    }
+                                    },
+                 "billing":  {
+                                 "credit":  {
+                                                "single":  [
+                                                               "CreditBillingSingle"
+                                                           ],
+                                                "bulk":  [
+                                                             "CreditBillingBulk"
+                                                         ],
+                                                "semantic":  [
+                                                                 "CreditBillingSemantic"
+                                                             ]
+                                            },
+                                 "refund":  {
+                                                "single":  [
+                                                               "RefundBillingSingle"
+                                                           ],
+                                                "bulk":  [
+                                                             "RefundBillingBulk"
+                                                         ],
+                                                "semantic":  [
+                                                                 "RefundBillingSemantic"
+                                                             ]
+                                            },
+                                 "discount":  {
+                                                  "single":  [
+                                                                 "DiscountBillingSingle"
+                                                             ],
+                                                  "bulk":  [
+                                                               "DiscountBillingBulk"
+                                                           ],
+                                                  "semantic":  [
+                                                                   "DiscountBillingSemantic"
+                                                               ]
+                                              },
+                                 "adjust":  {
+                                                "single":  [
+                                                               "AdjustBillingSingle"
+                                                           ],
+                                                "bulk":  [
+                                                             "AdjustBillingBulk"
+                                                         ],
+                                                "semantic":  [
+                                                                 "AdjustBillingSemantic"
+                                                             ]
+                                            }
+                             }
              },
     "tools":  {
                   "ReadResearchSingle":  {
-                                             "description":  "Read one explicit item, this item, one file, one document, one event, or one named entity in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, payment refunds, legal filings.",
+                                             "description":  "Read in research literature. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, legal filings, procurement purchases.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -567,7 +613,7 @@
                                                         }
                                          },
                   "ReadResearchBulk":  {
-                                           "description":  "Read multiple explicit items, a known set, changed files, these papers, or several selected items in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, payment refunds, legal filings.",
+                                           "description":  "Read in research literature. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, legal filings, procurement purchases.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -575,7 +621,7 @@
                                                       }
                                        },
                   "ReadResearchSemantic":  {
-                                               "description":  "Read unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, payment refunds, legal filings.",
+                                               "description":  "Read in research literature. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, legal filings, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -583,7 +629,7 @@
                                                           }
                                            },
                   "SummarizeResearchSingle":  {
-                                                  "description":  "Summarize one explicit item, this item, one file, one document, one event, or one named entity in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, payment refunds, legal filings.",
+                                                  "description":  "Summarize in research literature. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, legal filings, procurement purchases.",
                                                   "schema":  {
                                                                  "target":  "string",
                                                                  "context":  "string",
@@ -591,7 +637,7 @@
                                                              }
                                               },
                   "SummarizeResearchBulk":  {
-                                                "description":  "Summarize multiple explicit items, a known set, changed files, these papers, or several selected items in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, payment refunds, legal filings.",
+                                                "description":  "Summarize in research literature. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, legal filings, procurement purchases.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -599,7 +645,7 @@
                                                            }
                                             },
                   "SummarizeResearchSemantic":  {
-                                                    "description":  "Summarize unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, payment refunds, legal filings.",
+                                                    "description":  "Summarize in research literature. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, legal filings, procurement purchases.",
                                                     "schema":  {
                                                                    "target":  "string",
                                                                    "context":  "string",
@@ -607,7 +653,7 @@
                                                                }
                                                 },
                   "CompareResearchSingle":  {
-                                                "description":  "Compare one explicit item, this item, one file, one document, one event, or one named entity in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, payment refunds, legal filings.",
+                                                "description":  "Compare in research literature. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, legal filings, procurement purchases.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -615,7 +661,7 @@
                                                            }
                                             },
                   "CompareResearchBulk":  {
-                                              "description":  "Compare multiple explicit items, a known set, changed files, these papers, or several selected items in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, payment refunds, legal filings.",
+                                              "description":  "Compare in research literature. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, legal filings, procurement purchases.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -623,7 +669,7 @@
                                                          }
                                           },
                   "CompareResearchSemantic":  {
-                                                  "description":  "Compare unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, payment refunds, legal filings.",
+                                                  "description":  "Compare in research literature. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, legal filings, procurement purchases.",
                                                   "schema":  {
                                                                  "target":  "string",
                                                                  "context":  "string",
@@ -631,7 +677,7 @@
                                                              }
                                               },
                   "ExportResearchSingle":  {
-                                               "description":  "Export one explicit item, this item, one file, one document, one event, or one named entity in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, payment refunds, legal filings.",
+                                               "description":  "Export in research literature. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, legal filings, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -639,7 +685,7 @@
                                                           }
                                            },
                   "ExportResearchBulk":  {
-                                             "description":  "Export multiple explicit items, a known set, changed files, these papers, or several selected items in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, payment refunds, legal filings.",
+                                             "description":  "Export in research literature. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, legal filings, procurement purchases.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -647,7 +693,7 @@
                                                         }
                                          },
                   "ExportResearchSemantic":  {
-                                                 "description":  "Export unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in research literature. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, payment refunds, legal filings.",
+                                                 "description":  "Export in research literature. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: papers, studies, citations, methodology, abstracts, academic findings. Not for: travel booking, legal filings, procurement purchases.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -655,7 +701,7 @@
                                                             }
                                              },
                   "ReadCalendarSingle":  {
-                                             "description":  "Read one explicit item, this item, one file, one document, one event, or one named entity in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, payment refunds, legal filings.",
+                                             "description":  "Read in calendar scheduling. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, legal filings, procurement purchases.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -663,7 +709,7 @@
                                                         }
                                          },
                   "ReadCalendarBulk":  {
-                                           "description":  "Read multiple explicit items, a known set, changed files, these papers, or several selected items in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, payment refunds, legal filings.",
+                                           "description":  "Read in calendar scheduling. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, legal filings, procurement purchases.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -671,7 +717,7 @@
                                                       }
                                        },
                   "ReadCalendarSemantic":  {
-                                               "description":  "Read unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, payment refunds, legal filings.",
+                                               "description":  "Read in calendar scheduling. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, legal filings, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -679,7 +725,7 @@
                                                           }
                                            },
                   "CreateCalendarSingle":  {
-                                               "description":  "Create one explicit item, this item, one file, one document, one event, or one named entity in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, payment refunds, legal filings.",
+                                               "description":  "Create in calendar scheduling. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, legal filings, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -687,7 +733,7 @@
                                                           }
                                            },
                   "CreateCalendarBulk":  {
-                                             "description":  "Create multiple explicit items, a known set, changed files, these papers, or several selected items in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, payment refunds, legal filings.",
+                                             "description":  "Create in calendar scheduling. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, legal filings, procurement purchases.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -695,7 +741,7 @@
                                                         }
                                          },
                   "CreateCalendarSemantic":  {
-                                                 "description":  "Create unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, payment refunds, legal filings.",
+                                                 "description":  "Create in calendar scheduling. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, legal filings, procurement purchases.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -703,7 +749,7 @@
                                                             }
                                              },
                   "UpdateCalendarSingle":  {
-                                               "description":  "Update one explicit item, this item, one file, one document, one event, or one named entity in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, payment refunds, legal filings.",
+                                               "description":  "Update in calendar scheduling. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, legal filings, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -711,7 +757,7 @@
                                                           }
                                            },
                   "UpdateCalendarBulk":  {
-                                             "description":  "Update multiple explicit items, a known set, changed files, these papers, or several selected items in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, payment refunds, legal filings.",
+                                             "description":  "Update in calendar scheduling. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, legal filings, procurement purchases.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -719,7 +765,7 @@
                                                         }
                                          },
                   "UpdateCalendarSemantic":  {
-                                                 "description":  "Update unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, payment refunds, legal filings.",
+                                                 "description":  "Update in calendar scheduling. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, legal filings, procurement purchases.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -727,7 +773,7 @@
                                                             }
                                              },
                   "AnalyzeCalendarSingle":  {
-                                                "description":  "Analyze one explicit item, this item, one file, one document, one event, or one named entity in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, payment refunds, legal filings.",
+                                                "description":  "Analyze in calendar scheduling. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, legal filings, procurement purchases.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -735,7 +781,7 @@
                                                            }
                                             },
                   "AnalyzeCalendarBulk":  {
-                                              "description":  "Analyze multiple explicit items, a known set, changed files, these papers, or several selected items in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, payment refunds, legal filings.",
+                                              "description":  "Analyze in calendar scheduling. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, legal filings, procurement purchases.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -743,7 +789,7 @@
                                                          }
                                           },
                   "AnalyzeCalendarSemantic":  {
-                                                  "description":  "Analyze unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in calendar scheduling. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, payment refunds, legal filings.",
+                                                  "description":  "Analyze in calendar scheduling. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: meetings, availability, agendas, dates, busy weeks, event schedules. Not for: travel booking, legal filings, procurement purchases.",
                                                   "schema":  {
                                                                  "target":  "string",
                                                                  "context":  "string",
@@ -751,7 +797,7 @@
                                                              }
                                               },
                   "ReadDocumentsSingle":  {
-                                              "description":  "Read one explicit item, this item, one file, one document, one event, or one named entity in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, payment refunds, travel booking.",
+                                              "description":  "Read in document authoring. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, travel booking, procurement purchases.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -759,7 +805,7 @@
                                                          }
                                           },
                   "ReadDocumentsBulk":  {
-                                            "description":  "Read multiple explicit items, a known set, changed files, these papers, or several selected items in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, payment refunds, travel booking.",
+                                            "description":  "Read in document authoring. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, travel booking, procurement purchases.",
                                             "schema":  {
                                                            "target":  "string",
                                                            "context":  "string",
@@ -767,7 +813,7 @@
                                                        }
                                         },
                   "ReadDocumentsSemantic":  {
-                                                "description":  "Read unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, payment refunds, travel booking.",
+                                                "description":  "Read in document authoring. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, travel booking, procurement purchases.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -775,7 +821,7 @@
                                                            }
                                             },
                   "DraftDocumentsSingle":  {
-                                               "description":  "Draft one explicit item, this item, one file, one document, one event, or one named entity in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, payment refunds, travel booking.",
+                                               "description":  "Draft in document authoring. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, travel booking, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -783,7 +829,7 @@
                                                           }
                                            },
                   "DraftDocumentsBulk":  {
-                                             "description":  "Draft multiple explicit items, a known set, changed files, these papers, or several selected items in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, payment refunds, travel booking.",
+                                             "description":  "Draft in document authoring. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, travel booking, procurement purchases.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -791,7 +837,7 @@
                                                         }
                                          },
                   "DraftDocumentsSemantic":  {
-                                                 "description":  "Draft unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, payment refunds, travel booking.",
+                                                 "description":  "Draft in document authoring. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, travel booking, procurement purchases.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -799,7 +845,7 @@
                                                             }
                                              },
                   "ReviewDocumentsSingle":  {
-                                                "description":  "Review one explicit item, this item, one file, one document, one event, or one named entity in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, payment refunds, travel booking.",
+                                                "description":  "Review in document authoring. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, travel booking, procurement purchases.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -807,7 +853,7 @@
                                                            }
                                             },
                   "ReviewDocumentsBulk":  {
-                                              "description":  "Review multiple explicit items, a known set, changed files, these papers, or several selected items in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, payment refunds, travel booking.",
+                                              "description":  "Review in document authoring. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, travel booking, procurement purchases.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -815,7 +861,7 @@
                                                          }
                                           },
                   "ReviewDocumentsSemantic":  {
-                                                  "description":  "Review unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, payment refunds, travel booking.",
+                                                  "description":  "Review in document authoring. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, travel booking, procurement purchases.",
                                                   "schema":  {
                                                                  "target":  "string",
                                                                  "context":  "string",
@@ -823,7 +869,7 @@
                                                              }
                                               },
                   "ConvertDocumentsSingle":  {
-                                                 "description":  "Convert one explicit item, this item, one file, one document, one event, or one named entity in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, payment refunds, travel booking.",
+                                                 "description":  "Convert in document authoring. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, travel booking, procurement purchases.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -831,7 +877,7 @@
                                                             }
                                              },
                   "ConvertDocumentsBulk":  {
-                                               "description":  "Convert multiple explicit items, a known set, changed files, these papers, or several selected items in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, payment refunds, travel booking.",
+                                               "description":  "Convert in document authoring. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, travel booking, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -839,7 +885,7 @@
                                                           }
                                            },
                   "ConvertDocumentsSemantic":  {
-                                                   "description":  "Convert unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in document authoring. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, payment refunds, travel booking.",
+                                                   "description":  "Convert in document authoring. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: proposals, memos, contracts, drafts, claims, wording, document review. Not for: filing legal applications, travel booking, procurement purchases.",
                                                    "schema":  {
                                                                   "target":  "string",
                                                                   "context":  "string",
@@ -847,7 +893,7 @@
                                                               }
                                                },
                   "SearchCodeSingle":  {
-                                           "description":  "Search one explicit item, this item, one file, one document, one event, or one named entity in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: payment refunds, legal filings, travel booking.",
+                                           "description":  "Search in software code. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: legal filings, travel booking, procurement purchases.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -855,7 +901,7 @@
                                                       }
                                        },
                   "SearchCodeBulk":  {
-                                         "description":  "Search multiple explicit items, a known set, changed files, these papers, or several selected items in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: payment refunds, legal filings, travel booking.",
+                                         "description":  "Search in software code. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: legal filings, travel booking, procurement purchases.",
                                          "schema":  {
                                                         "target":  "string",
                                                         "context":  "string",
@@ -863,7 +909,7 @@
                                                     }
                                      },
                   "SearchCodeSemantic":  {
-                                             "description":  "Search unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: payment refunds, legal filings, travel booking.",
+                                             "description":  "Search in software code. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: legal filings, travel booking, procurement purchases.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -871,7 +917,7 @@
                                                         }
                                          },
                   "ReviewCodeSingle":  {
-                                           "description":  "Review one explicit item, this item, one file, one document, one event, or one named entity in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: payment refunds, legal filings, travel booking.",
+                                           "description":  "Review in software code. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: legal filings, travel booking, procurement purchases.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -879,7 +925,7 @@
                                                       }
                                        },
                   "ReviewCodeBulk":  {
-                                         "description":  "Review multiple explicit items, a known set, changed files, these papers, or several selected items in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: payment refunds, legal filings, travel booking.",
+                                         "description":  "Review in software code. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: legal filings, travel booking, procurement purchases.",
                                          "schema":  {
                                                         "target":  "string",
                                                         "context":  "string",
@@ -887,7 +933,7 @@
                                                     }
                                      },
                   "ReviewCodeSemantic":  {
-                                             "description":  "Review unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: payment refunds, legal filings, travel booking.",
+                                             "description":  "Review in software code. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: legal filings, travel booking, procurement purchases.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -895,7 +941,7 @@
                                                         }
                                          },
                   "ModifyCodeSingle":  {
-                                           "description":  "Modify one explicit item, this item, one file, one document, one event, or one named entity in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: payment refunds, legal filings, travel booking.",
+                                           "description":  "Modify in software code. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: legal filings, travel booking, procurement purchases.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -903,7 +949,7 @@
                                                       }
                                        },
                   "ModifyCodeBulk":  {
-                                         "description":  "Modify multiple explicit items, a known set, changed files, these papers, or several selected items in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: payment refunds, legal filings, travel booking.",
+                                         "description":  "Modify in software code. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: legal filings, travel booking, procurement purchases.",
                                          "schema":  {
                                                         "target":  "string",
                                                         "context":  "string",
@@ -911,7 +957,7 @@
                                                     }
                                      },
                   "ModifyCodeSemantic":  {
-                                             "description":  "Modify unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: payment refunds, legal filings, travel booking.",
+                                             "description":  "Modify in software code. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: legal filings, travel booking, procurement purchases.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -919,7 +965,7 @@
                                                         }
                                          },
                   "TestCodeSingle":  {
-                                         "description":  "Test one explicit item, this item, one file, one document, one event, or one named entity in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: payment refunds, legal filings, travel booking.",
+                                         "description":  "Test in software code. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: legal filings, travel booking, procurement purchases.",
                                          "schema":  {
                                                         "target":  "string",
                                                         "context":  "string",
@@ -927,7 +973,7 @@
                                                     }
                                      },
                   "TestCodeBulk":  {
-                                       "description":  "Test multiple explicit items, a known set, changed files, these papers, or several selected items in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: payment refunds, legal filings, travel booking.",
+                                       "description":  "Test in software code. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: legal filings, travel booking, procurement purchases.",
                                        "schema":  {
                                                       "target":  "string",
                                                       "context":  "string",
@@ -935,7 +981,7 @@
                                                   }
                                    },
                   "TestCodeSemantic":  {
-                                           "description":  "Test unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in software code. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: payment refunds, legal filings, travel booking.",
+                                           "description":  "Test in software code. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: source files, tests, parsers, pull requests, functions, build errors. Not for: legal filings, travel booking, procurement purchases.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -943,7 +989,7 @@
                                                       }
                                        },
                   "QueryAnalyticsSingle":  {
-                                               "description":  "Query one explicit item, this item, one file, one document, one event, or one named entity in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: payment refunds, legal filings, travel booking.",
+                                               "description":  "Query in data analytics. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: legal filings, travel booking, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -951,7 +997,7 @@
                                                           }
                                            },
                   "QueryAnalyticsBulk":  {
-                                             "description":  "Query multiple explicit items, a known set, changed files, these papers, or several selected items in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: payment refunds, legal filings, travel booking.",
+                                             "description":  "Query in data analytics. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: legal filings, travel booking, procurement purchases.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -959,7 +1005,7 @@
                                                         }
                                          },
                   "QueryAnalyticsSemantic":  {
-                                                 "description":  "Query unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: payment refunds, legal filings, travel booking.",
+                                                 "description":  "Query in data analytics. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: legal filings, travel booking, procurement purchases.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -967,7 +1013,7 @@
                                                             }
                                              },
                   "VisualizeAnalyticsSingle":  {
-                                                   "description":  "Visualize one explicit item, this item, one file, one document, one event, or one named entity in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: payment refunds, legal filings, travel booking.",
+                                                   "description":  "Visualize in data analytics. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: legal filings, travel booking, procurement purchases.",
                                                    "schema":  {
                                                                   "target":  "string",
                                                                   "context":  "string",
@@ -975,7 +1021,7 @@
                                                               }
                                                },
                   "VisualizeAnalyticsBulk":  {
-                                                 "description":  "Visualize multiple explicit items, a known set, changed files, these papers, or several selected items in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: payment refunds, legal filings, travel booking.",
+                                                 "description":  "Visualize in data analytics. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: legal filings, travel booking, procurement purchases.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -983,7 +1029,7 @@
                                                             }
                                              },
                   "VisualizeAnalyticsSemantic":  {
-                                                     "description":  "Visualize unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: payment refunds, legal filings, travel booking.",
+                                                     "description":  "Visualize in data analytics. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: legal filings, travel booking, procurement purchases.",
                                                      "schema":  {
                                                                     "target":  "string",
                                                                     "context":  "string",
@@ -991,7 +1037,7 @@
                                                                 }
                                                  },
                   "ForecastAnalyticsSingle":  {
-                                                  "description":  "Forecast one explicit item, this item, one file, one document, one event, or one named entity in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: payment refunds, legal filings, travel booking.",
+                                                  "description":  "Forecast in data analytics. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: legal filings, travel booking, procurement purchases.",
                                                   "schema":  {
                                                                  "target":  "string",
                                                                  "context":  "string",
@@ -999,7 +1045,7 @@
                                                              }
                                               },
                   "ForecastAnalyticsBulk":  {
-                                                "description":  "Forecast multiple explicit items, a known set, changed files, these papers, or several selected items in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: payment refunds, legal filings, travel booking.",
+                                                "description":  "Forecast in data analytics. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: legal filings, travel booking, procurement purchases.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -1007,7 +1053,7 @@
                                                            }
                                             },
                   "ForecastAnalyticsSemantic":  {
-                                                    "description":  "Forecast unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: payment refunds, legal filings, travel booking.",
+                                                    "description":  "Forecast in data analytics. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: legal filings, travel booking, procurement purchases.",
                                                     "schema":  {
                                                                    "target":  "string",
                                                                    "context":  "string",
@@ -1015,7 +1061,7 @@
                                                                }
                                                 },
                   "ExplainAnalyticsSingle":  {
-                                                 "description":  "Explain one explicit item, this item, one file, one document, one event, or one named entity in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: payment refunds, legal filings, travel booking.",
+                                                 "description":  "Explain in data analytics. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: legal filings, travel booking, procurement purchases.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -1023,7 +1069,7 @@
                                                             }
                                              },
                   "ExplainAnalyticsBulk":  {
-                                               "description":  "Explain multiple explicit items, a known set, changed files, these papers, or several selected items in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: payment refunds, legal filings, travel booking.",
+                                               "description":  "Explain in data analytics. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: legal filings, travel booking, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1031,7 +1077,7 @@
                                                           }
                                            },
                   "ExplainAnalyticsSemantic":  {
-                                                   "description":  "Explain unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in data analytics. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: payment refunds, legal filings, travel booking.",
+                                                   "description":  "Explain in data analytics. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: datasets, metrics, charts, dashboards, forecasts, trends, cohorts. Not for: legal filings, travel booking, procurement purchases.",
                                                    "schema":  {
                                                                   "target":  "string",
                                                                   "context":  "string",
@@ -1039,7 +1085,7 @@
                                                               }
                                                },
                   "ScanSecuritySingle":  {
-                                             "description":  "Scan one explicit item, this item, one file, one document, one event, or one named entity in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: payment refunds, legal filings, travel booking.",
+                                             "description":  "Scan in security operations. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: legal filings, travel booking, procurement purchases.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -1047,7 +1093,7 @@
                                                         }
                                          },
                   "ScanSecurityBulk":  {
-                                           "description":  "Scan multiple explicit items, a known set, changed files, these papers, or several selected items in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: payment refunds, legal filings, travel booking.",
+                                           "description":  "Scan in security operations. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: legal filings, travel booking, procurement purchases.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -1055,7 +1101,7 @@
                                                       }
                                        },
                   "ScanSecuritySemantic":  {
-                                               "description":  "Scan unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: payment refunds, legal filings, travel booking.",
+                                               "description":  "Scan in security operations. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: legal filings, travel booking, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1063,7 +1109,7 @@
                                                           }
                                            },
                   "AuditSecuritySingle":  {
-                                              "description":  "Audit one explicit item, this item, one file, one document, one event, or one named entity in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: payment refunds, legal filings, travel booking.",
+                                              "description":  "Audit in security operations. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: legal filings, travel booking, procurement purchases.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -1071,7 +1117,7 @@
                                                          }
                                           },
                   "AuditSecurityBulk":  {
-                                            "description":  "Audit multiple explicit items, a known set, changed files, these papers, or several selected items in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: payment refunds, legal filings, travel booking.",
+                                            "description":  "Audit in security operations. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: legal filings, travel booking, procurement purchases.",
                                             "schema":  {
                                                            "target":  "string",
                                                            "context":  "string",
@@ -1079,7 +1125,7 @@
                                                        }
                                         },
                   "AuditSecuritySemantic":  {
-                                                "description":  "Audit unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: payment refunds, legal filings, travel booking.",
+                                                "description":  "Audit in security operations. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: legal filings, travel booking, procurement purchases.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -1087,7 +1133,7 @@
                                                            }
                                             },
                   "TriageSecuritySingle":  {
-                                               "description":  "Triage one explicit item, this item, one file, one document, one event, or one named entity in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: payment refunds, legal filings, travel booking.",
+                                               "description":  "Triage in security operations. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: legal filings, travel booking, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1095,7 +1141,7 @@
                                                           }
                                            },
                   "TriageSecurityBulk":  {
-                                             "description":  "Triage multiple explicit items, a known set, changed files, these papers, or several selected items in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: payment refunds, legal filings, travel booking.",
+                                             "description":  "Triage in security operations. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: legal filings, travel booking, procurement purchases.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -1103,7 +1149,7 @@
                                                         }
                                          },
                   "TriageSecuritySemantic":  {
-                                                 "description":  "Triage unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: payment refunds, legal filings, travel booking.",
+                                                 "description":  "Triage in security operations. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: legal filings, travel booking, procurement purchases.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -1111,7 +1157,7 @@
                                                             }
                                              },
                   "ReportSecuritySingle":  {
-                                               "description":  "Report one explicit item, this item, one file, one document, one event, or one named entity in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: payment refunds, legal filings, travel booking.",
+                                               "description":  "Report in security operations. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: legal filings, travel booking, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1119,7 +1165,7 @@
                                                           }
                                            },
                   "ReportSecurityBulk":  {
-                                             "description":  "Report multiple explicit items, a known set, changed files, these papers, or several selected items in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: payment refunds, legal filings, travel booking.",
+                                             "description":  "Report in security operations. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: legal filings, travel booking, procurement purchases.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -1127,7 +1173,7 @@
                                                         }
                                          },
                   "ReportSecuritySemantic":  {
-                                                 "description":  "Report unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in security operations. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: payment refunds, legal filings, travel booking.",
+                                                 "description":  "Report in security operations. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: alerts, suspicious logins, vulnerabilities, risk, audits, incidents. Not for: legal filings, travel booking, procurement purchases.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -1135,7 +1181,7 @@
                                                             }
                                              },
                   "InspectInfrastructureSingle":  {
-                                                      "description":  "Inspect one explicit item, this item, one file, one document, one event, or one named entity in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: payment refunds, legal filings, travel booking.",
+                                                      "description":  "Inspect in infrastructure systems. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: legal filings, travel booking, procurement purchases.",
                                                       "schema":  {
                                                                      "target":  "string",
                                                                      "context":  "string",
@@ -1143,7 +1189,7 @@
                                                                  }
                                                   },
                   "InspectInfrastructureBulk":  {
-                                                    "description":  "Inspect multiple explicit items, a known set, changed files, these papers, or several selected items in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: payment refunds, legal filings, travel booking.",
+                                                    "description":  "Inspect in infrastructure systems. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: legal filings, travel booking, procurement purchases.",
                                                     "schema":  {
                                                                    "target":  "string",
                                                                    "context":  "string",
@@ -1151,7 +1197,7 @@
                                                                }
                                                 },
                   "InspectInfrastructureSemantic":  {
-                                                        "description":  "Inspect unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: payment refunds, legal filings, travel booking.",
+                                                        "description":  "Inspect in infrastructure systems. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: legal filings, travel booking, procurement purchases.",
                                                         "schema":  {
                                                                        "target":  "string",
                                                                        "context":  "string",
@@ -1159,7 +1205,7 @@
                                                                    }
                                                     },
                   "DeployInfrastructureSingle":  {
-                                                     "description":  "Deploy one explicit item, this item, one file, one document, one event, or one named entity in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: payment refunds, legal filings, travel booking.",
+                                                     "description":  "Deploy in infrastructure systems. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: legal filings, travel booking, procurement purchases.",
                                                      "schema":  {
                                                                     "target":  "string",
                                                                     "context":  "string",
@@ -1167,7 +1213,7 @@
                                                                 }
                                                  },
                   "DeployInfrastructureBulk":  {
-                                                   "description":  "Deploy multiple explicit items, a known set, changed files, these papers, or several selected items in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: payment refunds, legal filings, travel booking.",
+                                                   "description":  "Deploy in infrastructure systems. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: legal filings, travel booking, procurement purchases.",
                                                    "schema":  {
                                                                   "target":  "string",
                                                                   "context":  "string",
@@ -1175,7 +1221,7 @@
                                                               }
                                                },
                   "DeployInfrastructureSemantic":  {
-                                                       "description":  "Deploy unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: payment refunds, legal filings, travel booking.",
+                                                       "description":  "Deploy in infrastructure systems. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: legal filings, travel booking, procurement purchases.",
                                                        "schema":  {
                                                                       "target":  "string",
                                                                       "context":  "string",
@@ -1183,7 +1229,7 @@
                                                                   }
                                                    },
                   "MonitorInfrastructureSingle":  {
-                                                      "description":  "Monitor one explicit item, this item, one file, one document, one event, or one named entity in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: payment refunds, legal filings, travel booking.",
+                                                      "description":  "Monitor in infrastructure systems. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: legal filings, travel booking, procurement purchases.",
                                                       "schema":  {
                                                                      "target":  "string",
                                                                      "context":  "string",
@@ -1191,7 +1237,7 @@
                                                                  }
                                                   },
                   "MonitorInfrastructureBulk":  {
-                                                    "description":  "Monitor multiple explicit items, a known set, changed files, these papers, or several selected items in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: payment refunds, legal filings, travel booking.",
+                                                    "description":  "Monitor in infrastructure systems. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: legal filings, travel booking, procurement purchases.",
                                                     "schema":  {
                                                                    "target":  "string",
                                                                    "context":  "string",
@@ -1199,7 +1245,7 @@
                                                                }
                                                 },
                   "MonitorInfrastructureSemantic":  {
-                                                        "description":  "Monitor unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: payment refunds, legal filings, travel booking.",
+                                                        "description":  "Monitor in infrastructure systems. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: legal filings, travel booking, procurement purchases.",
                                                         "schema":  {
                                                                        "target":  "string",
                                                                        "context":  "string",
@@ -1207,7 +1253,7 @@
                                                                    }
                                                     },
                   "RollbackInfrastructureSingle":  {
-                                                       "description":  "Rollback one explicit item, this item, one file, one document, one event, or one named entity in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: payment refunds, legal filings, travel booking.",
+                                                       "description":  "Rollback in infrastructure systems. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: legal filings, travel booking, procurement purchases.",
                                                        "schema":  {
                                                                       "target":  "string",
                                                                       "context":  "string",
@@ -1215,7 +1261,7 @@
                                                                   }
                                                    },
                   "RollbackInfrastructureBulk":  {
-                                                     "description":  "Rollback multiple explicit items, a known set, changed files, these papers, or several selected items in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: payment refunds, legal filings, travel booking.",
+                                                     "description":  "Rollback in infrastructure systems. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: legal filings, travel booking, procurement purchases.",
                                                      "schema":  {
                                                                     "target":  "string",
                                                                     "context":  "string",
@@ -1223,7 +1269,7 @@
                                                                 }
                                                  },
                   "RollbackInfrastructureSemantic":  {
-                                                         "description":  "Rollback unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in infrastructure systems. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: payment refunds, legal filings, travel booking.",
+                                                         "description":  "Rollback in infrastructure systems. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: deployments, services, logs, uptime, rollbacks, clusters, hosts. Not for: legal filings, travel booking, procurement purchases.",
                                                          "schema":  {
                                                                         "target":  "string",
                                                                         "context":  "string",
@@ -1231,7 +1277,7 @@
                                                                     }
                                                      },
                   "InspectMediaSingle":  {
-                                             "description":  "Inspect one explicit item, this item, one file, one document, one event, or one named entity in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: payment refunds, legal filings, travel booking.",
+                                             "description":  "Inspect in media assets. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: legal filings, travel booking, procurement purchases.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -1239,7 +1285,7 @@
                                                         }
                                          },
                   "InspectMediaBulk":  {
-                                           "description":  "Inspect multiple explicit items, a known set, changed files, these papers, or several selected items in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: payment refunds, legal filings, travel booking.",
+                                           "description":  "Inspect in media assets. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: legal filings, travel booking, procurement purchases.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -1247,7 +1293,7 @@
                                                       }
                                        },
                   "InspectMediaSemantic":  {
-                                               "description":  "Inspect unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: payment refunds, legal filings, travel booking.",
+                                               "description":  "Inspect in media assets. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: legal filings, travel booking, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1255,7 +1301,7 @@
                                                           }
                                            },
                   "TransformMediaSingle":  {
-                                               "description":  "Transform one explicit item, this item, one file, one document, one event, or one named entity in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: payment refunds, legal filings, travel booking.",
+                                               "description":  "Transform in media assets. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: legal filings, travel booking, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1263,7 +1309,7 @@
                                                           }
                                            },
                   "TransformMediaBulk":  {
-                                             "description":  "Transform multiple explicit items, a known set, changed files, these papers, or several selected items in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: payment refunds, legal filings, travel booking.",
+                                             "description":  "Transform in media assets. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: legal filings, travel booking, procurement purchases.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -1271,7 +1317,7 @@
                                                         }
                                          },
                   "TransformMediaSemantic":  {
-                                                 "description":  "Transform unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: payment refunds, legal filings, travel booking.",
+                                                 "description":  "Transform in media assets. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: legal filings, travel booking, procurement purchases.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -1279,7 +1325,7 @@
                                                             }
                                              },
                   "CaptionMediaSingle":  {
-                                             "description":  "Caption one explicit item, this item, one file, one document, one event, or one named entity in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: payment refunds, legal filings, travel booking.",
+                                             "description":  "Caption in media assets. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: legal filings, travel booking, procurement purchases.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -1287,7 +1333,7 @@
                                                         }
                                          },
                   "CaptionMediaBulk":  {
-                                           "description":  "Caption multiple explicit items, a known set, changed files, these papers, or several selected items in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: payment refunds, legal filings, travel booking.",
+                                           "description":  "Caption in media assets. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: legal filings, travel booking, procurement purchases.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -1295,7 +1341,7 @@
                                                       }
                                        },
                   "CaptionMediaSemantic":  {
-                                               "description":  "Caption unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: payment refunds, legal filings, travel booking.",
+                                               "description":  "Caption in media assets. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: legal filings, travel booking, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1303,7 +1349,7 @@
                                                           }
                                            },
                   "ExportMediaSingle":  {
-                                            "description":  "Export one explicit item, this item, one file, one document, one event, or one named entity in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: payment refunds, legal filings, travel booking.",
+                                            "description":  "Export in media assets. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: legal filings, travel booking, procurement purchases.",
                                             "schema":  {
                                                            "target":  "string",
                                                            "context":  "string",
@@ -1311,7 +1357,7 @@
                                                        }
                                         },
                   "ExportMediaBulk":  {
-                                          "description":  "Export multiple explicit items, a known set, changed files, these papers, or several selected items in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: payment refunds, legal filings, travel booking.",
+                                          "description":  "Export in media assets. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: legal filings, travel booking, procurement purchases.",
                                           "schema":  {
                                                          "target":  "string",
                                                          "context":  "string",
@@ -1319,7 +1365,7 @@
                                                      }
                                       },
                   "ExportMediaSemantic":  {
-                                              "description":  "Export unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in media assets. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: payment refunds, legal filings, travel booking.",
+                                              "description":  "Export in media assets. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: images, audio, video, captions, thumbnails, transcripts, exports. Not for: legal filings, travel booking, procurement purchases.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -1327,7 +1373,7 @@
                                                          }
                                           },
                   "PlanEducationSingle":  {
-                                              "description":  "Plan one explicit item, this item, one file, one document, one event, or one named entity in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: payment refunds, legal filings, travel booking.",
+                                              "description":  "Plan in learning content. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: legal filings, travel booking, procurement purchases.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -1335,7 +1381,7 @@
                                                          }
                                           },
                   "PlanEducationBulk":  {
-                                            "description":  "Plan multiple explicit items, a known set, changed files, these papers, or several selected items in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: payment refunds, legal filings, travel booking.",
+                                            "description":  "Plan in learning content. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: legal filings, travel booking, procurement purchases.",
                                             "schema":  {
                                                            "target":  "string",
                                                            "context":  "string",
@@ -1343,7 +1389,7 @@
                                                        }
                                         },
                   "PlanEducationSemantic":  {
-                                                "description":  "Plan unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: payment refunds, legal filings, travel booking.",
+                                                "description":  "Plan in learning content. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: legal filings, travel booking, procurement purchases.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -1351,7 +1397,7 @@
                                                            }
                                             },
                   "GradeEducationSingle":  {
-                                               "description":  "Grade one explicit item, this item, one file, one document, one event, or one named entity in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: payment refunds, legal filings, travel booking.",
+                                               "description":  "Grade in learning content. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: legal filings, travel booking, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1359,7 +1405,7 @@
                                                           }
                                            },
                   "GradeEducationBulk":  {
-                                             "description":  "Grade multiple explicit items, a known set, changed files, these papers, or several selected items in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: payment refunds, legal filings, travel booking.",
+                                             "description":  "Grade in learning content. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: legal filings, travel booking, procurement purchases.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -1367,7 +1413,7 @@
                                                         }
                                          },
                   "GradeEducationSemantic":  {
-                                                 "description":  "Grade unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: payment refunds, legal filings, travel booking.",
+                                                 "description":  "Grade in learning content. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: legal filings, travel booking, procurement purchases.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -1375,7 +1421,7 @@
                                                             }
                                              },
                   "ExplainEducationSingle":  {
-                                                 "description":  "Explain one explicit item, this item, one file, one document, one event, or one named entity in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: payment refunds, legal filings, travel booking.",
+                                                 "description":  "Explain in learning content. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: legal filings, travel booking, procurement purchases.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -1383,7 +1429,7 @@
                                                             }
                                              },
                   "ExplainEducationBulk":  {
-                                               "description":  "Explain multiple explicit items, a known set, changed files, these papers, or several selected items in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: payment refunds, legal filings, travel booking.",
+                                               "description":  "Explain in learning content. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: legal filings, travel booking, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1391,7 +1437,7 @@
                                                           }
                                            },
                   "ExplainEducationSemantic":  {
-                                                   "description":  "Explain unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: payment refunds, legal filings, travel booking.",
+                                                   "description":  "Explain in learning content. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: legal filings, travel booking, procurement purchases.",
                                                    "schema":  {
                                                                   "target":  "string",
                                                                   "context":  "string",
@@ -1399,7 +1445,7 @@
                                                               }
                                                },
                   "QuizEducationSingle":  {
-                                              "description":  "Quiz one explicit item, this item, one file, one document, one event, or one named entity in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: payment refunds, legal filings, travel booking.",
+                                              "description":  "Quiz in learning content. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: legal filings, travel booking, procurement purchases.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -1407,7 +1453,7 @@
                                                          }
                                           },
                   "QuizEducationBulk":  {
-                                            "description":  "Quiz multiple explicit items, a known set, changed files, these papers, or several selected items in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: payment refunds, legal filings, travel booking.",
+                                            "description":  "Quiz in learning content. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: legal filings, travel booking, procurement purchases.",
                                             "schema":  {
                                                            "target":  "string",
                                                            "context":  "string",
@@ -1415,7 +1461,7 @@
                                                        }
                                         },
                   "QuizEducationSemantic":  {
-                                                "description":  "Quiz unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in learning content. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: payment refunds, legal filings, travel booking.",
+                                                "description":  "Quiz in learning content. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: lesson plans, grading, explanations, quizzes, student feedback. Not for: legal filings, travel booking, procurement purchases.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -1423,7 +1469,7 @@
                                                            }
                                             },
                   "SearchSupportSingle":  {
-                                              "description":  "Search one explicit item, this item, one file, one document, one event, or one named entity in support desk. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel.",
+                                              "description":  "Search in support desk. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel, procurement purchases.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -1431,7 +1477,7 @@
                                                          }
                                           },
                   "SearchSupportBulk":  {
-                                            "description":  "Search multiple explicit items, a known set, changed files, these papers, or several selected items in support desk. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel.",
+                                            "description":  "Search in support desk. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel, procurement purchases.",
                                             "schema":  {
                                                            "target":  "string",
                                                            "context":  "string",
@@ -1439,7 +1485,7 @@
                                                        }
                                         },
                   "SearchSupportSemantic":  {
-                                                "description":  "Search unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in support desk. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel.",
+                                                "description":  "Search in support desk. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel, procurement purchases.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -1447,7 +1493,7 @@
                                                            }
                                             },
                   "TriageSupportSingle":  {
-                                              "description":  "Triage one explicit item, this item, one file, one document, one event, or one named entity in support desk. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel.",
+                                              "description":  "Triage in support desk. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel, procurement purchases.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -1455,7 +1501,7 @@
                                                          }
                                           },
                   "TriageSupportBulk":  {
-                                            "description":  "Triage multiple explicit items, a known set, changed files, these papers, or several selected items in support desk. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel.",
+                                            "description":  "Triage in support desk. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel, procurement purchases.",
                                             "schema":  {
                                                            "target":  "string",
                                                            "context":  "string",
@@ -1463,7 +1509,7 @@
                                                        }
                                         },
                   "TriageSupportSemantic":  {
-                                                "description":  "Triage unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in support desk. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel.",
+                                                "description":  "Triage in support desk. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel, procurement purchases.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -1471,7 +1517,7 @@
                                                            }
                                             },
                   "ReplySupportSingle":  {
-                                             "description":  "Reply one explicit item, this item, one file, one document, one event, or one named entity in support desk. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel.",
+                                             "description":  "Reply in support desk. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel, procurement purchases.",
                                              "schema":  {
                                                             "target":  "string",
                                                             "context":  "string",
@@ -1479,7 +1525,7 @@
                                                         }
                                          },
                   "ReplySupportBulk":  {
-                                           "description":  "Reply multiple explicit items, a known set, changed files, these papers, or several selected items in support desk. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel.",
+                                           "description":  "Reply in support desk. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel, procurement purchases.",
                                            "schema":  {
                                                           "target":  "string",
                                                           "context":  "string",
@@ -1487,7 +1533,7 @@
                                                       }
                                        },
                   "ReplySupportSemantic":  {
-                                               "description":  "Reply unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in support desk. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel.",
+                                               "description":  "Reply in support desk. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1495,7 +1541,7 @@
                                                           }
                                            },
                   "EscalateSupportSingle":  {
-                                                "description":  "Escalate one explicit item, this item, one file, one document, one event, or one named entity in support desk. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel.",
+                                                "description":  "Escalate in support desk. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel, procurement purchases.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -1503,7 +1549,7 @@
                                                            }
                                             },
                   "EscalateSupportBulk":  {
-                                              "description":  "Escalate multiple explicit items, a known set, changed files, these papers, or several selected items in support desk. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel.",
+                                              "description":  "Escalate in support desk. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel, procurement purchases.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -1511,7 +1557,7 @@
                                                          }
                                           },
                   "EscalateSupportSemantic":  {
-                                                  "description":  "Escalate unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in support desk. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel.",
+                                                  "description":  "Escalate in support desk. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: tickets, user issues, troubleshooting requests, escalation notes. Not for: issuing refunds, charging cards, filing legal applications, booking travel, procurement purchases.",
                                                   "schema":  {
                                                                  "target":  "string",
                                                                  "context":  "string",
@@ -1519,7 +1565,7 @@
                                                              }
                                               },
                   "SearchKnowledgeSingle":  {
-                                                "description":  "Search one explicit item, this item, one file, one document, one event, or one named entity in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: payment refunds, legal filings, travel booking.",
+                                                "description":  "Search in knowledge base. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: legal filings, travel booking, procurement purchases.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -1527,7 +1573,7 @@
                                                            }
                                             },
                   "SearchKnowledgeBulk":  {
-                                              "description":  "Search multiple explicit items, a known set, changed files, these papers, or several selected items in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: payment refunds, legal filings, travel booking.",
+                                              "description":  "Search in knowledge base. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: legal filings, travel booking, procurement purchases.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -1535,7 +1581,7 @@
                                                          }
                                           },
                   "SearchKnowledgeSemantic":  {
-                                                  "description":  "Search unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: payment refunds, legal filings, travel booking.",
+                                                  "description":  "Search in knowledge base. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: legal filings, travel booking, procurement purchases.",
                                                   "schema":  {
                                                                  "target":  "string",
                                                                  "context":  "string",
@@ -1543,7 +1589,7 @@
                                                              }
                                               },
                   "LinkKnowledgeSingle":  {
-                                              "description":  "Link one explicit item, this item, one file, one document, one event, or one named entity in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: payment refunds, legal filings, travel booking.",
+                                              "description":  "Link in knowledge base. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: legal filings, travel booking, procurement purchases.",
                                               "schema":  {
                                                              "target":  "string",
                                                              "context":  "string",
@@ -1551,7 +1597,7 @@
                                                          }
                                           },
                   "LinkKnowledgeBulk":  {
-                                            "description":  "Link multiple explicit items, a known set, changed files, these papers, or several selected items in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: payment refunds, legal filings, travel booking.",
+                                            "description":  "Link in knowledge base. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: legal filings, travel booking, procurement purchases.",
                                             "schema":  {
                                                            "target":  "string",
                                                            "context":  "string",
@@ -1559,7 +1605,7 @@
                                                        }
                                         },
                   "LinkKnowledgeSemantic":  {
-                                                "description":  "Link unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: payment refunds, legal filings, travel booking.",
+                                                "description":  "Link in knowledge base. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: legal filings, travel booking, procurement purchases.",
                                                 "schema":  {
                                                                "target":  "string",
                                                                "context":  "string",
@@ -1567,7 +1613,7 @@
                                                            }
                                             },
                   "SummarizeKnowledgeSingle":  {
-                                                   "description":  "Summarize one explicit item, this item, one file, one document, one event, or one named entity in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: payment refunds, legal filings, travel booking.",
+                                                   "description":  "Summarize in knowledge base. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: legal filings, travel booking, procurement purchases.",
                                                    "schema":  {
                                                                   "target":  "string",
                                                                   "context":  "string",
@@ -1575,7 +1621,7 @@
                                                               }
                                                },
                   "SummarizeKnowledgeBulk":  {
-                                                 "description":  "Summarize multiple explicit items, a known set, changed files, these papers, or several selected items in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: payment refunds, legal filings, travel booking.",
+                                                 "description":  "Summarize in knowledge base. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: legal filings, travel booking, procurement purchases.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -1583,7 +1629,7 @@
                                                             }
                                              },
                   "SummarizeKnowledgeSemantic":  {
-                                                     "description":  "Summarize unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: payment refunds, legal filings, travel booking.",
+                                                     "description":  "Summarize in knowledge base. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: legal filings, travel booking, procurement purchases.",
                                                      "schema":  {
                                                                     "target":  "string",
                                                                     "context":  "string",
@@ -1591,7 +1637,7 @@
                                                                 }
                                                  },
                   "ArchiveKnowledgeSingle":  {
-                                                 "description":  "Archive one explicit item, this item, one file, one document, one event, or one named entity in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: payment refunds, legal filings, travel booking.",
+                                                 "description":  "Archive in knowledge base. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: legal filings, travel booking, procurement purchases.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -1599,7 +1645,7 @@
                                                             }
                                              },
                   "ArchiveKnowledgeBulk":  {
-                                               "description":  "Archive multiple explicit items, a known set, changed files, these papers, or several selected items in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: payment refunds, legal filings, travel booking.",
+                                               "description":  "Archive in knowledge base. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: legal filings, travel booking, procurement purchases.",
                                                "schema":  {
                                                               "target":  "string",
                                                               "context":  "string",
@@ -1607,7 +1653,7 @@
                                                           }
                                            },
                   "ArchiveKnowledgeSemantic":  {
-                                                   "description":  "Archive unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in knowledge base. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: payment refunds, legal filings, travel booking.",
+                                                   "description":  "Archive in knowledge base. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: wiki pages, internal notes, links, archived references, canonical answers. Not for: legal filings, travel booking, procurement purchases.",
                                                    "schema":  {
                                                                   "target":  "string",
                                                                   "context":  "string",
@@ -1615,7 +1661,7 @@
                                                               }
                                                },
                   "ReadCommunicationsSingle":  {
-                                                   "description":  "Read one explicit item, this item, one file, one document, one event, or one named entity in communications. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: payment refunds, legal filings, travel booking.",
+                                                   "description":  "Read in communications. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: legal filings, travel booking, procurement purchases.",
                                                    "schema":  {
                                                                   "target":  "string",
                                                                   "context":  "string",
@@ -1623,7 +1669,7 @@
                                                               }
                                                },
                   "ReadCommunicationsBulk":  {
-                                                 "description":  "Read multiple explicit items, a known set, changed files, these papers, or several selected items in communications. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: payment refunds, legal filings, travel booking.",
+                                                 "description":  "Read in communications. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: legal filings, travel booking, procurement purchases.",
                                                  "schema":  {
                                                                 "target":  "string",
                                                                 "context":  "string",
@@ -1631,7 +1677,7 @@
                                                             }
                                              },
                   "ReadCommunicationsSemantic":  {
-                                                     "description":  "Read unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in communications. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: payment refunds, legal filings, travel booking.",
+                                                     "description":  "Read in communications. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: legal filings, travel booking, procurement purchases.",
                                                      "schema":  {
                                                                     "target":  "string",
                                                                     "context":  "string",
@@ -1639,7 +1685,7 @@
                                                                 }
                                                  },
                   "DraftCommunicationsSingle":  {
-                                                    "description":  "Draft one explicit item, this item, one file, one document, one event, or one named entity in communications. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: payment refunds, legal filings, travel booking.",
+                                                    "description":  "Draft in communications. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: legal filings, travel booking, procurement purchases.",
                                                     "schema":  {
                                                                    "target":  "string",
                                                                    "context":  "string",
@@ -1647,7 +1693,7 @@
                                                                }
                                                 },
                   "DraftCommunicationsBulk":  {
-                                                  "description":  "Draft multiple explicit items, a known set, changed files, these papers, or several selected items in communications. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: payment refunds, legal filings, travel booking.",
+                                                  "description":  "Draft in communications. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: legal filings, travel booking, procurement purchases.",
                                                   "schema":  {
                                                                  "target":  "string",
                                                                  "context":  "string",
@@ -1655,7 +1701,7 @@
                                                              }
                                               },
                   "DraftCommunicationsSemantic":  {
-                                                      "description":  "Draft unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in communications. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: payment refunds, legal filings, travel booking.",
+                                                      "description":  "Draft in communications. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: legal filings, travel booking, procurement purchases.",
                                                       "schema":  {
                                                                      "target":  "string",
                                                                      "context":  "string",
@@ -1663,7 +1709,7 @@
                                                                  }
                                                   },
                   "ScheduleCommunicationsSingle":  {
-                                                       "description":  "Schedule one explicit item, this item, one file, one document, one event, or one named entity in communications. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: payment refunds, legal filings, travel booking.",
+                                                       "description":  "Schedule in communications. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: legal filings, travel booking, procurement purchases.",
                                                        "schema":  {
                                                                       "target":  "string",
                                                                       "context":  "string",
@@ -1671,7 +1717,7 @@
                                                                   }
                                                    },
                   "ScheduleCommunicationsBulk":  {
-                                                     "description":  "Schedule multiple explicit items, a known set, changed files, these papers, or several selected items in communications. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: payment refunds, legal filings, travel booking.",
+                                                     "description":  "Schedule in communications. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: legal filings, travel booking, procurement purchases.",
                                                      "schema":  {
                                                                     "target":  "string",
                                                                     "context":  "string",
@@ -1679,7 +1725,7 @@
                                                                 }
                                                  },
                   "ScheduleCommunicationsSemantic":  {
-                                                         "description":  "Schedule unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in communications. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: payment refunds, legal filings, travel booking.",
+                                                         "description":  "Schedule in communications. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: legal filings, travel booking, procurement purchases.",
                                                          "schema":  {
                                                                         "target":  "string",
                                                                         "context":  "string",
@@ -1687,7 +1733,7 @@
                                                                     }
                                                      },
                   "SummarizeCommunicationsSingle":  {
-                                                        "description":  "Summarize one explicit item, this item, one file, one document, one event, or one named entity in communications. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: payment refunds, legal filings, travel booking.",
+                                                        "description":  "Summarize in communications. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: legal filings, travel booking, procurement purchases.",
                                                         "schema":  {
                                                                        "target":  "string",
                                                                        "context":  "string",
@@ -1695,7 +1741,7 @@
                                                                    }
                                                     },
                   "SummarizeCommunicationsBulk":  {
-                                                      "description":  "Summarize multiple explicit items, a known set, changed files, these papers, or several selected items in communications. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: payment refunds, legal filings, travel booking.",
+                                                      "description":  "Summarize in communications. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: legal filings, travel booking, procurement purchases.",
                                                       "schema":  {
                                                                      "target":  "string",
                                                                      "context":  "string",
@@ -1703,13 +1749,109 @@
                                                                  }
                                                   },
                   "SummarizeCommunicationsSemantic":  {
-                                                          "description":  "Summarize unknown items discovered by meaning, fuzzy criteria, intent, or search across a collection in communications. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: payment refunds, legal filings, travel booking.",
+                                                          "description":  "Summarize in communications. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: messages, announcements, newsletters, emails, communication summaries. Not for: legal filings, travel booking, procurement purchases.",
                                                           "schema":  {
                                                                          "target":  "string",
                                                                          "context":  "string",
                                                                          "dryRun":  "boolean"
                                                                      }
-                                                      }
+                                                      },
+                  "CreditBillingSingle":  {
+                                              "description":  "Issue account credits or credit memos for service issues. A credit reduces an invoice or account balance but does not return money to the original payment method. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: invoices, account credits, captured payment refunds, promo discounts, subscription rate adjustments. Not for: support ticket replies, legal filings, travel booking, procurement purchases.",
+                                              "schema":  {
+                                                             "target":  "string",
+                                                             "context":  "string",
+                                                             "dryRun":  "boolean"
+                                                         }
+                                          },
+                  "CreditBillingBulk":  {
+                                            "description":  "Issue account credits or credit memos for service issues. A credit reduces an invoice or account balance but does not return money to the original payment method. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: invoices, account credits, captured payment refunds, promo discounts, subscription rate adjustments. Not for: support ticket replies, legal filings, travel booking, procurement purchases.",
+                                            "schema":  {
+                                                           "target":  "string",
+                                                           "context":  "string",
+                                                           "dryRun":  "boolean"
+                                                       }
+                                        },
+                  "CreditBillingSemantic":  {
+                                                "description":  "Issue account credits or credit memos for service issues. A credit reduces an invoice or account balance but does not return money to the original payment method. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: invoices, account credits, captured payment refunds, promo discounts, subscription rate adjustments. Not for: support ticket replies, legal filings, travel booking, procurement purchases.",
+                                                "schema":  {
+                                                               "target":  "string",
+                                                               "context":  "string",
+                                                               "dryRun":  "boolean"
+                                                           }
+                                            },
+                  "RefundBillingSingle":  {
+                                              "description":  "Return money to the original payment method for an already captured charge. Use for captured payments, card charges, or refund requests, not invoice credits. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: invoices, account credits, captured payment refunds, promo discounts, subscription rate adjustments. Not for: support ticket replies, legal filings, travel booking, procurement purchases.",
+                                              "schema":  {
+                                                             "target":  "string",
+                                                             "context":  "string",
+                                                             "dryRun":  "boolean"
+                                                         }
+                                          },
+                  "RefundBillingBulk":  {
+                                            "description":  "Return money to the original payment method for an already captured charge. Use for captured payments, card charges, or refund requests, not invoice credits. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: invoices, account credits, captured payment refunds, promo discounts, subscription rate adjustments. Not for: support ticket replies, legal filings, travel booking, procurement purchases.",
+                                            "schema":  {
+                                                           "target":  "string",
+                                                           "context":  "string",
+                                                           "dryRun":  "boolean"
+                                                       }
+                                        },
+                  "RefundBillingSemantic":  {
+                                                "description":  "Return money to the original payment method for an already captured charge. Use for captured payments, card charges, or refund requests, not invoice credits. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: invoices, account credits, captured payment refunds, promo discounts, subscription rate adjustments. Not for: support ticket replies, legal filings, travel booking, procurement purchases.",
+                                                "schema":  {
+                                                               "target":  "string",
+                                                               "context":  "string",
+                                                               "dryRun":  "boolean"
+                                                           }
+                                            },
+                  "DiscountBillingSingle":  {
+                                                "description":  "Apply coupons, promo codes, negotiated discounts, or percentage reductions. Use for discounting invoice amounts, not refunding captured payments or issuing credits. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: invoices, account credits, captured payment refunds, promo discounts, subscription rate adjustments. Not for: support ticket replies, legal filings, travel booking, procurement purchases.",
+                                                "schema":  {
+                                                               "target":  "string",
+                                                               "context":  "string",
+                                                               "dryRun":  "boolean"
+                                                           }
+                                            },
+                  "DiscountBillingBulk":  {
+                                              "description":  "Apply coupons, promo codes, negotiated discounts, or percentage reductions. Use for discounting invoice amounts, not refunding captured payments or issuing credits. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: invoices, account credits, captured payment refunds, promo discounts, subscription rate adjustments. Not for: support ticket replies, legal filings, travel booking, procurement purchases.",
+                                              "schema":  {
+                                                             "target":  "string",
+                                                             "context":  "string",
+                                                             "dryRun":  "boolean"
+                                                         }
+                                          },
+                  "DiscountBillingSemantic":  {
+                                                  "description":  "Apply coupons, promo codes, negotiated discounts, or percentage reductions. Use for discounting invoice amounts, not refunding captured payments or issuing credits. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: invoices, account credits, captured payment refunds, promo discounts, subscription rate adjustments. Not for: support ticket replies, legal filings, travel booking, procurement purchases.",
+                                                  "schema":  {
+                                                                 "target":  "string",
+                                                                 "context":  "string",
+                                                                 "dryRun":  "boolean"
+                                                             }
+                                              },
+                  "AdjustBillingSingle":  {
+                                              "description":  "Change the base subscription rate, contract price, billing plan amount, or recurring charge. Use for price/rate corrections, not one-off discounts, credits, or refunds. Mode: one explicit item, this item, one file, one document, one event, one account, one invoice, or one named entity. Applies to: invoices, account credits, captured payment refunds, promo discounts, subscription rate adjustments. Not for: support ticket replies, legal filings, travel booking, procurement purchases.",
+                                              "schema":  {
+                                                             "target":  "string",
+                                                             "context":  "string",
+                                                             "dryRun":  "boolean"
+                                                         }
+                                          },
+                  "AdjustBillingBulk":  {
+                                            "description":  "Change the base subscription rate, contract price, billing plan amount, or recurring charge. Use for price/rate corrections, not one-off discounts, credits, or refunds. Mode: multiple explicit items, a known set, changed files, these papers, several invoices, or several selected items. Applies to: invoices, account credits, captured payment refunds, promo discounts, subscription rate adjustments. Not for: support ticket replies, legal filings, travel booking, procurement purchases.",
+                                            "schema":  {
+                                                           "target":  "string",
+                                                           "context":  "string",
+                                                           "dryRun":  "boolean"
+                                                       }
+                                        },
+                  "AdjustBillingSemantic":  {
+                                                "description":  "Change the base subscription rate, contract price, billing plan amount, or recurring charge. Use for price/rate corrections, not one-off discounts, credits, or refunds. Mode: unknown items discovered, ranked, or prioritized by meaning, fuzzy criteria, inferred risk, likelihood, intent, or search across a collection. Applies to: invoices, account credits, captured payment refunds, promo discounts, subscription rate adjustments. Not for: support ticket replies, legal filings, travel booking, procurement purchases.",
+                                                "schema":  {
+                                                               "target":  "string",
+                                                               "context":  "string",
+                                                               "dryRun":  "boolean"
+                                                           }
+                                            }
               },
     "evalCases":  [
                       {
@@ -1778,8 +1920,32 @@
                           "expectedToolName":  "DraftCommunicationsBulk"
                       },
                       {
-                          "id":  "unsupported-payment",
-                          "request":  "Refund the failed credit card charge for invoice INV-2026-118",
+                          "id":  "billing-credit-single",
+                          "request":  "Issue a courtesy credit memo on invoice INV-2026-118 for last week outage",
+                          "expectedType":  "tool",
+                          "expectedToolName":  "CreditBillingSingle"
+                      },
+                      {
+                          "id":  "billing-refund-single",
+                          "request":  "Refund captured payment CHG-9281 to the original card",
+                          "expectedType":  "tool",
+                          "expectedToolName":  "RefundBillingSingle"
+                      },
+                      {
+                          "id":  "billing-discount-bulk",
+                          "request":  "Apply promo code CONF2026 to these three renewal invoices",
+                          "expectedType":  "tool",
+                          "expectedToolName":  "DiscountBillingBulk"
+                      },
+                      {
+                          "id":  "billing-adjust-single",
+                          "request":  "Change account ACME-42 base subscription rate to the contracted nonprofit rate",
+                          "expectedType":  "tool",
+                          "expectedToolName":  "AdjustBillingSingle"
+                      },
+                      {
+                          "id":  "unsupported-procurement",
+                          "request":  "Order twenty replacement laptops for the design team",
                           "expectedType":  "no_tool_available"
                       },
                       {
@@ -1789,3 +1955,4 @@
                       }
                   ]
 }
+

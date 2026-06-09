@@ -204,7 +204,7 @@ function buildSelectionHints(options: string[]): string[] {
     "Mode selection hints:",
     "- single: one explicit item, this item/file/document/event, or one named entity.",
     "- bulk: multiple explicit items, a known set, changed files, these papers, or several selected items.",
-    "- semantic: discover unknown matching items by meaning, fuzzy criteria, or intent across a collection."
+    "- semantic: discover, rank, or prioritize unknown matching items by meaning, fuzzy criteria, inferred risk, likelihood, or intent across a collection."
   ];
 }
 

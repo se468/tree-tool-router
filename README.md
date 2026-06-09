@@ -286,7 +286,7 @@ Real eval settings:
 - `TOOLROUTER_API_KEY`: optional for local servers, required by most hosted providers
 - `TOOLROUTER_BASE_URL`: optional, defaults to `https://api.openai.com/v1`
 
-For a larger stress fixture, `evals/large-toolset.json` contains 144 tools and includes an unsupported request that should return `no_tool_available`.
+For a larger stress fixture, `evals/large-toolset.json` contains 156 tools, including similar subscription billing actions such as account credits, captured payment refunds, promo discounts, and subscription rate adjustments. It also includes unsupported requests that should return `no_tool_available`.
 
 Current smoke-test results:
 
@@ -294,18 +294,18 @@ Current smoke-test results:
 | --- | --- | ---: | ---: | --- |
 | `npm run eval` | Mock adapter | 8 | 3/3 | Passed |
 | `npm run eval:real` | `gpt-4.1-mini` | 8 | 3/3 | Passed |
-| `npm run eval:large:real` | `gpt-4.1-mini` | 144 | 13/13 | Passed |
+| `npm run eval:large:real` | `gpt-4.1-mini` | 156 | 17/17 | Passed |
 
-`npm run eval:compare:real` compares a flat prompt baseline against ToolRouter on the 144-tool fixture. It reports accuracy, false tool calls, LLM calls, estimated prompt tokens, and latency.
+`npm run eval:compare:real` compares a flat prompt baseline against ToolRouter on the 156-tool fixture. It reports accuracy, false tool calls, LLM calls, estimated prompt tokens, and latency.
 
-Example comparison run with `gpt-4.1-mini` on the 144-tool fixture:
+Example comparison run with `gpt-4.1-mini` on the 156-tool fixture:
 
 | Approach | Accuracy | False Tool Calls | LLM Calls | Est. Prompt Tokens | Total Latency |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Flat prompt | 12/13 | 0 | 13 | 164,647 | 30.7s |
-| ToolRouter | 13/13 | 0 | 33 | 40,222 | 48.7s |
+| Flat prompt | 15/17 | 0 | 17 | 273,126 | 47.4s |
+| ToolRouter | 17/17 | 0 | 45 | 65,805 | 76.6s |
 
-In this run, the flat baseline failed `code-test-bulk`: it selected `TestCodeSemantic` instead of `TestCodeBulk` for "Run the relevant tests for the changed parser files." These are smoke-test numbers, not a benchmark. Model behavior and latency can vary between runs. The important signal is that the flat baseline sees every tool at once, while ToolRouter trades more LLM calls for a smaller prompt at each decision step and an auditable route path.
+In this run, the flat baseline failed two near-neighbor cases: `code-test-bulk`, where it selected `TestCodeSemantic` instead of `TestCodeBulk`, and `communications-draft-bulk`, where it selected `DraftCommunicationsSingle` instead of `DraftCommunicationsBulk`. The added billing cases passed in this run, but they exercise the same real-world pressure pattern: many similar actions whose differences matter. These are smoke-test numbers, not a benchmark. Model behavior and latency can vary between runs. The important signal is that the flat baseline sees every tool at once, while ToolRouter trades more LLM calls for a smaller prompt at each decision step and an auditable route path.
 
 ## API
 
