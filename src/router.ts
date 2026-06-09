@@ -232,7 +232,41 @@ function describeOption(option: string, node: ToolTree | string[], config: ToolR
 
 function describeBranch(node: ToolTree, config: ToolRouterConfig): string {
   const childKeys = Object.keys(node);
-  return `routes to: ${childKeys.join(", ")}`;
+  const examples = collectLeafDescriptions(node, config, 2);
+  const parts = [`routes to: ${childKeys.join(", ")}`];
+
+  if (examples.length > 0) {
+    parts.push(`examples: ${examples.join(" | ")}`);
+  }
+
+  return parts.join("; ");
+}
+
+function collectLeafDescriptions(
+  node: ToolTree | string[],
+  config: ToolRouterConfig,
+  limit: number,
+  results: string[] = []
+): string[] {
+  if (results.length >= limit) return results;
+
+  if (Array.isArray(node)) {
+    for (const toolName of node) {
+      if (results.length >= limit) break;
+
+      const description = config.tools[toolName]?.description;
+      results.push(description ? `${toolName}: ${description}` : toolName);
+    }
+
+    return results;
+  }
+
+  for (const child of Object.values(node)) {
+    if (results.length >= limit) break;
+    collectLeafDescriptions(child, config, limit, results);
+  }
+
+  return results;
 }
 
 function normalizeDecision(decision: RouterDecision): RouterDecision {

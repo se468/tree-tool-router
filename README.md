@@ -294,7 +294,7 @@ Current smoke-test results:
 | --- | --- | ---: | ---: | --- |
 | `npm run eval` | Mock adapter | 8 | 3/3 | Passed |
 | `npm run eval:real` | `gpt-4.1-mini` | 8 | 3/3 | Passed |
-| `npm run eval:large:real` | `gpt-4.1-mini` | 144 | 6/6 | Passed |
+| `npm run eval:large:real` | `gpt-4.1-mini` | 144 | 13/13 | Passed |
 
 `npm run eval:compare:real` compares a flat prompt baseline against ToolRouter on the 144-tool fixture. It reports accuracy, false tool calls, LLM calls, estimated prompt tokens, and latency.
 
@@ -302,10 +302,10 @@ Example comparison run with `gpt-4.1-mini` on the 144-tool fixture:
 
 | Approach | Accuracy | False Tool Calls | LLM Calls | Est. Prompt Tokens | Total Latency |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Flat prompt | 5/6 | 0 | 6 | 63,106 | 10.8s |
-| ToolRouter | 6/6 | 0 | 16 | 5,740 | 23.1s |
+| Flat prompt | 12/13 | 0 | 13 | 164,647 | 30.7s |
+| ToolRouter | 13/13 | 0 | 33 | 40,222 | 48.7s |
 
-These are smoke-test numbers, not a benchmark. Model behavior and latency can vary between runs. The important signal is that the flat baseline sees every tool at once, while ToolRouter trades more LLM calls for a much smaller prompt at each decision step and an auditable route path.
+In this run, the flat baseline failed `code-test-bulk`: it selected `TestCodeSemantic` instead of `TestCodeBulk` for "Run the relevant tests for the changed parser files." These are smoke-test numbers, not a benchmark. Model behavior and latency can vary between runs. The important signal is that the flat baseline sees every tool at once, while ToolRouter trades more LLM calls for a smaller prompt at each decision step and an auditable route path.
 
 ## API
 
