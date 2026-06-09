@@ -36,11 +36,11 @@
           <div class="route-map">
             <span class="node root">request</span>
             <span class="branch"></span>
-            <span class="node">domain</span>
+            <span class="node">category</span>
             <span class="branch"></span>
-            <span class="node">operation</span>
+            <span class="node">subtask</span>
             <span class="branch"></span>
-            <span class="node">mode</span>
+            <span class="node">variant</span>
             <span class="branch"></span>
             <span class="node final">tool or no tool</span>
           </div>
@@ -97,8 +97,9 @@
           <p class="eyebrow">Routing Shape</p>
           <h2>Ask for one constrained choice at a time.</h2>
           <p>
-            ToolRouter traverses a tree level by level: domain, operation, mode, then the final
-            tool. Multi-sample voting and confidence thresholds help avoid low-confidence calls.
+            ToolRouter traverses whatever tree you define, one level at a time, until it reaches a
+            final tool or safely returns no tool. Multi-sample voting and confidence thresholds help
+            avoid low-confidence calls.
           </p>
         </div>
         <pre class="code-window"><code>const router = createToolRouter({

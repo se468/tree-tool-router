@@ -10,10 +10,10 @@ Quickstart guide: https://se468.github.io/tree-tool-router/
 
 LLM agents often fail tool selection when every available tool is passed in one flat prompt. Large tool lists create context bloat, make similar tools harder to distinguish, increase latency and cost, and can push the model toward bad tool calls when the correct answer is "do nothing."
 
-ToolRouter organizes tools into a decision tree. The router asks the model for one constrained choice at a time:
+ToolRouter organizes tools into a decision tree that you define. The router asks the model for one constrained choice at a time:
 
 ```txt
-domain -> operation -> mode -> specific tool
+category -> subcategory -> ... -> specific tool
 ```
 
 At every step, the model sees only the user request, the current path, and the child options available from that node. If none fit, `no_tool_available` is a first-class result rather than an error.
@@ -107,13 +107,27 @@ Tools are defined in two parts:
 - `tree`: the routing hierarchy
 - `tools`: metadata for each leaf tool
 
-The tree can be as deep as you want, but the default mental model is:
+The tree shape is not fixed. Use whatever hierarchy makes your tool set easier to route. Common shapes include:
 
 ```txt
-domain
-└── operation
-    └── mode
-        └── tool
+category
+`-- task
+    `-- variant
+        `-- tool
+```
+
+```txt
+service
+`-- resource
+    `-- action
+        `-- tool
+```
+
+```txt
+team
+`-- workflow
+    `-- risk_level
+        `-- tool
 ```
 
 For example, this `tree`:
@@ -147,28 +161,28 @@ Represents this routing structure:
 
 ```txt
 root
-├── research
-│   ├── read
-│   │   ├── single
-│   │   │   └── getPaper
-│   │   └── bulk
-│   │       └── searchPapers
-│   └── summarize
-│       ├── single
-│       │   └── summarizePaper
-│       └── bulk
-│           └── summarizePaperSet
-└── calendar
-    ├── read
-    │   ├── single
-    │   │   └── getEvent
-    │   └── bulk
-    │       └── listEvents
-    └── update
-        ├── single
-        │   └── rescheduleEvent
-        └── bulk
-            └── rescheduleEvents
+|-- research
+|   |-- read
+|   |   |-- single
+|   |   |   `-- getPaper
+|   |   `-- bulk
+|   |       `-- searchPapers
+|   `-- summarize
+|       |-- single
+|       |   `-- summarizePaper
+|       `-- bulk
+|           `-- summarizePaperSet
+`-- calendar
+    |-- read
+    |   |-- single
+    |   |   `-- getEvent
+    |   `-- bulk
+    |       `-- listEvents
+    `-- update
+        |-- single
+        |   `-- rescheduleEvent
+        `-- bulk
+            `-- rescheduleEvents
 ```
 
 Each leaf tool is described separately:
@@ -186,7 +200,7 @@ const tools = {
 };
 ```
 
-At runtime, ToolRouter asks one constrained question per level. For the request:
+At runtime, ToolRouter does not care what the levels are called. It simply asks one constrained question per level. For the request:
 
 ```txt
 Summarize recent papers about battery recycling
@@ -222,7 +236,7 @@ The library does not ship provider-specific clients. Bring your own OpenAI, Anth
 
 ## Routing Behavior
 
-ToolRouter traverses the tree level by level. At each node it asks the LLM to choose one available child option, `no_tool_available`, or `needs_clarification`.
+ToolRouter traverses your tree level by level. At each node it asks the LLM to choose one available child option, `no_tool_available`, or `needs_clarification`.
 
 The prompt for each routing step includes only:
 
