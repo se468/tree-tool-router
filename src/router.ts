@@ -1,4 +1,5 @@
 import type {
+  DecisionAdapter,
   RouteInput,
   RouteResult,
   RouteResultBase,
@@ -8,6 +9,7 @@ import type {
   ToolRouterConfig,
   ToolTree
 } from "./types.js";
+import type { LLMAdapter } from "./adapters/types.js";
 
 const NO_TOOL = "no_tool_available";
 const NEEDS_CLARIFICATION = "needs_clarification";
@@ -30,6 +32,7 @@ export function createToolRouter(config: ToolRouterConfig): ToolRouter {
   const confidenceThreshold = config.confidenceThreshold ?? 0.8;
   const samples = Math.max(1, Math.floor(config.samples ?? 1));
   const allowNoTool = config.allowNoTool ?? true;
+  const decider = config.decider ?? createLLMDecisionAdapter(config.llm);
 
   return {
     async route(input: RouteInput): Promise<RouteResult> {
@@ -64,6 +67,7 @@ export function createToolRouter(config: ToolRouterConfig): ToolRouter {
           options,
           node,
           config,
+          decider,
           samples
         });
         step.choice = coerceChoice(step.choice, options);
@@ -138,25 +142,18 @@ async function choose(input: {
   options: string[];
   node: ToolTree | string[];
   config: ToolRouterConfig;
+  decider: DecisionAdapter;
   samples: number;
 }): Promise<RouterDecision & { votes: Record<string, number> }> {
   const decisions: RouterDecision[] = [];
+  const optionDescriptions = describeOptions(input.options, input.node, input.config);
 
   for (let i = 0; i < input.samples; i += 1) {
-    const decision = await input.config.llm.completeJSON<RouterDecision>({
-      system:
-        "You are a precise hierarchical tool router. Available options may be categories, operations, modes, or final tools. Choose the best child option when its subtree is likely to contain the right tool. Choose no_tool_available only when no available child option can plausibly handle the request. Return JSON only.",
-      prompt: buildPrompt(input),
-      schema: {
-        type: "object",
-        properties: {
-          choice: { type: "string" },
-          confidence: { type: "number", minimum: 0, maximum: 1 },
-          reason: { type: "string" },
-          question: { type: "string" }
-        },
-        required: ["choice", "confidence"]
-      }
+    const decision = await input.decider.decide({
+      request: input.request,
+      path: input.path,
+      options: input.options,
+      optionDescriptions
     });
 
     decisions.push(normalizeDecision(decision));
@@ -165,16 +162,41 @@ async function choose(input: {
   return aggregate(decisions);
 }
 
+function createLLMDecisionAdapter(llm: LLMAdapter | undefined): DecisionAdapter {
+  if (!llm) {
+    throw new Error("ToolRouter requires either a decider or an llm adapter.");
+  }
+
+  return {
+    async decide(input) {
+      return llm.completeJSON<RouterDecision>({
+        system:
+          "You are a precise hierarchical tool router. Available options may be categories, operations, modes, or final tools. Choose the best child option when its subtree is likely to contain the right tool. Choose no_tool_available only when no available child option can plausibly handle the request. Return JSON only.",
+        prompt: buildPrompt(input),
+        schema: {
+          type: "object",
+          properties: {
+            choice: { type: "string" },
+            confidence: { type: "number", minimum: 0, maximum: 1 },
+            reason: { type: "string" },
+            question: { type: "string" }
+          },
+          required: ["choice", "confidence"]
+        }
+      });
+    }
+  };
+}
+
 function buildPrompt(input: {
   request: string;
   path: string[];
   options: string[];
-  node: ToolTree | string[];
-  config: ToolRouterConfig;
+  optionDescriptions: Record<string, string | undefined>;
 }): string {
   const currentPath = input.path.length > 0 ? input.path.join(" -> ") : "(root)";
   const optionLines = input.options.map((option) => {
-    const description = describeOption(option, input.node, input.config);
+    const description = input.optionDescriptions[option];
     return description ? `- ${option}: ${description}` : `- ${option}`;
   });
 
@@ -192,6 +214,14 @@ function buildPrompt(input: {
     `You may choose ${NEEDS_CLARIFICATION} if the request is ambiguous.`,
     "Return JSON with: choice, confidence, reason, and optional question."
   ].join("\n");
+}
+
+function describeOptions(
+  options: string[],
+  node: ToolTree | string[],
+  config: ToolRouterConfig
+): Record<string, string | undefined> {
+  return Object.fromEntries(options.map((option) => [option, describeOption(option, node, config)]));
 }
 
 function buildSelectionHints(options: string[]): string[] {

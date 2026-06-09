@@ -1,4 +1,10 @@
-import { createToolRouter, type LLMAdapter, type RouteResult, type ToolRouterConfig } from "../src/index.js";
+import {
+  createToolRouter,
+  type DecisionAdapter,
+  type LLMAdapter,
+  type RouteResult,
+  type ToolRouterConfig
+} from "../src/index.js";
 
 export interface EvalCase {
   id: string;
@@ -70,14 +76,14 @@ export function createEvalRouter(llm: LLMAdapter, samples = 3) {
 export function createEvalRouterWithConfig(
   treeConfig: ToolRouterConfig["tree"],
   toolConfig: ToolRouterConfig["tools"],
-  llm: LLMAdapter,
+  adapter: LLMAdapter | DecisionAdapter,
   samples = 3
 ) {
   return createToolRouter({
     confidenceThreshold: 0.82,
     samples,
     allowNoTool: true,
-    llm,
+    ...toRouterAdapterConfig(adapter),
     tree: treeConfig,
     tools: toolConfig
   });
@@ -91,10 +97,10 @@ export async function runEvalWithConfig(
   cases: EvalCase[],
   treeConfig: ToolRouterConfig["tree"],
   toolConfig: ToolRouterConfig["tools"],
-  llm: LLMAdapter,
+  adapter: LLMAdapter | DecisionAdapter,
   samples = 3
 ) : Promise<EvalSummary> {
-  const router = createEvalRouterWithConfig(treeConfig, toolConfig, llm, samples);
+  const router = createEvalRouterWithConfig(treeConfig, toolConfig, adapter, samples);
   const results = [];
 
   for (const testCase of cases) {
@@ -125,6 +131,10 @@ export async function runEvalWithConfig(
   const accuracy = passed / results.length;
 
   return { results, passed, accuracy, falseToolCalls };
+}
+
+function toRouterAdapterConfig(adapter: LLMAdapter | DecisionAdapter) {
+  return "decide" in adapter ? { decider: adapter } : { llm: adapter };
 }
 
 export async function runFlatEvalWithConfig(
@@ -199,6 +209,29 @@ export function createMeteredAdapter(adapter: LLMAdapter) {
       stats.promptChars += input.system.length + input.prompt.length;
       stats.estimatedTokens = Math.ceil(stats.promptChars / 4);
       return adapter.completeJSON<T>(input);
+    }
+  };
+
+  return { adapter: metered, stats };
+}
+
+export function createMeteredDecider(adapter: DecisionAdapter) {
+  const stats: EvalStats = {
+    calls: 0,
+    promptChars: 0,
+    estimatedTokens: 0
+  };
+
+  const metered: DecisionAdapter = {
+    async decide(input) {
+      stats.calls += 1;
+      stats.promptChars +=
+        input.request.length +
+        input.path.join(" ").length +
+        input.options.join(" ").length +
+        Object.values(input.optionDescriptions).join(" ").length;
+      stats.estimatedTokens = Math.ceil(stats.promptChars / 4);
+      return adapter.decide(input);
     }
   };
 

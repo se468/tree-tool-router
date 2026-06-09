@@ -218,9 +218,49 @@ If none of the child options are plausible, the path ends in:
 no_tool_available
 ```
 
-## LLM Adapter
+## Decision Adapters
 
-ToolRouter works with any LLM provider that can return JSON. Implement one method:
+ToolRouter can use any decision strategy. For deterministic routing or classifier-based routing, pass a `decider`:
+
+```ts
+import type { DecisionAdapter } from "toolrouter";
+
+const classifier: DecisionAdapter = {
+  async decide({ request, path, options, optionDescriptions }) {
+    return {
+      choice: "research",
+      confidence: 0.91,
+      reason: "Classifier matched paper and methodology signals"
+    };
+  }
+};
+
+const router = createToolRouter({
+  decider: classifier,
+  tree,
+  tools
+});
+```
+
+The `DecisionAdapter` contract is:
+
+```ts
+export interface DecisionAdapter {
+  decide(input: {
+    request: string;
+    path: string[];
+    options: string[];
+    optionDescriptions: Record<string, string | undefined>;
+  }): Promise<{
+    choice: string;
+    confidence: number;
+    reason?: string;
+    question?: string;
+  }>;
+}
+```
+
+LLMs are optional. If you want an LLM fallback or an LLM-only router, pass an `llm` adapter. ToolRouter works with any LLM provider that can return JSON:
 
 ```ts
 export interface LLMAdapter {
@@ -232,11 +272,11 @@ export interface LLMAdapter {
 }
 ```
 
-The library does not ship provider-specific clients. Bring your own OpenAI, Anthropic, local model, gateway, or mocked adapter.
+The library does not ship provider-specific clients. Bring your own classifier, rules engine, embedding search, OpenAI, Anthropic, local model, gateway, or mocked adapter.
 
 ## Routing Behavior
 
-ToolRouter traverses your tree level by level. At each node it asks the LLM to choose one available child option, `no_tool_available`, or `needs_clarification`.
+ToolRouter traverses your tree level by level. At each node it asks the configured decider to choose one available child option, `no_tool_available`, or `needs_clarification`. The decider can be deterministic code, a classifier, embedding search, an LLM, or a chain that tries those in order.
 
 The prompt for each routing step includes only:
 
@@ -274,6 +314,7 @@ The examples use mocked LLM adapters, so they run without API keys.
 
 ```bash
 npm run eval
+npm run eval:classifier
 npm run eval:large:real
 npm run eval:compare:real
 ```
@@ -307,8 +348,12 @@ Current smoke-test results:
 | Eval | Adapter | Tools | Accuracy | Unsupported Request |
 | --- | --- | ---: | ---: | --- |
 | `npm run eval` | Mock adapter | 8 | 3/3 | Passed |
+| `npm run eval:classifier` | Deterministic path classifier | 156 | 17/17 | Passed |
+| `npm run eval:classifier:keywords` | Naive keyword classifier | 156 | 2/17 | Included |
 | `npm run eval:real` | `gpt-4.1-mini` | 8 | 3/3 | Passed |
 | `npm run eval:large:real` | `gpt-4.1-mini` | 156 | 17/17 | Passed |
+
+The classifier evals use the same router and the same large fixture. `eval:classifier` demonstrates a deterministic classifier-style adapter that returns a route path without any LLM calls. `eval:classifier:keywords` is intentionally simple and shows that classifier quality matters.
 
 `npm run eval:compare:real` compares a flat prompt baseline against ToolRouter on the 156-tool fixture. It reports accuracy, false tool calls, LLM calls, estimated prompt tokens, and latency.
 
@@ -316,8 +361,8 @@ Example comparison run with `gpt-4.1-mini` on the 156-tool fixture:
 
 | Approach | Accuracy | False Tool Calls | LLM Calls | Est. Prompt Tokens | Total Latency |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Flat prompt | 15/17 | 0 | 17 | 273,126 | 47.4s |
-| ToolRouter | 17/17 | 0 | 45 | 65,805 | 76.6s |
+| Flat prompt | 15/17 | 0 | 17 | 273,126 | 35.0s |
+| ToolRouter | 17/17 | 0 | 45 | 65,805 | 71.2s |
 
 In this run, the flat baseline failed two near-neighbor cases: `code-test-bulk`, where it selected `TestCodeSemantic` instead of `TestCodeBulk`, and `communications-draft-bulk`, where it selected `DraftCommunicationsSingle` instead of `DraftCommunicationsBulk`. The added billing cases passed in this run, but they exercise the same real-world pressure pattern: many similar actions whose differences matter. These are smoke-test numbers, not a benchmark. Model behavior and latency can vary between runs. The important signal is that the flat baseline sees every tool at once, while ToolRouter trades more LLM calls for a smaller prompt at each decision step and an auditable route path.
 

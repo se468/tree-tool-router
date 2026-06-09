@@ -11,11 +11,23 @@ export type ToolTree = {
   [key: string]: ToolTree | string[];
 };
 
+export interface DecisionInput {
+  request: string;
+  path: string[];
+  options: string[];
+  optionDescriptions: Record<string, string | undefined>;
+}
+
+export interface DecisionAdapter {
+  decide(input: DecisionInput): Promise<RouterDecision>;
+}
+
 export interface ToolRouterConfig {
   confidenceThreshold?: number;
   samples?: number;
   allowNoTool?: boolean;
-  llm: LLMAdapter;
+  decider?: DecisionAdapter;
+  llm?: LLMAdapter;
   tree: ToolTree;
   tools: Record<string, ToolDefinition>;
 }
